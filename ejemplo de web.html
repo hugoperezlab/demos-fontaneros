@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fontanería Martínez | Fontaneros en Madrid 24h</title>
+    <meta name="description" content="Fontaneros profesionales en Madrid. Urgencias 24h, desatascos, fugas, baños y calderas. Presupuesto gratis.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; color: #333; overflow-x: hidden; }
+
+    :root {
+        --orange: #F5A623;
+        --orange-dark: #e09010;
+        --navy: #1a2a4a;
+        --navy-dark: #0f1e38;
+        --white: #fff;
+        --gray: #f7f8fa;
+        --text: #666;
+    }
+
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+
+    /* ══ TICKER ══ */
+    .ticker-bar { background: var(--navy-dark); overflow: hidden; padding: 7px 0; }
+    .ticker-track { display: flex; white-space: nowrap; animation: ticker 28s linear infinite; }
+    .ticker-track:hover { animation-play-state: paused; }
+    .ticker-item { display: inline-flex; align-items: center; gap: 10px; padding: 0 40px; font-size: 12px; font-weight: 600; color: rgba(255,255,255,.8); flex-shrink: 0; }
+    .ticker-item .dot { width: 7px; height: 7px; background: #ff4444; border-radius: 50%; animation: blink 1.2s infinite; flex-shrink: 0; }
+    .ticker-item a { color: var(--orange); text-decoration: none; }
+    @keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.15} }
+
+    /* ══ TOPBAR (desktop only) ══ */
+    .topbar { background: var(--orange); padding: 8px 0; font-size: 13px; }
+    .topbar .container { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .topbar-items { display: flex; gap: 22px; flex-wrap: wrap; align-items: center; }
+    .topbar-items span, .topbar-items a { color: var(--navy-dark); font-weight: 500; text-decoration: none; display: flex; align-items: center; gap: 5px; }
+    .topbar-badge { background: var(--navy-dark); color: var(--orange) !important; padding: 4px 14px; border-radius: 20px; font-weight: 700 !important; font-size: 12px; display: flex; align-items: center; gap: 5px; }
+
+    /* ══ HEADER ══ */
+    header { background: #fff; padding: 12px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 12px rgba(0,0,0,.08); }
+    header .container { display: flex; justify-content: space-between; align-items: center; position: relative; }
+    .logo { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+    .logo-icon { width: 46px; height: 46px; border-radius: 10px; overflow: hidden; flex-shrink: 0; }
+    .logo-icon svg { width: 46px; height: 46px; display: block; }
+    .logo-text h2 { font-size: 17px; font-weight: 700; color: var(--navy); line-height: 1.1; }
+    .logo-text span { font-size: 10px; color: var(--orange); text-transform: uppercase; letter-spacing: 1px; }
+    nav ul { list-style: none; display: flex; gap: 2px; align-items: center; }
+    nav ul li a { text-decoration: none; color: var(--navy); font-weight: 500; font-size: 13px; padding: 7px 11px; border-radius: 6px; transition: color .2s; }
+    nav ul li a:hover { color: var(--orange); }
+    .btn-cta { background: var(--orange) !important; color: #fff !important; padding: 9px 18px !important; border-radius: 6px !important; font-weight: 600 !important; transition: background .2s !important; }
+    .btn-cta:hover { background: var(--orange-dark) !important; }
+    .header-actions { display: flex; align-items: center; gap: 10px; }
+    .mobile-call-btn { display: none; width: 40px; height: 40px; background: var(--orange); border-radius: 50%; align-items: center; justify-content: center; color: #fff; font-size: 16px; text-decoration: none; }
+    .menu-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .menu-toggle span { display: block; width: 22px; height: 2.5px; background: var(--navy); border-radius: 3px; transition: .3s; }
+
+    /* ══ SECTION BASE ══ */
+    section { padding: 64px 0; }
+    .section-label { color: var(--orange); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 8px; }
+    .section-title { font-size: clamp(24px, 3vw, 36px); font-weight: 800; color: var(--navy); line-height: 1.2; margin-bottom: 12px; }
+    .section-subtitle { color: var(--text); font-size: 14px; line-height: 1.75; max-width: 520px; }
+    .section-header { text-align: center; margin-bottom: 44px; }
+    .section-header .section-subtitle { margin: 0 auto; }
+
+    /* ══ REVEAL ══ */
+    .reveal { opacity: 0; transform: translateY(26px); transition: opacity .6s, transform .6s; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-left { opacity: 0; transform: translateX(-32px); transition: opacity .65s, transform .65s; }
+    .reveal-left.visible { opacity: 1; transform: none; }
+    .reveal-right { opacity: 0; transform: translateX(32px); transition: opacity .65s, transform .65s; }
+    .reveal-right.visible { opacity: 1; transform: none; }
+
+    /* ══ HERO (desktop: 2 columns) ══ */
+    #inicio {
+        background: linear-gradient(135deg, #07111f 0%, var(--navy) 100%);
+        position: relative; min-height: 84vh;
+        display: flex; align-items: center; overflow: hidden;
+    }
+    .hero-bg { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=1400&q=70'); background-size: cover; background-position: center; opacity: .1; }
+    .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; position: relative; z-index: 1; padding: 56px 0; }
+    .hero-content { }
+    .hero-eyebrow { color: var(--orange); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 14px; }
+    .hero-title { color: #fff; font-size: clamp(30px, 3.8vw, 50px); font-weight: 800; line-height: 1.15; margin-bottom: 18px; }
+    .hero-title span { color: var(--orange); }
+    .hero-subtitle { color: rgba(255,255,255,.7); font-size: 15px; line-height: 1.75; margin-bottom: 30px; }
+    .hero-phone { display: flex; align-items: center; gap: 14px; margin-bottom: 30px; }
+    .phone-icon { width: 48px; height: 48px; background: var(--orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 18px; flex-shrink: 0; animation: pulse 2.2s infinite; }
+    @keyframes pulse { 0%,100%{box-shadow:0 0 0 0 rgba(245,166,35,.45)} 55%{box-shadow:0 0 0 14px rgba(245,166,35,0)} }
+    .phone-number { color: #fff; font-size: 26px; font-weight: 800; }
+    .phone-label { color: rgba(255,255,255,.5); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 24px; border-radius: 7px; font-size: 14px; font-weight: 600; text-decoration: none; transition: all .25s; cursor: pointer; border: 2px solid transparent; }
+    .btn-primary { background: var(--orange); color: #fff; }
+    .btn-primary:hover { background: var(--orange-dark); transform: translateY(-2px); box-shadow: 0 8px 22px rgba(245,166,35,.4); }
+    .btn-outline { background: transparent; color: #fff; border-color: rgba(255,255,255,.4); }
+    .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,.1); }
+    .hero-badges { display: flex; gap: 20px; flex-wrap: wrap; }
+    .hero-badge { display: flex; align-items: center; gap: 7px; color: rgba(255,255,255,.6); }
+    .hero-badge i { color: var(--orange); font-size: 15px; }
+    .hero-badge span { font-size: 12px; }
+
+    /* Hero visual (right column) */
+    .hero-visual { position: relative; }
+    .hero-photo { width: 100%; height: 480px; object-fit: cover; border-radius: 20px; display: block; filter: brightness(.92); }
+    .hero-photo-overlay { position: absolute; inset: 0; border-radius: 20px; background: linear-gradient(to bottom, transparent 50%, rgba(15,30,56,.6) 100%); }
+    .hero-card-avail {
+        position: absolute; bottom: 24px; left: -28px;
+        background: #fff; border-radius: 14px; padding: 14px 18px;
+        display: flex; align-items: center; gap: 12px;
+        box-shadow: 0 12px 36px rgba(0,0,0,.2);
+        min-width: 200px;
+    }
+    .avail-dot { width: 10px; height: 10px; background: #22c55e; border-radius: 50%; flex-shrink: 0; box-shadow: 0 0 0 3px rgba(34,197,94,.2); animation: blink 1.8s infinite; }
+    .avail-text strong { display: block; font-size: 13px; color: var(--navy); font-weight: 700; }
+    .avail-text span { font-size: 11px; color: var(--text); }
+    .hero-card-rating {
+        position: absolute; top: 20px; right: -20px;
+        background: var(--orange); border-radius: 14px; padding: 12px 16px;
+        display: flex; align-items: center; gap: 10px;
+        box-shadow: 0 8px 24px rgba(245,166,35,.4);
+    }
+    .hero-card-rating i { color: #fff; font-size: 18px; }
+    .hero-card-rating strong { display: block; color: #fff; font-size: 17px; font-weight: 800; line-height: 1; }
+    .hero-card-rating span { font-size: 10px; color: rgba(255,255,255,.85); }
+
+    /* ══ QUICK STRIP ══ */
+    .quick-strip { background: var(--navy); }
+    .quick-strip .container { display: grid; grid-template-columns: repeat(4,1fr); }
+    .quick-item { display: flex; align-items: center; gap: 14px; padding: 22px 20px; border-right: 1px solid rgba(255,255,255,.07); transition: background .2s; }
+    .quick-item:last-child { border-right: none; }
+    .quick-item:hover { background: rgba(255,255,255,.04); }
+    .quick-item i { color: var(--orange); font-size: 22px; flex-shrink: 0; }
+    .quick-item-text strong { display: block; color: #fff; font-size: 12.5px; font-weight: 600; }
+    .quick-item-text span { font-size: 11px; color: rgba(255,255,255,.45); }
+
+    /* ══ SERVICES ══ */
+    #servicios { background: var(--gray); }
+    .services-layout { display: grid; grid-template-columns: 1fr 2.2fr; gap: 48px; align-items: start; }
+    .services-intro { position: sticky; top: 100px; }
+    .services-intro .section-label { text-align: left; }
+    .services-intro .section-title { text-align: left; }
+    .services-intro .section-subtitle { text-align: left; margin: 0 0 24px; }
+    .services-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--orange); color: #fff; padding: 12px 22px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; transition: background .2s, transform .2s; }
+    .services-cta:hover { background: var(--orange-dark); transform: translateY(-2px); }
+    .services-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+    .service-card { background: #fff; border-radius: 14px; padding: 28px 22px; box-shadow: 0 2px 12px rgba(0,0,0,.05); transition: all .3s; position: relative; overflow: hidden; }
+    .service-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--orange); transform: scaleX(0); transition: transform .3s; }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,.1); }
+    .service-card:hover::after { transform: scaleX(1); }
+    .service-icon { width: 54px; height: 54px; background: rgba(245,166,35,.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--orange); font-size: 21px; margin-bottom: 14px; transition: background .3s, color .3s; }
+    .service-card:hover .service-icon { background: var(--orange); color: #fff; }
+    .service-card h3 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 7px; }
+    .service-card p { color: var(--text); font-size: 12.5px; line-height: 1.7; }
+
+    /* ══ EMERGENCY BAND ══ */
+    .emergency-band { background: var(--navy-dark); padding: 44px 0; position: relative; overflow: hidden; }
+    .emergency-band::before { content: ''; position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=50') center/cover; opacity: .06; }
+    .emergency-inner { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .emergency-left { display: flex; align-items: center; gap: 18px; }
+    .emergency-icon-wrap { width: 58px; height: 58px; background: rgba(245,166,35,.12); border: 2px solid var(--orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--orange); font-size: 22px; flex-shrink: 0; animation: pulse 2s infinite; }
+    .emergency-text h3 { color: #fff; font-size: 19px; font-weight: 800; margin-bottom: 3px; }
+    .emergency-text p { color: rgba(255,255,255,.6); font-size: 13px; }
+    .emergency-phone { color: var(--orange); font-size: 32px; font-weight: 800; text-decoration: none; transition: color .2s; }
+    .emergency-phone:hover { color: #fff; }
+
+    /* ══ HOW WE WORK ══ */
+    #como-trabajamos { background: #fff; }
+    .steps-wrapper { position: relative; }
+    .steps-connector {
+        position: absolute; top: 90px; left: calc(33.33% - 14px); right: calc(33.33% - 14px);
+        height: 2px; background: repeating-linear-gradient(90deg, var(--orange) 0, var(--orange) 8px, transparent 8px, transparent 16px);
+        z-index: 0;
+    }
+    .steps-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; position: relative; z-index: 1; }
+    .step-card { text-align: center; padding: 32px 22px; border-radius: 16px; background: var(--gray); position: relative; transition: box-shadow .3s, transform .3s; }
+    .step-card:hover { box-shadow: 0 10px 36px rgba(0,0,0,.1); transform: translateY(-4px); }
+    .step-number { position: absolute; top: -16px; left: 50%; transform: translateX(-50%); width: 32px; height: 32px; background: var(--orange); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; border: 3px solid #fff; box-shadow: 0 4px 12px rgba(245,166,35,.35); }
+    .step-img { width: 100%; height: 160px; border-radius: 10px; object-fit: cover; margin-bottom: 16px; display: block; }
+    .step-card h3 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 7px; }
+    .step-card p { font-size: 12.5px; color: var(--text); line-height: 1.7; }
+
+    /* ══ GALLERY ══ */
+    #galeria { background: var(--gray); }
+    .gallery-bento {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr 1fr;
+        grid-template-rows: 240px 240px;
+        gap: 14px;
+    }
+    .gallery-item { position: relative; overflow: hidden; border-radius: 14px; cursor: pointer; }
+    .gallery-item.gi-tall { grid-row: span 2; }
+    .gallery-item.gi-wide { grid-column: span 2; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s; }
+    .gallery-item:hover img { transform: scale(1.06); }
+    .gallery-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,30,56,.8) 0%, transparent 55%); opacity: 0; transition: opacity .3s; display: flex; align-items: flex-end; padding: 18px; }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-label { color: #fff; font-size: 13px; font-weight: 600; }
+    .gallery-scroll-hint { display: none; }
+
+    /* ══ ABOUT ══ */
+    #nosotros { background: #fff; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .about-collage { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 10px; }
+    .about-collage .ac-main { grid-column: span 2; }
+    .about-collage img { width: 100%; border-radius: 12px; object-fit: cover; display: block; height: 180px; }
+    .about-collage .ac-main img { height: 240px; }
+    .about-badge-row { display: flex; gap: 10px; margin-top: 10px; }
+    .about-stat-card { flex: 1; background: var(--navy); color: #fff; border-radius: 12px; padding: 16px 14px; text-align: center; }
+    .about-stat-card .asn { font-size: 28px; font-weight: 800; color: var(--orange); line-height: 1; }
+    .about-stat-card .asl { font-size: 10px; color: rgba(255,255,255,.6); margin-top: 4px; }
+    .about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 20px 0 26px; }
+    .feature-item { display: flex; align-items: flex-start; gap: 9px; }
+    .feature-item i { color: var(--orange); margin-top: 3px; flex-shrink: 0; }
+    .feature-item span { font-size: 13px; font-weight: 500; color: var(--navy); }
+
+    /* ══ STATS ══ */
+    #stats { background: var(--navy); padding: 56px 0; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; }
+    .stat-item { color: #fff; text-align: center; padding: 32px 20px; border-right: 1px solid rgba(255,255,255,.07); }
+    .stat-item:last-child { border-right: none; }
+    .stat-icon { width: 60px; height: 60px; border: 2px solid var(--orange); background: rgba(245,166,35,.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--orange); font-size: 22px; margin: 0 auto 12px; }
+    .stat-number { font-size: 42px; font-weight: 800; color: var(--orange); line-height: 1; }
+    .stat-label { font-size: 12px; color: rgba(255,255,255,.55); margin-top: 6px; font-weight: 500; }
+
+    /* ══ TESTIMONIALS ══ */
+    #testimonios { background: var(--gray); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .testimonial-card { background: #fff; border-radius: 14px; padding: 32px 28px; box-shadow: 0 2px 12px rgba(0,0,0,.06); position: relative; overflow: hidden; }
+    .testimonial-card::before { content: '\201C'; position: absolute; top: -8px; right: 18px; font-size: 96px; color: var(--orange); opacity: .1; font-family: Georgia, serif; line-height: 1; pointer-events: none; }
+    .stars { color: var(--orange); font-size: 15px; letter-spacing: 2px; margin-bottom: 12px; }
+    .testimonial-text { color: var(--text); font-size: 13.5px; line-height: 1.8; margin-bottom: 20px; font-style: italic; position: relative; z-index: 1; }
+    .testimonial-author { display: flex; align-items: center; gap: 12px; }
+    .author-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--orange); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 14px; flex-shrink: 0; }
+    .author-name { font-weight: 700; font-size: 13px; color: var(--navy); }
+    .author-location { font-size: 11px; color: var(--text); }
+
+    /* ══ CONTACT ══ */
+    #contacto { background: #fff; padding: 0; overflow: hidden; }
+    .contact-wrapper { display: grid; grid-template-columns: 1fr 1.5fr; min-height: 600px; }
+    .contact-left { background: var(--navy); padding: 64px 48px; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
+    .contact-left::before { content: ''; position: absolute; bottom: -60px; right: -60px; width: 260px; height: 260px; border: 50px solid rgba(245,166,35,.08); border-radius: 50%; }
+    .contact-left::after { content: ''; position: absolute; top: -80px; left: -80px; width: 220px; height: 220px; border: 50px solid rgba(245,166,35,.05); border-radius: 50%; }
+    .contact-left .section-label { color: var(--orange); }
+    .contact-left .section-title { color: #fff; margin-bottom: 14px; }
+    .contact-left > p { color: rgba(255,255,255,.6); font-size: 14px; line-height: 1.75; margin-bottom: 32px; }
+    .contact-items { display: flex; flex-direction: column; gap: 18px; position: relative; z-index: 1; }
+    .contact-item { display: flex; align-items: center; gap: 14px; }
+    .contact-item-icon { width: 44px; height: 44px; background: rgba(245,166,35,.15); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--orange); font-size: 16px; flex-shrink: 0; }
+    .contact-item-text strong { display: block; font-size: 13px; color: #fff; margin-bottom: 2px; }
+    .contact-item-text span { font-size: 12px; color: rgba(255,255,255,.5); }
+    .contact-right { padding: 64px 48px; background: var(--gray); display: flex; flex-direction: column; justify-content: center; }
+    .contact-right h3 { font-size: 22px; font-weight: 800; color: var(--navy); margin-bottom: 24px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-group { margin-bottom: 14px; }
+    .form-group label { display: block; font-size: 11px; font-weight: 700; color: var(--navy); margin-bottom: 5px; text-transform: uppercase; letter-spacing: .5px; }
+    .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 11px 14px; border: 2px solid #e8e8e8; border-radius: 8px; font-size: 13px; font-family: 'Poppins', sans-serif; color: #333; background: #fff; outline: none; transition: border-color .2s; }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--orange); }
+    .form-group textarea { resize: vertical; min-height: 96px; }
+    .btn-submit { width: 100%; background: var(--orange); color: #fff; padding: 14px; border: none; border-radius: 8px; font-size: 15px; font-weight: 700; font-family: 'Poppins', sans-serif; cursor: pointer; transition: background .2s, transform .2s; display: flex; align-items: center; justify-content: center; gap: 8px; }
+    .btn-submit:hover { background: var(--orange-dark); transform: translateY(-1px); }
+
+    /* ══ FOOTER ══ */
+    footer { background: var(--navy-dark); color: rgba(255,255,255,.65); padding: 56px 0 0; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.4fr; gap: 36px; padding-bottom: 40px; }
+    .footer-brand p { font-size: 12px; line-height: 1.8; margin-top: 14px; color: rgba(255,255,255,.4); }
+    .footer-social { display: flex; gap: 8px; margin-top: 18px; }
+    .footer-social a { width: 34px; height: 34px; background: rgba(255,255,255,.08); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.6); text-decoration: none; transition: background .2s, color .2s; }
+    .footer-social a:hover { background: var(--orange); color: #fff; }
+    .footer-col h4 { color: #fff; font-size: 13px; font-weight: 700; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul li a { color: rgba(255,255,255,.4); text-decoration: none; font-size: 12px; transition: color .2s; }
+    .footer-col ul li a:hover { color: var(--orange); }
+    .footer-contact-item { display: flex; align-items: flex-start; gap: 9px; margin-bottom: 12px; }
+    .footer-contact-item i { color: var(--orange); margin-top: 3px; flex-shrink: 0; font-size: 12px; }
+    .footer-contact-item span { font-size: 12px; color: rgba(255,255,255,.4); line-height: 1.55; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.07); padding: 16px 0; text-align: center; font-size: 12px; color: rgba(255,255,255,.3); }
+
+    /* ══ WHATSAPP FLOAT ══ */
+    .whatsapp-float { position: fixed; bottom: 24px; right: 24px; width: 54px; height: 54px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 25px; text-decoration: none; box-shadow: 0 4px 20px rgba(37,211,102,.45); z-index: 999; transition: transform .2s; }
+    .whatsapp-float:hover { transform: scale(1.1); }
+
+
+    /* ════════════════════
+       TABLET
+    ════════════════════ */
+    @media (max-width: 1024px) {
+        .hero-inner { grid-template-columns: 1fr 1fr; gap: 36px; }
+        .hero-card-avail { left: -10px; }
+        .hero-card-rating { right: -10px; }
+        .services-layout { grid-template-columns: 1fr; }
+        .services-intro { position: static; }
+        .services-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 900px) {
+        .hero-inner { grid-template-columns: 1fr; }
+        .hero-visual { display: none; }
+        .services-grid { grid-template-columns: repeat(2,1fr); }
+        .steps-connector { display: none; }
+        .steps-grid { grid-template-columns: 1fr 1fr; }
+        .gallery-bento { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+        .gallery-item.gi-tall { grid-row: span 1; }
+        .gallery-item.gi-wide { grid-column: span 1; }
+        .about-grid { grid-template-columns: 1fr; }
+        .stats-grid { grid-template-columns: repeat(2,1fr); }
+        .stats-grid .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.07); }
+        .stats-grid .stat-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,.07); }
+        .testimonials-grid { grid-template-columns: 1fr 1fr; }
+        .contact-wrapper { grid-template-columns: 1fr; }
+        .contact-left { padding: 40px 32px; }
+        .contact-right { padding: 40px 32px; }
+        .footer-grid { grid-template-columns: 1fr 1fr; }
+        nav ul { display: none; }
+        nav ul.open { display: flex; flex-direction: column; position: absolute; top: calc(100% + 10px); left: 0; right: 0; background: #fff; padding: 14px 18px; box-shadow: 0 12px 30px rgba(0,0,0,.1); border-radius: 10px; gap: 2px; }
+        .menu-toggle { display: flex; }
+        .mobile-call-btn { display: flex; }
+    }
+
+    /* ════════════════════
+       MOBILE
+    ════════════════════ */
+    @media (max-width: 640px) {
+        .ticker-bar { padding: 6px 0; }
+        .ticker-item { font-size: 11px; padding: 0 28px; }
+        .topbar { display: none; }
+        .logo-text span { display: none; }
+        section { padding: 48px 0; }
+        #inicio { min-height: 75vh; }
+        .hero-inner { padding: 36px 0; }
+        .hero-subtitle { font-size: 14px; }
+        .hero-badges { display: none; }
+        .phone-number { font-size: 22px; }
+        .btn { padding: 12px 20px; font-size: 13px; }
+
+        .quick-strip .container { grid-template-columns: 1fr 1fr; }
+        .quick-item { padding: 14px 12px; border-right: none; border-bottom: 1px solid rgba(255,255,255,.07); }
+        .quick-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,.07); }
+        .quick-item:nth-last-child(-n+2) { border-bottom: none; }
+
+        .services-layout { grid-template-columns: 1fr; }
+        .services-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+        .service-card { padding: 20px 14px; text-align: center; border-radius: 12px; }
+        .service-icon { margin: 0 auto 12px; width: 50px; height: 50px; font-size: 19px; }
+        .service-card h3 { font-size: 12.5px; font-weight: 700; margin-bottom: 0; }
+        .service-card p { display: none; }
+        .service-card::after { display: none; }
+
+        .emergency-band { padding: 30px 0; }
+        .emergency-inner { flex-direction: column; text-align: center; gap: 14px; }
+        .emergency-left { flex-direction: column; gap: 10px; }
+        .emergency-phone { font-size: 26px; }
+        .emergency-text h3 { font-size: 16px; }
+
+        .steps-connector { display: none; }
+        .steps-grid { grid-template-columns: 1fr; gap: 20px; }
+        .step-card { padding: 26px 18px; }
+        .step-img { height: 130px; }
+
+        #galeria .section-header { margin-bottom: 20px; }
+        .gallery-bento {
+            display: flex; overflow-x: auto; scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch; scrollbar-width: none; gap: 10px;
+            margin: 0 -24px; padding-left: 24px; padding-right: 24px; padding-bottom: 4px;
+        }
+        .gallery-bento::-webkit-scrollbar { display: none; }
+        .gallery-item { flex: 0 0 76vw; scroll-snap-align: start; min-height: 200px; }
+        .gallery-item.gi-tall, .gallery-item.gi-wide { flex: 0 0 76vw; grid-row: auto; grid-column: auto; }
+        .gallery-item img { min-height: 200px; height: 200px; }
+        .gallery-overlay { opacity: 1; }
+        .gallery-scroll-hint { display: block; text-align: center; margin-top: 10px; color: var(--text); font-size: 12px; }
+        .gallery-scroll-hint i { color: var(--orange); }
+
+        .about-grid { grid-template-columns: 1fr; }
+        .about-collage { grid-template-columns: 1fr; }
+        .about-collage .ac-main { grid-column: span 1; }
+        .about-collage img:not(.ac-main img) { display: none; }
+        .about-collage .ac-main img { height: 210px; }
+        .about-badge-row { }
+        .about-features { grid-template-columns: 1fr; gap: 8px; }
+
+        .stats-grid { grid-template-columns: 1fr 1fr; gap: 0; }
+        .stat-number { font-size: 34px; }
+        .stat-item { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,.07); }
+        .stat-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,.07) !important; }
+        .stat-item:nth-last-child(-n+2) { border-bottom: none !important; }
+
+        .testimonials-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; gap: 12px; margin: 0 -24px; padding-left: 24px; padding-right: 24px; padding-bottom: 4px; }
+        .testimonials-grid::-webkit-scrollbar { display: none; }
+        .testimonial-card { flex: 0 0 82vw; scroll-snap-align: start; }
+
+        .contact-wrapper { grid-template-columns: 1fr; min-height: auto; }
+        .contact-left { padding: 36px 24px; }
+        .contact-right { padding: 28px 24px; }
+        .form-row { grid-template-columns: 1fr; }
+
+        .footer-grid { grid-template-columns: 1fr; }
+        .footer-col:nth-child(3) { display: none; }
+    }
+    </style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker-bar">
+    <div class="ticker-track">
+        <span class="ticker-item"><span class="dot"></span> Servicio urgente 24h &nbsp;·&nbsp; Disponibles ahora &nbsp;·&nbsp; Llama ya: <a href="tel:+34612345678">+34 612 345 678</a></span>
+        <span class="ticker-item"><i class="fas fa-check-circle" style="color:var(--orange)"></i> Presupuesto gratuito sin compromiso</span>
+        <span class="ticker-item"><i class="fas fa-tools" style="color:var(--orange)"></i> Más de 1.250 trabajos en Madrid</span>
+        <span class="ticker-item"><span class="dot"></span> Servicio urgente 24h &nbsp;·&nbsp; Disponibles ahora &nbsp;·&nbsp; Llama ya: <a href="tel:+34612345678">+34 612 345 678</a></span>
+        <span class="ticker-item"><i class="fas fa-check-circle" style="color:var(--orange)"></i> Presupuesto gratuito sin compromiso</span>
+        <span class="ticker-item"><i class="fas fa-tools" style="color:var(--orange)"></i> Más de 1.250 trabajos en Madrid</span>
+    </div>
+</div>
+
+<!-- TOPBAR (desktop) -->
+<div class="topbar">
+    <div class="container">
+        <div class="topbar-items">
+            <span><i class="fas fa-envelope"></i> info@fontaneriamartinez.es</span>
+            <span><i class="fas fa-map-marker-alt"></i> Madrid y toda la Comunidad</span>
+            <span><i class="fas fa-clock"></i> Lun–Sáb 8:00–21:00</span>
+        </div>
+        <a href="tel:+34612345678" class="topbar-badge"><i class="fas fa-phone"></i> Urgencias: +34 612 345 678</a>
+    </div>
+</div>
+
+<!-- HEADER -->
+<header>
+    <div class="container">
+        <a href="#inicio" class="logo">
+            <div class="logo-icon">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="100" height="100" rx="12" fill="#0f1e38"/>
+                    <circle cx="50" cy="46" r="34" fill="none" stroke="#F5A623" stroke-width="3.5"/>
+                    <rect x="30" y="16" width="26" height="7" rx="3.5" fill="white"/>
+                    <rect x="36" y="22" width="7" height="11" fill="white"/>
+                    <rect x="28" y="31" width="15" height="5" rx="2.5" fill="white"/>
+                    <rect x="54" y="16" width="12" height="5" rx="2.5" fill="white"/>
+                    <circle cx="60" cy="18.5" r="5" fill="white"/>
+                    <path d="M33 40 Q30 48 34 53 Q38 56 41 52 Q44 47 41 40 Q37 36 33 40 Z" fill="white"/>
+                    <path d="M18 64 Q50 44 82 64" fill="#F5A623"/>
+                    <rect x="15" y="64" width="70" height="9" rx="4.5" fill="#F5A623"/>
+                    <rect x="15" y="70" width="70" height="3" rx="1.5" fill="#d4870f"/>
+                    <path d="M20 84 Q50 77 80 84" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="logo-text">
+                <h2>Fontanería Martínez</h2>
+                <span>Fontaneros en Madrid 24h</span>
+            </div>
+        </a>
+        <div class="header-actions">
+            <a href="tel:+34612345678" class="mobile-call-btn" aria-label="Llamar"><i class="fas fa-phone"></i></a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menú"><span></span><span></span><span></span></button>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#como-trabajamos">Cómo trabajamos</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#testimonios">Opiniones</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="tel:+34612345678" class="btn-cta">Llamar Ahora</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<!-- HERO -->
+<section id="inicio">
+    <div class="hero-bg"></div>
+    <div class="container">
+        <div class="hero-inner">
+            <!-- Texto izquierda -->
+            <div class="hero-content">
+                <p class="hero-eyebrow">Fontaneros de confianza en Madrid</p>
+                <h1 class="hero-title">Fontaneros en <span>Madrid</span> para Urgencias y Reformas</h1>
+                <p class="hero-subtitle">¿Fuga de agua, desatasco urgente o reforma de baño? Disponibles 24h, los 7 días. Presupuesto gratuito sin compromiso.</p>
+                <div class="hero-phone">
+                    <div class="phone-icon"><i class="fas fa-phone"></i></div>
+                    <div>
+                        <div class="phone-number">+34 612 345 678</div>
+                        <div class="phone-label">Urgencias 24h · Respuesta inmediata</div>
+                    </div>
+                </div>
+                <div class="hero-btns">
+                    <a href="tel:+34612345678" class="btn btn-primary"><i class="fas fa-phone"></i> Llamar Ahora</a>
+                    <a href="#servicios" class="btn btn-outline"><i class="fas fa-tools"></i> Ver Servicios</a>
+                </div>
+                <div class="hero-badges">
+                    <div class="hero-badge"><i class="fas fa-shield-alt"></i><span>Trabajo Garantizado</span></div>
+                    <div class="hero-badge"><i class="fas fa-clock"></i><span>Disponible 24/7</span></div>
+                    <div class="hero-badge"><i class="fas fa-star"></i><span>+15 Años Experiencia</span></div>
+                </div>
+            </div>
+            <!-- Foto derecha + tarjetas flotantes -->
+            <div class="hero-visual reveal-right">
+                <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=700&q=80" alt="Fontanero profesional en Madrid" class="hero-photo">
+                <div class="hero-photo-overlay"></div>
+                <!-- Tarjeta disponible -->
+                <div class="hero-card-avail">
+                    <div class="avail-dot"></div>
+                    <div class="avail-text">
+                        <strong>Disponible ahora</strong>
+                        <span>Llegada en &lt; 60 min</span>
+                    </div>
+                </div>
+                <!-- Tarjeta rating -->
+                <div class="hero-card-rating">
+                    <i class="fas fa-star"></i>
+                    <div>
+                        <strong>850+</strong>
+                        <span>Clientes satisfechos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- QUICK STRIP -->
+<div class="quick-strip">
+    <div class="container">
+        <div class="quick-item reveal"><i class="fas fa-bolt"></i><div class="quick-item-text"><strong>Respuesta en &lt;60 min</strong><span>Urgencias todo el día</span></div></div>
+        <div class="quick-item reveal" style="transition-delay:.07s"><i class="fas fa-tag"></i><div class="quick-item-text"><strong>Precio transparente</strong><span>Sin sorpresas ni letra pequeña</span></div></div>
+        <div class="quick-item reveal" style="transition-delay:.14s"><i class="fas fa-medal"></i><div class="quick-item-text"><strong>Garantía por escrito</strong><span>En todos los trabajos</span></div></div>
+        <div class="quick-item reveal" style="transition-delay:.21s"><i class="fas fa-user-check"></i><div class="quick-item-text"><strong>Técnicos certificados</strong><span>+15 años de experiencia</span></div></div>
+    </div>
+</div>
+
+<!-- SERVICES -->
+<section id="servicios">
+    <div class="container">
+        <div class="services-layout">
+            <!-- Intro fija izquierda -->
+            <div class="services-intro reveal-left">
+                <p class="section-label">Lo que hacemos</p>
+                <h2 class="section-title">Todo lo que necesitas en fontanería</h2>
+                <p class="section-subtitle">Soluciones completas en Madrid y toda la Comunidad. Materiales de primera y garantía por escrito en cada trabajo.</p>
+                <a href="tel:+34612345678" class="services-cta"><i class="fas fa-phone"></i> Pedir Presupuesto</a>
+            </div>
+            <!-- Grid de tarjetas -->
+            <div class="services-grid">
+                <div class="service-card reveal" style="transition-delay:.04s">
+                    <div class="service-icon"><i class="fas fa-tint-slash"></i></div>
+                    <h3>Reparación de Fugas</h3>
+                    <p>Detección y reparación rápida en tuberías, grifos y juntas. Actuación inmediata.</p>
+                </div>
+                <div class="service-card reveal" style="transition-delay:.08s">
+                    <div class="service-icon"><i class="fas fa-toilet"></i></div>
+                    <h3>Desatascos Urgentes</h3>
+                    <p>Maquinaria profesional. Llegada en menos de 60 minutos a cualquier punto de Madrid.</p>
+                </div>
+                <div class="service-card reveal" style="transition-delay:.12s">
+                    <div class="service-icon"><i class="fas fa-bath"></i></div>
+                    <h3>Instalación de Baños</h3>
+                    <p>Reforma integral: sanitarios, platos de ducha, bañeras, mamparas y muebles.</p>
+                </div>
+                <div class="service-card reveal" style="transition-delay:.16s">
+                    <div class="service-icon"><i class="fas fa-fire"></i></div>
+                    <h3>Calefacción y Calderas</h3>
+                    <p>Instalación, mantenimiento y reparación de calderas. Todas las marcas.</p>
+                </div>
+                <div class="service-card reveal" style="transition-delay:.20s">
+                    <div class="service-icon"><i class="fas fa-faucet"></i></div>
+                    <h3>Grifería</h3>
+                    <p>Cambio y reparación de grifos, mezcladores y duchas termostáticas con garantía.</p>
+                </div>
+                <div class="service-card reveal" style="transition-delay:.24s">
+                    <div class="service-icon"><i class="fas fa-home"></i></div>
+                    <h3>Obras y Reformas</h3>
+                    <p>Reformas integrales de cocina y baño. Renovación completa de instalaciones.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- EMERGENCY BAND -->
+<div class="emergency-band">
+    <div class="container">
+        <div class="emergency-inner">
+            <div class="emergency-left">
+                <div class="emergency-icon-wrap"><i class="fas fa-phone-volume"></i></div>
+                <div class="emergency-text">
+                    <h3>¿Urgencia ahora mismo?</h3>
+                    <p>Disponibles 24h / 365 días. Llegamos en menos de 60 minutos.</p>
+                </div>
+            </div>
+            <a href="tel:+34612345678" class="emergency-phone">+34 612 345 678</a>
+        </div>
+    </div>
+</div>
+
+<!-- HOW WE WORK -->
+<section id="como-trabajamos">
+    <div class="container">
+        <div class="section-header reveal">
+            <p class="section-label">El proceso</p>
+            <h2 class="section-title">¿Cómo Trabajamos?</h2>
+            <p class="section-subtitle">Tres pasos sencillos para resolver tu problema sin complicaciones ni sorpresas.</p>
+        </div>
+        <div class="steps-wrapper">
+            <div class="steps-connector"></div>
+            <div class="steps-grid">
+                <div class="step-card reveal" style="transition-delay:.06s">
+                    <div class="step-number">1</div>
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&q=80" alt="Llama y cuéntanos" class="step-img" loading="lazy">
+                    <h3>Llama y Cuéntanos</h3>
+                    <p>Llámenos o escríbanos por WhatsApp. Le damos solución inmediata o concertamos visita.</p>
+                </div>
+                <div class="step-card reveal" style="transition-delay:.14s">
+                    <div class="step-number">2</div>
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=500&q=80" alt="Presupuesto gratis" class="step-img" loading="lazy">
+                    <h3>Presupuesto Gratuito</h3>
+                    <p>Nuestro técnico evalúa y entrega un presupuesto detallado, claro y sin letra pequeña.</p>
+                </div>
+                <div class="step-card reveal" style="transition-delay:.22s">
+                    <div class="step-number">3</div>
+                    <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=500&q=80" alt="Trabajo garantizado" class="step-img" loading="lazy">
+                    <h3>Trabajo Garantizado</h3>
+                    <p>Realizamos el trabajo con materiales de primera y entregamos garantía por escrito.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section id="galeria">
+    <div class="container">
+        <div class="section-header reveal">
+            <p class="section-label">Nuestros trabajos</p>
+            <h2 class="section-title">Trabajos Realizados en Madrid</h2>
+            <p class="section-subtitle">Una muestra de los proyectos recientes de fontanería y reforma que hemos completado.</p>
+        </div>
+        <div class="gallery-bento">
+            <div class="gallery-item gi-tall reveal">
+                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80" alt="Reforma de baño" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-label">Reforma completa de baño · Chamberí</span></div>
+            </div>
+            <div class="gallery-item reveal" style="transition-delay:.07s">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Instalación tuberías" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-label">Instalación de tuberías · Salamanca</span></div>
+            </div>
+            <div class="gallery-item reveal" style="transition-delay:.12s">
+                <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80" alt="Cocina reformada" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-label">Fontanería de cocina · Retiro</span></div>
+            </div>
+            <div class="gallery-item gi-wide reveal" style="transition-delay:.17s">
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Instalación caldera" loading="lazy">
+                <div class="gallery-overlay"><span class="gallery-label">Instalación caldera nueva · Carabanchel</span></div>
+            </div>
+        </div>
+        <p class="gallery-scroll-hint"><i class="fas fa-hand-point-right"></i> Desliza para ver más trabajos</p>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="nosotros">
+    <div class="container">
+        <div class="about-grid">
+            <div class="reveal-left">
+                <div class="about-collage">
+                    <div class="ac-main">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=700&q=80" alt="Equipo fontaneros Madrid" loading="lazy">
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1621905252472-943afaa20e20?w=400&q=80" alt="Fontanero trabajando" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1609743522653-52354461eb27?w=400&q=80" alt="Herramientas" loading="lazy">
+                </div>
+                <div class="about-badge-row">
+                    <div class="about-stat-card"><div class="asn">15+</div><div class="asl">Años de experiencia</div></div>
+                    <div class="about-stat-card"><div class="asn">1.250+</div><div class="asl">Trabajos completados</div></div>
+                    <div class="about-stat-card"><div class="asn">24h</div><div class="asl">Disponibles siempre</div></div>
+                </div>
+            </div>
+            <div class="reveal-right">
+                <p class="section-label">Sobre Nosotros</p>
+                <h2 class="section-title">Fontaneros de Confianza en Madrid</h2>
+                <p style="color:var(--text);font-size:14px;line-height:1.8;margin-bottom:10px;">Somos un equipo de fontaneros certificados con más de 15 años de experiencia en Madrid. Servicio rápido, honesto y de calidad.</p>
+                <p style="color:var(--text);font-size:14px;line-height:1.8;">Garantía por escrito, materiales de primera calidad y presupuesto gratuito sin compromiso previo.</p>
+                <div class="about-features">
+                    <div class="feature-item"><i class="fas fa-check-circle"></i><span>Urgencias 24/7</span></div>
+                    <div class="feature-item"><i class="fas fa-check-circle"></i><span>Presupuesto gratis</span></div>
+                    <div class="feature-item"><i class="fas fa-check-circle"></i><span>Garantía escrita</span></div>
+                    <div class="feature-item"><i class="fas fa-check-circle"></i><span>Técnicos certificados</span></div>
+                    <div class="feature-item"><i class="fas fa-check-circle"></i><span>Materiales de 1ª</span></div>
+                    <div class="feature-item"><i class="fas fa-check-circle"></i><span>Sin sorpresas</span></div>
+                </div>
+                <a href="tel:+34612345678" class="btn btn-primary"><i class="fas fa-phone"></i> Solicitar Presupuesto</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- STATS -->
+<section id="stats">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item reveal"><div class="stat-icon"><i class="fas fa-tools"></i></div><div class="stat-number" data-target="1250">0</div><div class="stat-label">Trabajos Completados</div></div>
+            <div class="stat-item reveal" style="transition-delay:.1s"><div class="stat-icon"><i class="fas fa-calendar-check"></i></div><div class="stat-number" data-target="15">0</div><div class="stat-label">Años de Experiencia</div></div>
+            <div class="stat-item reveal" style="transition-delay:.2s"><div class="stat-icon"><i class="fas fa-smile"></i></div><div class="stat-number" data-target="850">0</div><div class="stat-label">Clientes Satisfechos</div></div>
+            <div class="stat-item reveal" style="transition-delay:.3s"><div class="stat-icon"><i class="fas fa-clock"></i></div><div class="stat-number" data-target="24">0</div><div class="stat-label">Horas Disponible</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonios">
+    <div class="container">
+        <div class="section-header reveal">
+            <p class="section-label">Opiniones reales</p>
+            <h2 class="section-title">Lo que dicen Nuestros Clientes</h2>
+            <p class="section-subtitle">+850 clientes satisfechos en Madrid nos avalan. Opiniones verificadas.</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card reveal" style="transition-delay:.05s">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"Llamé a las 11 de la noche por una fuga y en menos de 45 minutos ya estaban en casa. Trabajo impecable y precio muy justo."</p>
+                <div class="testimonial-author"><div class="author-avatar">MG</div><div><div class="author-name">María García</div><div class="author-location">Salamanca, Madrid</div></div></div>
+            </div>
+            <div class="testimonial-card reveal" style="transition-delay:.1s">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"Reformamos el baño completo. Resultado espectacular, cumplieron el plazo y el precio fue exactamente el del presupuesto."</p>
+                <div class="testimonial-author"><div class="author-avatar">JR</div><div><div class="author-name">Juan Rodríguez</div><div class="author-location">Chamberí, Madrid</div></div></div>
+            </div>
+            <div class="testimonial-card reveal" style="transition-delay:.15s">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"Llevaba meses con la caldera dando problemas. La diagnosticaron en 20 minutos y la dejaron como nueva. Excelente servicio."</p>
+                <div class="testimonial-author"><div class="author-avatar">AL</div><div><div class="author-name">Ana López</div><div class="author-location">Retiro, Madrid</div></div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contacto" style="padding:0">
+    <div class="contact-wrapper">
+        <div class="contact-left reveal-left">
+            <p class="section-label">Contáctanos</p>
+            <h2 class="section-title">Presupuesto<br>Gratis</h2>
+            <p>Disponibles 7 días a la semana, incluyendo festivos. Para urgencias, llame directamente.</p>
+            <div class="contact-items">
+                <div class="contact-item"><div class="contact-item-icon"><i class="fas fa-phone"></i></div><div class="contact-item-text"><strong>Teléfono / Urgencias 24h</strong><span>+34 612 345 678</span></div></div>
+                <div class="contact-item"><div class="contact-item-icon"><i class="fab fa-whatsapp"></i></div><div class="contact-item-text"><strong>WhatsApp</strong><span>+34 612 345 678</span></div></div>
+                <div class="contact-item"><div class="contact-item-icon"><i class="fas fa-envelope"></i></div><div class="contact-item-text"><strong>Email</strong><span>info@fontaneriamartinez.es</span></div></div>
+                <div class="contact-item"><div class="contact-item-icon"><i class="fas fa-map-marker-alt"></i></div><div class="contact-item-text"><strong>Zona de Trabajo</strong><span>Madrid capital y Comunidad de Madrid</span></div></div>
+                <div class="contact-item"><div class="contact-item-icon"><i class="fas fa-clock"></i></div><div class="contact-item-text"><strong>Horario</strong><span>Lun–Sáb 8:00–21:00 · Urgencias 24h</span></div></div>
+            </div>
+        </div>
+        <div class="contact-right reveal-right">
+            <h3>Pide tu Presupuesto</h3>
+            <div class="form-row">
+                <div class="form-group"><label>Nombre *</label><input type="text" placeholder="Tu nombre"></div>
+                <div class="form-group"><label>Teléfono *</label><input type="tel" placeholder="Tu teléfono"></div>
+            </div>
+            <div class="form-group"><label>Email</label><input type="email" placeholder="tu@email.com"></div>
+            <div class="form-group"><label>Servicio</label>
+                <select><option value="">¿Qué necesitas?</option><option>Reparación de fuga urgente</option><option>Desatasco urgente</option><option>Instalación / reforma de baño</option><option>Calefacción / caldera</option><option>Instalación de grifería</option><option>Otro</option></select>
+            </div>
+            <div class="form-group"><label>Descripción</label><textarea placeholder="Cuéntanos el problema..."></textarea></div>
+            <button type="button" class="btn-submit" id="submitBtn"><i class="fas fa-paper-plane"></i> Solicitar Presupuesto Gratis</button>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="#inicio" class="logo">
+                    <div class="logo-icon" style="width:40px;height:40px;">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+                            <rect width="100" height="100" rx="12" fill="#0f1e38"/>
+                            <circle cx="50" cy="46" r="34" fill="none" stroke="#F5A623" stroke-width="3.5"/>
+                            <rect x="30" y="16" width="26" height="7" rx="3.5" fill="white"/>
+                            <rect x="36" y="22" width="7" height="11" fill="white"/>
+                            <rect x="28" y="31" width="15" height="5" rx="2.5" fill="white"/>
+                            <rect x="54" y="16" width="12" height="5" rx="2.5" fill="white"/>
+                            <circle cx="60" cy="18.5" r="5" fill="white"/>
+                            <path d="M33 40 Q30 48 34 53 Q38 56 41 52 Q44 47 41 40 Q37 36 33 40 Z" fill="white"/>
+                            <path d="M18 64 Q50 44 82 64" fill="#F5A623"/>
+                            <rect x="15" y="64" width="70" height="9" rx="4.5" fill="#F5A623"/>
+                            <rect x="15" y="70" width="70" height="3" rx="1.5" fill="#d4870f"/>
+                            <path d="M20 84 Q50 77 80 84" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="logo-text"><h2 style="color:#fff;font-size:15px;">Fontanería Martínez</h2><span>Fontaneros en Madrid 24h</span></div>
+                </a>
+                <p>Fontaneros profesionales en Madrid con más de 15 años de experiencia. Urgencias 24h, presupuesto gratuito.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" aria-label="Google"><i class="fab fa-google"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Servicios</h4>
+                <ul>
+                    <li><a href="#servicios">Reparación de Fugas</a></li>
+                    <li><a href="#servicios">Desatascos Urgentes</a></li>
+                    <li><a href="#servicios">Instalación de Baños</a></li>
+                    <li><a href="#servicios">Calefacción y Calderas</a></li>
+                    <li><a href="#servicios">Grifería</a></li>
+                    <li><a href="#servicios">Obras y Reformas</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#como-trabajamos">Cómo trabajamos</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#testimonios">Opiniones</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contacto</h4>
+                <div class="footer-contact-item"><i class="fas fa-phone"></i><span>+34 612 345 678<br>Urgencias 24h / 7 días</span></div>
+                <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>info@fontaneriamartinez.es</span></div>
+                <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Madrid y Comunidad de Madrid</span></div>
+                <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Lun–Sáb: 8:00–21:00<br>Urgencias: 24h / 7 días</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom"><div class="container"><p>&copy; 2024 Fontanería Martínez Madrid · Todos los derechos reservados.</p></div></div>
+</footer>
+
+<a href="https://wa.me/34612345678" class="whatsapp-float" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+    // Menu
+    const toggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('navMenu');
+    toggle.addEventListener('click', () => menu.classList.toggle('open'));
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+
+    // Reveal
+    const ro = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); ro.unobserve(e.target); } }), {threshold:.1});
+    document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => ro.observe(el));
+
+    // Stats
+    const so = new IntersectionObserver(es => {
+        es.forEach(e => {
+            if(!e.isIntersecting) return;
+            const t = +e.target.dataset.target;
+            const s = t===24?'h':'+';
+            let c=0; const step=Math.max(1,Math.ceil(t/55));
+            const ti=setInterval(()=>{ c=Math.min(c+step,t); e.target.textContent=c.toLocaleString('es-ES')+s; if(c>=t)clearInterval(ti); },28);
+            so.unobserve(e.target);
+        });
+    },{threshold:.6});
+    document.querySelectorAll('.stat-number').forEach(n=>so.observe(n));
+
+    // Active nav
+    const secs = document.querySelectorAll('section[id]');
+    window.addEventListener('scroll',()=>{
+        const y=window.scrollY+120;
+        secs.forEach(s=>{ const l=document.querySelector(`nav a[href="#${s.id}"]`); if(!l||l.classList.contains('btn-cta')) return; l.style.color=(y>=s.offsetTop&&y<s.offsetTop+s.offsetHeight)?'var(--orange)':''; });
+    });
+
+    // Form
+    document.getElementById('submitBtn').addEventListener('click',function(){
+        this.innerHTML='<i class="fas fa-check"></i> ¡Solicitud enviada!';
+        this.style.background='#28a745';
+        setTimeout(()=>{ this.innerHTML='<i class="fas fa-paper-plane"></i> Solicitar Presupuesto Gratis'; this.style.background=''; },3000);
+    });
+</script>
+</body>
+</html>
