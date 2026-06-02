@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="referrer" content="no-referrer"/>
+  <title>Fontaneros Urgencias 24 Horas Madrid – Tu urgencia resuelta en 30 minutos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--az:#0f2f8a;--az2:#1a4fd6;--na:#f97316;--na2:#ea6c0a;--bl:#fff;--gr:#f8fafc;--gt:#64748b;--gb:#e2e8f0;--ve:#25d366}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;color:#1e293b;background:#fff;line-height:1.6}
+    h1,h2,h3,h4{font-family:'Outfit',sans-serif}
+    a{text-decoration:none;color:inherit}
+    .topbar{background:#07194a;color:rgba(255,255,255,.8);font-size:.82rem;padding:8px 0}
+    .tw{max-width:1140px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px}
+    .tl{display:flex;gap:18px}
+    .tl span{display:flex;align-items:center;gap:5px}
+    .ttel{font-weight:700;font-size:.93rem;color:var(--na);white-space:nowrap}
+    .ttel:hover{text-decoration:underline}
+    @media(max-width:640px){.tl{display:none}.tw{justify-content:center}}
+    header{position:sticky;top:0;z-index:900;background:#fff;border-bottom:2px solid var(--gb);box-shadow:0 2px 18px rgba(15,47,138,.09)}
+    .hdr{max-width:1140px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{display:flex;align-items:center;gap:13px}
+    .logo-ico{width:48px;height:48px;background:linear-gradient(135deg,var(--az),var(--az2));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
+    .logo-name{font-family:'Outfit',sans-serif;font-weight:900;font-size:1.2rem;color:var(--az);line-height:1.2;letter-spacing:.02em}
+    .logo-sub{font-size:.71rem;color:var(--gt);font-weight:500}
+    nav{display:flex;gap:2px}
+    nav a{font-size:.84rem;font-weight:600;color:#475569;padding:7px 12px;border-radius:8px;transition:background .15s,color .15s;white-space:nowrap}
+    nav a:hover{background:var(--gr);color:var(--az)}
+    .hdr-cta{display:inline-flex;align-items:center;gap:8px;background:var(--na);color:#fff;font-family:'Outfit',sans-serif;font-weight:700;font-size:.92rem;padding:11px 22px;border-radius:50px;transition:background .2s,transform .15s;white-space:nowrap;flex-shrink:0}
+    .hdr-cta:hover{background:var(--na2);transform:scale(1.03)}
+    .hero{position:relative;min-height:680px;display:flex;align-items:center;overflow:hidden;color:#fff}
+    .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center}
+    .hero-ov{position:absolute;inset:0;background:linear-gradient(120deg,rgba(10,28,90,.94) 0%,rgba(15,47,138,.85) 55%,rgba(10,28,90,.7) 100%)}
+    .hero-inner{position:relative;z-index:2;max-width:1140px;margin:0 auto;padding:80px 24px;display:grid;grid-template-columns:1fr 390px;gap:52px;align-items:center;width:100%}
+    .hero-badge{display:inline-block;background:rgba(249,115,22,.18);border:1px solid rgba(249,115,22,.5);color:#fda96e;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:50px;margin-bottom:18px}
+    .hero h1{font-size:clamp(1.9rem,4vw,3rem);font-weight:900;line-height:1.12;margin-bottom:16px}
+    .hero h1 em{color:var(--na);font-style:normal}
+    .hero-desc{font-size:1.02rem;color:rgba(255,255,255,.83);margin-bottom:28px;max-width:490px}
+    .hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px}
+    .btn-pulse{display:inline-flex;align-items:center;gap:9px;background:var(--na);color:#fff;font-family:'Outfit',sans-serif;font-weight:800;font-size:1.05rem;padding:16px 32px;border-radius:50px;position:relative;transition:background .2s,transform .15s}
+    .btn-pulse:hover{background:var(--na2);transform:scale(1.04)}
+    .btn-pulse::before{content:'';position:absolute;inset:-4px;border-radius:50px;border:3px solid var(--na);animation:pulse 2s ease-out infinite}
+    @keyframes pulse{0%{transform:scale(1);opacity:.7}70%{transform:scale(1.18);opacity:0}100%{transform:scale(1.18);opacity:0}}
+    .btn-wa{display:inline-flex;align-items:center;gap:9px;background:var(--ve);color:#fff;font-family:'Outfit',sans-serif;font-weight:700;font-size:1rem;padding:14px 26px;border-radius:50px;transition:background .2s}
+    .btn-wa:hover{background:#1db954}
+    .hero-stats{display:flex;gap:28px;flex-wrap:wrap}
+    .hs-n{font-family:'Outfit',sans-serif;font-weight:900;font-size:2rem;color:var(--na);line-height:1}
+    .hs-l{font-size:.73rem;color:rgba(255,255,255,.65);text-transform:uppercase;letter-spacing:.05em;margin-top:3px}
+    .hero-card{background:#fff;border-radius:20px;padding:28px 24px;box-shadow:0 24px 64px rgba(0,0,0,.35)}
+    .hero-card h3{font-size:1.12rem;font-weight:800;color:var(--az);margin-bottom:5px}
+    .hero-card>p{font-size:.83rem;color:var(--gt);margin-bottom:16px}
+    .fg{margin-bottom:11px}
+    .fg label{display:block;font-size:.77rem;font-weight:600;color:#475569;margin-bottom:4px}
+    .fg input,.fg select,.fg textarea{width:100%;padding:10px 13px;border:1.5px solid var(--gb);border-radius:9px;font-family:'Inter',sans-serif;font-size:.87rem;color:#1e293b;transition:border-color .2s;background:#fff}
+    .fg input:focus,.fg select:focus,.fg textarea:focus{outline:none;border-color:var(--az2)}
+    .fg textarea{resize:vertical;min-height:68px}
+    .btn-send{width:100%;padding:13px;background:var(--na);color:#fff;font-family:'Outfit',sans-serif;font-weight:800;font-size:.98rem;border:none;border-radius:10px;cursor:pointer;transition:background .2s}
+    .btn-send:hover{background:var(--na2)}
+    .form-note{font-size:.72rem;color:var(--gt);text-align:center;margin-top:8px}
+    .sec{padding:76px 24px}
+    .w{max-width:1140px;margin:0 auto}
+    .stag{display:inline-block;background:rgba(26,79,214,.09);color:var(--az2);font-size:.73rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 13px;border-radius:50px;margin-bottom:11px}
+    .stit{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;color:var(--az);margin-bottom:11px;line-height:1.2}
+    .ssub{color:var(--gt);font-size:.95rem;max-width:540px}
+    .sh{margin-bottom:42px}.sh.c{text-align:center}.sh.c .ssub{margin:0 auto}
+    .sband{background:var(--az);padding:44px 24px}
+    .sbg{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+    .sb-n{font-family:'Outfit',sans-serif;font-weight:900;font-size:2.6rem;color:var(--na)}
+    .sb-l{font-size:.82rem;color:rgba(255,255,255,.68);text-transform:uppercase;letter-spacing:.05em;margin-top:4px}
+    .tabs{display:flex;gap:8px;margin-bottom:30px;flex-wrap:wrap}
+    .tbtn{padding:9px 20px;border-radius:50px;border:2px solid var(--gb);font-family:'Outfit',sans-serif;font-weight:700;font-size:.86rem;background:#fff;color:#475569;cursor:pointer;transition:all .2s}
+    .tbtn.on{background:var(--az);color:#fff;border-color:var(--az)}
+    .tbtn:hover:not(.on){border-color:var(--az2);color:var(--az2)}
+    .tpanel{display:none}.tpanel.on{display:block}
+    .sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
+    .scard{background:#fff;border-radius:16px;border:1px solid var(--gb);overflow:hidden;transition:box-shadow .25s,transform .2s}
+    .scard:hover{box-shadow:0 10px 36px rgba(15,47,138,.13);transform:translateY(-5px)}
+    .scard-img{width:100%;height:175px;object-fit:cover;display:block;background:linear-gradient(135deg,var(--az),var(--az2))}
+    .scard-body{padding:22px}
+    .scard-ico{font-size:1.6rem;margin-bottom:9px;display:flex;align-items:center;justify-content:center;width:44px;height:44px;background:rgba(15,47,138,.08);border-radius:10px;font-family:'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji',sans-serif;line-height:1}
+    .scard h3{font-size:1rem;font-weight:700;color:var(--az);margin-bottom:5px}
+    .scard p{font-size:.84rem;color:var(--gt);line-height:1.55}
+    .scard-lnk{display:inline-flex;align-items:center;gap:4px;font-size:.8rem;font-weight:700;color:var(--az2);margin-top:10px}
+    .sobre-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+    .sobre-wrap{border-radius:20px;overflow:hidden;position:relative;box-shadow:0 20px 56px rgba(15,47,138,.15)}
+    .sobre-wrap img{width:100%;height:460px;object-fit:cover;display:block;background:linear-gradient(135deg,var(--az),var(--az2))}
+    .sobre-badge{position:absolute;bottom:20px;left:20px;background:var(--na);color:#fff;font-family:'Outfit',sans-serif;font-weight:800;font-size:.85rem;padding:10px 16px;border-radius:10px}
+    .checks{display:flex;flex-direction:column;gap:11px;margin-top:20px}
+    .chk{display:flex;gap:10px;align-items:flex-start;font-size:.91rem}
+    .chk-i{color:var(--na);font-weight:700;flex-shrink:0;margin-top:2px}
+    .mini-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px;padding-top:22px;border-top:1px solid var(--gb)}
+    .ms-n{font-family:'Outfit',sans-serif;font-weight:900;font-size:1.8rem;color:var(--az);line-height:1}
+    .ms-l{font-size:.72rem;color:var(--gt);text-transform:uppercase;letter-spacing:.05em;margin-top:4px}
+    .pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:20px}
+    .paso{text-align:center;background:#fff;border-radius:16px;border:1px solid var(--gb);padding:30px 20px}
+    .paso-n{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--az),var(--az2));color:#fff;font-family:'Outfit',sans-serif;font-weight:900;font-size:1.4rem;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;box-shadow:0 4px 16px rgba(26,79,214,.28)}
+    .paso-ico{font-size:1.8rem;margin-bottom:9px}
+    .paso h3{font-size:.98rem;font-weight:700;color:var(--az);margin-bottom:6px}
+    .paso p{font-size:.83rem;color:var(--gt)}
+    .vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+    .vcard{background:#fff;border-radius:14px;padding:22px 20px;border:1px solid var(--gb);display:flex;gap:14px;align-items:flex-start}
+    .vico{width:44px;height:44px;border-radius:11px;background:rgba(15,47,138,.08);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+    .vcard h4{font-size:.95rem;font-weight:700;color:var(--az);margin-bottom:4px}
+    .vcard p{font-size:.83rem;color:var(--gt);line-height:1.5}
+    .valores{background:var(--az)}
+    .valgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+    .valcard{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:26px 22px;color:#fff}
+    .valcard-ico{font-size:1.9rem;margin-bottom:11px}
+    .valcard h3{font-size:1rem;font-weight:800;margin-bottom:6px}
+    .valcard p{font-size:.84rem;color:rgba(255,255,255,.72);line-height:1.55}
+    .ggrid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:230px 230px;gap:14px}
+    .gitem{border-radius:14px;overflow:hidden;cursor:pointer;background:linear-gradient(135deg,var(--az),var(--az2))}
+    .gitem img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+    .gitem:hover img{transform:scale(1.06)}
+    .gitem:first-child{grid-row:span 2}
+    .comunidades{background:linear-gradient(135deg,var(--az) 0%,#0d2370 100%);color:#fff;padding:76px 24px}
+    .com-inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;max-width:1140px;margin:0 auto}
+    .com-img{border-radius:18px;overflow:hidden;box-shadow:0 20px 56px rgba(0,0,0,.3);background:rgba(255,255,255,.1)}
+    .com-img img{width:100%;height:420px;object-fit:cover;display:block}
+    .com-badge-big{font-family:'Outfit',sans-serif;font-weight:900;font-size:3.2rem;color:var(--na);line-height:1;margin-bottom:4px}
+    .com-lbl{font-size:.8rem;color:rgba(255,255,255,.62);text-transform:uppercase;letter-spacing:.06em;margin-bottom:24px}
+    .com-list{display:flex;flex-direction:column;gap:12px}
+    .com-item{display:flex;gap:12px;align-items:flex-start;font-size:.92rem;color:rgba(255,255,255,.85)}
+    .com-item::before{content:'✔';color:var(--na);font-weight:700;flex-shrink:0;margin-top:2px}
+    .rgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:20px}
+    .rcard{background:#fff;border:1px solid var(--gb);border-radius:16px;padding:24px;position:relative}
+    .rcard::before{content:'"';position:absolute;top:12px;right:20px;font-family:'Outfit',sans-serif;font-size:5rem;color:rgba(26,79,214,.07);line-height:1}
+    .stars{color:#f59e0b;font-size:1rem;letter-spacing:2px;margin-bottom:10px}
+    .rtxt{font-size:.9rem;color:#334155;line-height:1.65;margin-bottom:16px;font-style:italic}
+    .rautor{display:flex;align-items:center;gap:10px}
+    .ravatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--az),var(--az2));display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Outfit',sans-serif;font-weight:700;font-size:.95rem;flex-shrink:0}
+    .rname{font-size:.86rem;font-weight:600;color:var(--az)}
+    .rmeta{font-size:.74rem;color:var(--gt)}
+    .gband{display:inline-flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--gb);border-radius:14px;padding:14px 20px;margin-bottom:28px}
+    .g-sc{font-family:'Outfit',sans-serif;font-weight:900;font-size:1.9rem;color:var(--az)}
+    .g-st{color:#f59e0b;font-size:1rem}
+    .g-mt{font-size:.76rem;color:var(--gt)}
+    .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .fitem{background:#fff;border:1px solid var(--gb);border-radius:13px;overflow:hidden}
+    .fq{padding:15px 18px;font-family:'Outfit',sans-serif;font-weight:700;font-size:.91rem;color:var(--az);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;user-select:none}
+    .fq::after{content:'+';font-size:1.3rem;color:var(--na);flex-shrink:0;transition:transform .2s}
+    .fitem.open .fq::after{transform:rotate(45deg)}
+    .fa{display:none;padding:0 18px 14px;font-size:.85rem;color:var(--gt);line-height:1.65;border-top:1px solid var(--gb);padding-top:11px}
+    .fitem.open .fa{display:block}
+    .zonas-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+    .ztags{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+    .ztag{background:rgba(15,47,138,.07);color:var(--az);font-size:.82rem;font-weight:600;padding:6px 15px;border-radius:50px;border:1px solid rgba(15,47,138,.14)}
+    .mapa{border-radius:18px;overflow:hidden;box-shadow:0 10px 40px rgba(15,47,138,.12);height:360px}
+    .mapa iframe{width:100%;height:100%;border:none}
+    .bgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
+    .bcard{background:#fff;border-radius:16px;border:1px solid var(--gb);overflow:hidden;transition:box-shadow .25s,transform .2s}
+    .bcard:hover{box-shadow:0 10px 32px rgba(15,47,138,.12);transform:translateY(-4px)}
+    .bcard-img{width:100%;height:185px;object-fit:cover;display:block;background:linear-gradient(135deg,var(--az),var(--az2))}
+    .bcard-b{padding:20px}
+    .btag{display:inline-block;background:rgba(249,115,22,.1);color:var(--na);font-size:.69rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;padding:3px 10px;border-radius:50px;margin-bottom:8px}
+    .bcard h3{font-size:.96rem;font-weight:700;color:var(--az);margin-bottom:6px;line-height:1.3}
+    .bcard p{font-size:.82rem;color:var(--gt);line-height:1.5}
+    .bcard-meta{font-size:.73rem;color:#94a3b8;margin-top:11px}
+    .partners{padding:32px 24px;border-top:1px solid var(--gb)}
+    .pt-t{text-align:center;font-size:.76rem;font-weight:600;color:#94a3b8;text-transform:uppercase;letter-spacing:.1em;margin-bottom:20px}
+    .pt-l{display:flex;justify-content:center;align-items:center;gap:24px;flex-wrap:wrap}
+    .pt-logo{background:var(--gr);border:1px solid var(--gb);border-radius:10px;padding:11px 24px;font-family:'Outfit',sans-serif;font-weight:800;font-size:.85rem;color:#94a3b8;letter-spacing:.04em}
+    .cta{background:linear-gradient(135deg,var(--az) 0%,#0a1c5a 100%);color:#fff;text-align:center;padding:90px 24px;position:relative;overflow:hidden}
+    .cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 100%,rgba(249,115,22,.18) 0%,transparent 70%)}
+    .cta-in{position:relative;z-index:1}
+    .cta h2{font-size:clamp(1.8rem,4vw,2.9rem);font-weight:900;margin-bottom:12px}
+    .cta p{color:rgba(255,255,255,.74);font-size:1rem;margin-bottom:32px}
+    .cta-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+    .cta-tel{display:inline-flex;align-items:center;gap:12px;background:var(--na);color:#fff;font-family:'Outfit',sans-serif;font-weight:900;font-size:clamp(1.2rem,3.5vw,1.8rem);padding:20px 42px;border-radius:50px;box-shadow:0 8px 40px rgba(249,115,22,.45);transition:background .2s,transform .15s}
+    .cta-tel:hover{background:var(--na2);transform:scale(1.04)}
+    .cta-wa2{display:inline-flex;align-items:center;gap:9px;background:var(--ve);color:#fff;font-family:'Outfit',sans-serif;font-weight:700;font-size:1.05rem;padding:20px 30px;border-radius:50px;transition:background .2s,transform .15s}
+    .cta-wa2:hover{background:#1db954;transform:scale(1.04)}
+    .cta-note{margin-top:20px;font-size:.81rem;color:rgba(255,255,255,.46)}
+    footer{background:#060e26;color:rgba(255,255,255,.65);padding:52px 24px 24px}
+    .fg2{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:38px}
+    .fb h3{font-family:'Outfit',sans-serif;font-size:1.2rem;font-weight:900;color:#fff;margin-bottom:10px}
+    .fb p{font-size:.84rem;line-height:1.65;max-width:240px}
+    .fsoc{display:flex;gap:8px;margin-top:14px}
+    .fsoc a{width:32px;height:32px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:700;transition:background .2s}
+    .fsoc a:hover{background:var(--na);color:#fff}
+    .fcol h4{font-family:'Outfit',sans-serif;font-size:.78rem;font-weight:700;color:var(--na);text-transform:uppercase;letter-spacing:.08em;margin-bottom:13px}
+    .fcol a,.fcol p{font-size:.83rem;line-height:1.9;display:block}
+    .fcol a:hover{color:#fff}
+    .fbot{max-width:1140px;margin:32px auto 0;padding-top:18px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;font-size:.76rem}
+    .fleg{display:flex;gap:14px}
+    .fleg a:hover{color:#fff}
+    .float{position:fixed;bottom:24px;right:24px;display:flex;flex-direction:column;gap:11px;z-index:999}
+    .fbtn{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(0,0,0,.24);transition:transform .2s}
+    .fbtn:hover{transform:scale(1.13)}
+    .fw{background:var(--ve)}.ft{background:var(--na)}
+    .urgencia-band{background:var(--na);color:#fff;text-align:center;padding:10px 24px;font-family:'Outfit',sans-serif;font-weight:700;font-size:.88rem;letter-spacing:.04em}
+    @media(max-width:1024px){.hero-inner{grid-template-columns:1fr}.hero-card{max-width:460px}.fg2{grid-template-columns:1fr 1fr}}
+    @media(max-width:768px){.sobre-grid,.zonas-grid,.com-inner{grid-template-columns:1fr}.sobre-wrap img{height:300px}.com-img img{height:260px}.ggrid{grid-template-columns:repeat(2,1fr);grid-template-rows:auto}.gitem:first-child{grid-row:span 1}.fgrid{grid-template-columns:1fr}.sbg{grid-template-columns:repeat(2,1fr)}nav{display:none}}
+    @media(max-width:640px){.sec{padding:52px 16px}.hdr{padding:11px 16px}.hero-inner{padding:60px 20px}.ggrid{grid-template-columns:1fr}.fg2{grid-template-columns:1fr}.fbot{flex-direction:column;text-align:center}}
+  </style>
+</head>
+<body>
+
+<div class="urgencia-band">🚨 URGENCIAS 24 HORAS · Tu urgencia resuelta en 30 minutos · 652 661 846</div>
+
+<div class="topbar">
+  <div class="tw">
+    <div class="tl">
+      <span>📍 C/ Lucero, 17, 28047 Madrid</span>
+      <span>✉️ info@fontaneros24horasmadrid.es</span>
+      <span>🕐 24 horas · 365 días al año</span>
+    </div>
+    <a href="tel:34652661846" class="ttel">📞 652 661 846</a>
+  </div>
+</div>
+
+<header>
+  <div class="hdr">
+    <div class="logo">
+      <div class="logo-ico">🔧</div>
+      <div>
+        <div class="logo-name">FONTANEROS 24H MADRID</div>
+        <div class="logo-sub">Urgencias resueltas en 30 minutos · Toda la Comunidad de Madrid</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#servicios">Servicios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#zonas">Zonas</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a href="tel:34652661846" class="hdr-cta">📞 Llamar ahora</a>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=1800&q=80&auto=format&fit=crop');filter:brightness(.25) saturate(.6)"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">🚨 Urgencias 24h · Tu urgencia resuelta en 30 minutos</div>
+      <h1>Fontaneros urgentes<br/>en toda <em>Madrid</em> 24 horas</h1>
+      <p class="hero-desc">Servicios urgentes de fontanería en toda la Comunidad de Madrid. Presupuesto y visita gratuitos, atención inmediata. Cubrimos 14 distritos y 18 municipios.</p>
+      <div class="hero-btns">
+        <a href="tel:34652661846" class="btn-pulse">📞 652 661 846</a>
+        <a href="https://wa.me/34652661846" class="btn-wa" target="_blank">💬 WhatsApp</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="hs-n">10+</div><div class="hs-l">Años exp.</div></div>
+        <div><div class="hs-n">1.000+</div><div class="hs-l">Clientes</div></div>
+        <div><div class="hs-n">30min</div><div class="hs-l">Respuesta</div></div>
+        <div><div class="hs-n">4.8⭐</div><div class="hs-l">Google</div></div>
+      </div>
+    </div>
+    <div class="hero-card" id="contacto">
+      <h3>Solicita presupuesto gratis</h3>
+      <p>Sin compromiso. Respuesta inmediata 24h.</p>
+      <div class="fg"><label>Nombre</label><input type="text" placeholder="Tu nombre y apellidos"/></div>
+      <div class="fg"><label>Teléfono</label><input type="tel" placeholder="600 000 000"/></div>
+      <div class="fg">
+        <label>¿Qué necesitas?</label>
+        <select>
+          <option>Selecciona un servicio...</option>
+          <option>Detección de fugas</option>
+          <option>Desatascos y desatrancos</option>
+          <option>Goteras y humedades</option>
+          <option>Calderas y termos</option>
+          <option>Reformas de baño</option>
+          <option>Grifos y cisternas</option>
+          <option>Otro</option>
+        </select>
+      </div>
+      <div class="fg"><label>Describe el trabajo</label><textarea placeholder="Cuéntanos qué necesitas..."></textarea></div>
+      <button class="btn-send">Enviar solicitud →</button>
+      <p class="form-note">🔒 Sin spam. Visita gratuita garantizada.</p>
+    </div>
+  </div>
+</section>
+
+<div class="sband">
+  <div class="sbg">
+    <div><div class="sb-n">10+</div><div class="sb-l">Años de experiencia</div></div>
+    <div><div class="sb-n">1.000+</div><div class="sb-l">Clientes atendidos</div></div>
+    <div><div class="sb-n">4.8★</div><div class="sb-l">Valoración Google</div></div>
+    <div><div class="sb-n">30min</div><div class="sb-l">Tiempo de respuesta</div></div>
+  </div>
+</div>
+
+<section class="sec" id="servicios" style="background:var(--gr)">
+  <div class="w">
+    <div class="sh">
+      <div class="stag">Nuestros servicios</div>
+      <h2 class="stit">Todo lo que necesitas<br/>en fontanería urgente</h2>
+      <p class="ssub">Fontaneros urgentes disponibles las 24 horas en toda la Comunidad de Madrid.</p>
+    </div>
+    <div class="tabs">
+      <button class="tbtn on" onclick="openTab(event,'hogar')">🏠 Hogar</button>
+      <button class="tbtn" onclick="openTab(event,'urgencias')">🚨 Urgencias</button>
+      <button class="tbtn" onclick="openTab(event,'reformas')">🔨 Reformas</button>
+    </div>
+    <div class="tpanel on" id="hogar">
+      <div class="sgrid">
+        <div class="scard"><img class="scard-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&auto=format&fit=crop" alt="Fugas" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#0f2f8a,#1a4fd6)';this.removeAttribute('src')"/><div class="scard-body"><span class="scard-ico">💧</span><h3>Detección de fugas</h3><p>Localizamos y reparamos fugas de agua en tuberías, grifos y sanitarios. Técnica no destructiva disponible.</p><span class="scard-lnk">Saber más →</span></div></div>
+        <div class="scard"><img class="scard-img" src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80&auto=format&fit=crop" alt="Desatascos" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#065f46,#059669)';this.removeAttribute('src')"/><div class="scard-body"><span class="scard-ico">🪠</span><h3>Desatascos y desatrancos</h3><p>Desobstrucción de tuberías, bajantes y desagües con equipos profesionales. Resultado inmediato.</p><span class="scard-lnk">Saber más →</span></div></div>
+        <div class="scard"><img class="scard-img" src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=600&q=80&auto=format&fit=crop" alt="Goteras" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#c2410c,#f97316)';this.removeAttribute('src')"/><div class="scard-body"><span class="scard-ico">🌧️</span><h3>Goteras y humedades</h3><p>Localización y reparación de goteras y humedades. Soluciones definitivas para el problema.</p><span class="scard-lnk">Saber más →</span></div></div>
+        <div class="scard"><img class="scard-img" src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80&auto=format&fit=crop" alt="Calderas" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#0f2f8a,#1a4fd6)';this.removeAttribute('src')"/><div class="scard-body"><span class="scard-ico">🔥</span><h3>Calderas y termos</h3><p>Reparación y sustitución de calderas y termos eléctricos. Todas las marcas del mercado.</p><span class="scard-lnk">Saber más →</span></div></div>
+        <div class="scard"><img class="scard-img" src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80&auto=format&fit=crop" alt="Reformas baño" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#065f46,#059669)';this.removeAttribute('src')"/><div class="scard-body"><span class="scard-ico">🚿</span><h3>Reformas de baño</h3><p>Reforma integral de baños con todos los trabajos de fontanería incluidos. Presupuesto gratuito.</p><span class="scard-lnk">Saber más →</span></div></div>
+        <div class="scard"><img class="scard-img" src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=600&q=80&auto=format&fit=crop" alt="Grifos" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#334155,#64748b)';this.removeAttribute('src')"/><div class="scard-body"><span class="scard-ico">🚰</span><h3>Grifos y cisternas</h3><p>Reparación e instalación de grifería y cisternas. Solución rápida y al mejor precio del mercado.</p><span class="scard-lnk">Saber más →</span></div></div>
+      </div>
+    </div>
+    <div class="tpanel" id="urgencias">
+      <div class="sgrid">
+        <div class="scard"><img class="scard-img" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80&auto=format&fit=crop" alt="Urgencias 24h" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#0f2f8a,#1a4fd6)';this.removeAttribute('src')"/><div class="scard-body"><span class="scard-ico">🚨</span><h3>Urgencias 24 horas</h3><p>Disponibles las 24 horas los 365 días. Atención inmediata en toda la Comunidad de Madrid en 30 minutos.</p></div></div>
+        <div class="scard"><img class="scard-img" src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=600&q=80&auto=format&fit=crop" alt="Fines de semana" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#c2410c,#f97316)';this.removeAttribute('src')"/><div class="scard-body"><span class="scard-ico">📅</span><h3>Fines de semana y festivos</h3><p>Atendemos sábados, domingos y festivos sin recargo. Tu urgencia no puede esperar al lunes.</p></div></div>
+        <div class="scard"><img class="scard-img" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80&auto=format&fit=crop" alt="Visita gratuita" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#065f46,#059669)';this.removeAttribute('src')"/><div class="scard-body"><span class="scard-ico">🆓</span><h3>Visita y presupuesto gratis</h3><p>Venimos a diagnosticar sin coste. Presupuesto cerrado antes de empezar. Sin sorpresas al terminar.</p></div></div>
+      </div>
+    </div>
+    <div class="tpanel" id="reformas">
+      <div class="sgrid">
+        <div class="scard"><img class="scard-img" src="https://images.unsplash.com/photo-1556909190-eccf4a8bf97a?w=600&q=80&auto=format&fit=crop" alt="Reforma baño" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#0f2f8a,#1a4fd6)';this.removeAttribute('src')"/><div class="scard-body"><span class="scard-ico">🚿</span><h3>Reforma integral de baño</h3><p>Renovamos tu baño de principio a fin con materiales de calidad y trabajo garantizado.</p></div></div>
+        <div class="scard"><img class="scard-img" src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80&auto=format&fit=crop" alt="Instalaciones nuevas" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#c2410c,#f97316)';this.removeAttribute('src')"/><div class="scard-body"><span class="scard-ico">🏗️</span><h3>Instalaciones nuevas</h3><p>Instalaciones completas de fontanería para obras nuevas o reformas integrales. Presupuesto detallado.</p></div></div>
+        <div class="scard"><img class="scard-img" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80&auto=format&fit=crop" alt="Renovación tuberías" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#065f46,#059669)';this.removeAttribute('src')"/><div class="scard-body"><span class="scard-ico">🔧</span><h3>Renovación de tuberías</h3><p>Sustitución completa de tuberías antiguas por materiales modernos y duraderos. Trabajo garantizado.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="nosotros">
+  <div class="w">
+    <div class="sobre-grid">
+      <div class="sobre-wrap">
+        <img src="https://images.unsplash.com/photo-1521791055366-0d553872952f?w=900&q=80&auto=format&fit=crop" alt="Fontaneros 24h Madrid" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#0f2f8a,#1a4fd6)';this.removeAttribute('src')"/>
+        <div class="sobre-badge">⭐ 4.8 · Reseñas verificadas en Google</div>
+      </div>
+      <div>
+        <div class="stag">Quiénes somos</div>
+        <h2 class="stit">10+ años siendo<br/>tu fontanero urgente en Madrid</h2>
+        <p style="color:var(--gt);margin-bottom:14px">Somos <strong>Fontaneros Urgencias 24 Horas Madrid</strong>, fontaneros profesionales disponibles las 24 horas en toda la Comunidad de Madrid. Cubrimos 14 distritos de Madrid Capital y 18 municipios de la provincia.</p>
+        <p style="color:var(--gt);margin-bottom:20px">Con más de 1.000 clientes atendidos y 10 años de experiencia, somos el servicio de fontanería urgente más completo de Madrid. Presupuesto y visita siempre gratuitos.</p>
+        <div class="checks">
+          <div class="chk"><span class="chk-i">✔</span><span><strong>30 minutos</strong> — tiempo de respuesta en urgencias</span></div>
+          <div class="chk"><span class="chk-i">✔</span><span><strong>Visita y presupuesto gratuitos</strong> sin compromiso</span></div>
+          <div class="chk"><span class="chk-i">✔</span><span><strong>1.000+ clientes</strong> atendidos en toda la Comunidad</span></div>
+          <div class="chk"><span class="chk-i">✔</span><span><strong>Cobertura total</strong> — 14 distritos y 18 municipios</span></div>
+          <div class="chk"><span class="chk-i">✔</span><span><strong>24 horas, 365 días</strong> — sin excepción</span></div>
+        </div>
+        <div class="mini-stats">
+          <div><div class="ms-n">1.000+</div><div class="ms-l">Clientes</div></div>
+          <div><div class="ms-n">10+</div><div class="ms-l">Años activos</div></div>
+          <div><div class="ms-n">30min</div><div class="ms-l">Respuesta</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--gr)">
+  <div class="w">
+    <div class="sh c">
+      <div class="stag">El proceso</div>
+      <h2 class="stit">¿Cómo trabajamos?</h2>
+      <p class="ssub">Rapidez y transparencia desde el primer contacto. En 30 minutos en tu puerta.</p>
+    </div>
+    <div class="pgrid">
+      <div class="paso"><div class="paso-n">1</div><div class="paso-ico">📞</div><h3>Nos llamas</h3><p>Llama o escribe por WhatsApp. Te atendemos al instante las 24 horas del día.</p></div>
+      <div class="paso"><div class="paso-n">2</div><div class="paso-ico">🚗</div><h3>Llegamos en 30 min</h3><p>Nuestro equipo sale inmediatamente. En urgencias llegamos en 30 minutos a cualquier zona.</p></div>
+      <div class="paso"><div class="paso-n">3</div><div class="paso-ico">🔍</div><h3>Diagnóstico gratuito</h3><p>Evaluamos el problema sin coste. Presupuesto cerrado antes de empezar, sin sorpresas.</p></div>
+      <div class="paso"><div class="paso-n">4</div><div class="paso-ico">🏆</div><h3>Avería solucionada</h3><p>Resolvemos el problema con los mejores materiales y garantía completa en el trabajo.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="w">
+    <div class="sh">
+      <div class="stag">¿Por qué elegirnos?</div>
+      <h2 class="stit">10 años de urgencias<br/>en toda Madrid</h2>
+    </div>
+    <div class="vgrid">
+      <div class="vcard"><div class="vico">⚡</div><div><h4>30 minutos de respuesta</h4><p>Tiempo de respuesta garantizado en urgencias. Llegamos antes que nadie a cualquier punto de Madrid.</p></div></div>
+      <div class="vcard"><div class="vico">🆓</div><div><h4>Visita y presupuesto gratis</h4><p>Venimos a ver el trabajo sin coste. Presupuesto cerrado antes de empezar. Sin compromisos.</p></div></div>
+      <div class="vcard"><div class="vico">🌙</div><div><h4>24 horas, 365 días</h4><p>Festivos, fines de semana, noche. Siempre disponibles para tu urgencia de fontanería.</p></div></div>
+      <div class="vcard"><div class="vico">🗺️</div><div><h4>Toda la Comunidad</h4><p>14 distritos de Madrid Capital y 18 municipios de la provincia. La cobertura más amplia.</p></div></div>
+      <div class="vcard"><div class="vico">✅</div><div><h4>Garantía total</h4><p>Todos los trabajos garantizados en materiales y mano de obra. Si falla, volvemos sin coste.</p></div></div>
+      <div class="vcard"><div class="vico">💰</div><div><h4>Precio justo</h4><p>Precio cerrado y transparente. Sin recargos ocultos por urgencias nocturnas o festivos.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec valores">
+  <div class="w">
+    <div class="sh c">
+      <div class="stag" style="background:rgba(255,255,255,.12);color:rgba(255,255,255,.85)">Nuestros valores</div>
+      <h2 class="stit" style="color:#fff">Lo que nos define<br/>en cada urgencia</h2>
+    </div>
+    <div class="valgrid">
+      <div class="valcard"><div class="valcard-ico">⚡</div><h3>Rapidez</h3><p>30 minutos en urgencias. Entendemos que cada minuto cuenta cuando hay una avería en casa.</p></div>
+      <div class="valcard"><div class="valcard-ico">🏅</div><h3>Profesionalidad</h3><p>Técnicos cualificados con 10+ años de experiencia. Trabajo bien hecho a la primera siempre.</p></div>
+      <div class="valcard"><div class="valcard-ico">💬</div><h3>Transparencia</h3><p>Visita gratuita. Presupuesto cerrado. Sin sorpresas al terminar. Lo que acordamos, lo que pagas.</p></div>
+      <div class="valcard"><div class="valcard-ico">🤝</div><h3>Compromiso</h3><p>10 años de urgencias resueltas en Madrid. La confianza de más de 1.000 clientes nos avala.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--gr)">
+  <div class="w">
+    <div class="sh c">
+      <div class="stag">Nuestros trabajos</div>
+      <h2 class="stit">Algunos de nuestros trabajos<br/>realizados en Madrid</h2>
+      <p class="ssub">Urgencias, reparaciones y reformas en toda la Comunidad de Madrid con resultados garantizados.</p>
+    </div>
+    <div class="ggrid">
+      <div class="gitem"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&auto=format&fit=crop" alt="Fontanero urgente" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#0f2f8a,#1a4fd6)';this.remove()"/></div>
+      <div class="gitem"><img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&q=80&auto=format&fit=crop" alt="Reparación" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#c2410c,#f97316)';this.remove()"/></div>
+      <div class="gitem"><img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80&auto=format&fit=crop" alt="Desatasco" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#065f46,#059669)';this.remove()"/></div>
+      <div class="gitem"><img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80&auto=format&fit=crop" alt="Baño" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#334155,#475569)';this.remove()"/></div>
+      <div class="gitem"><img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80&auto=format&fit=crop" alt="Caldera" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#0f2f8a,#1a4fd6)';this.remove()"/></div>
+    </div>
+  </div>
+</section>
+
+<section class="comunidades" id="cobertura">
+  <div class="com-inner">
+    <div>
+      <div class="stag" style="background:rgba(255,255,255,.12);color:rgba(255,255,255,.85)">Cobertura</div>
+      <h2 class="stit" style="color:#fff;margin-bottom:20px">Toda la Comunidad<br/>de Madrid cubierta</h2>
+      <div class="com-badge-big">1.000+</div>
+      <div class="com-lbl">Clientes atendidos en toda la Comunidad de Madrid</div>
+      <div class="com-list">
+        <div class="com-item">14 distritos de Madrid Capital cubiertos</div>
+        <div class="com-item">18 municipios de la provincia con cobertura total</div>
+        <div class="com-item">30 minutos de respuesta en urgencias</div>
+        <div class="com-item">Disponibles 24 horas los 365 días del año</div>
+        <div class="com-item">Visita y presupuesto siempre gratuitos</div>
+        <div class="com-item">Sin recargos por horario nocturno o festivos</div>
+      </div>
+    </div>
+    <div class="com-img">
+      <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80&auto=format&fit=crop" alt="Cobertura Madrid" loading="lazy" onerror="this.parentElement.style.background='rgba(255,255,255,.1)';this.remove()"/>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="w">
+    <div class="sh c">
+      <div class="stag">Opiniones de clientes</div>
+      <h2 class="stit">Lo que dicen quienes<br/>ya confían en nosotros</h2>
+    </div>
+    <div class="gband">
+      <div style="font-size:1.5rem;font-weight:900;color:#4285f4">G</div>
+      <div><div class="g-sc">4.8</div><div class="g-st">★★★★★</div><div class="g-mt">Reseñas verificadas en Google · Madrid</div></div>
+    </div>
+    <div class="rgrid">
+      <div class="rcard"><div class="stars">★★★★★</div><p class="rtxt">"Atención rápida, llamé un sábado y en un par de horas ya estaban aquí. Muy profesionales y el precio fue justo."</p><div class="rautor"><div class="ravatar">D</div><div><div class="rname">David López Frutos</div><div class="rmeta">Cliente verificado · Google</div></div></div></div>
+      <div class="rcard"><div class="stars">★★★★★</div><p class="rtxt">"Servicio muy profesional, resolvieron la avería sin complicaciones. Volveré a contactarles sin duda."</p><div class="rautor"><div class="ravatar">C</div><div><div class="rname">Carlos Carballo Delgado</div><div class="rmeta">Cliente verificado · Google</div></div></div></div>
+      <div class="rcard"><div class="stars">★★★★★</div><p class="rtxt">"Vinieron un domingo sin problema. Rapidez y eficacia total. Muy recomendables para urgencias de fin de semana."</p><div class="rautor"><div class="ravatar">F</div><div><div class="rname">Fran Milla</div><div class="rmeta">Cliente verificado · Google</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--gr)" id="faq">
+  <div class="w">
+    <div class="sh c"><div class="stag">Preguntas frecuentes</div><h2 class="stit">Lo que más nos preguntan</h2></div>
+    <div class="fgrid">
+      <div class="fitem"><div class="fq" onclick="toggleFaq(this)">¿En cuánto tiempo llegáis en urgencias?</div><div class="fa">Nuestro tiempo de respuesta en urgencias es de 30 minutos en toda la Comunidad de Madrid. Salimos inmediatamente al recibir tu llamada.</div></div>
+      <div class="fitem"><div class="fq" onclick="toggleFaq(this)">¿La visita y el presupuesto son gratuitos?</div><div class="fa">Sí, siempre. Venimos a diagnosticar el problema sin coste y te damos un presupuesto cerrado antes de empezar. Sin compromisos.</div></div>
+      <div class="fitem"><div class="fq" onclick="toggleFaq(this)">¿Trabajáis fines de semana y festivos?</div><div class="fa">Sí, trabajamos todos los días del año, incluyendo sábados, domingos y festivos. Las averías no entienden de horarios.</div></div>
+      <div class="fitem"><div class="fq" onclick="toggleFaq(this)">¿Qué zonas de Madrid cubrís?</div><div class="fa">Cubrimos toda la Comunidad de Madrid: 14 distritos de Madrid Capital y 18 municipios de la provincia, incluyendo Alcalá, Alcorcón, Getafe, Leganés y Móstoles.</div></div>
+      <div class="fitem"><div class="fq" onclick="toggleFaq(this)">¿Hay recargo por urgencias nocturnas?</div><div class="fa">No aplicamos recargos ocultos. El presupuesto es transparente y cerrado antes de empezar, independientemente del horario.</div></div>
+      <div class="fitem"><div class="fq" onclick="toggleFaq(this)">¿Tenéis garantía en los trabajos?</div><div class="fa">Sí, garantía completa en materiales y mano de obra. Si algo no funciona como debe, volvemos y lo solucionamos sin coste adicional.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="zonas">
+  <div class="w">
+    <div class="zonas-grid">
+      <div>
+        <div class="stag">Cobertura</div>
+        <h2 class="stit">Trabajamos en<br/>toda la Comunidad de Madrid</h2>
+        <p class="ssub">14 distritos de Madrid Capital y 18 municipios de la provincia con 30 minutos de respuesta en urgencias.</p>
+        <div class="ztags">
+          <span class="ztag">Arganzuela</span><span class="ztag">Barajas</span>
+          <span class="ztag">Carabanchel</span><span class="ztag">Chamartín</span>
+          <span class="ztag">Retiro</span><span class="ztag">Vallecas</span>
+          <span class="ztag">Tetuán</span><span class="ztag">Latina</span>
+          <span class="ztag">Alcalá de Henares</span><span class="ztag">Alcorcón</span>
+          <span class="ztag">Getafe</span><span class="ztag">Leganés</span>
+          <span class="ztag">Móstoles</span><span class="ztag">Las Rozas</span>
+        </div>
+      </div>
+      <div class="mapa">
+        <iframe src="https://maps.google.com/maps?q=40.3936,-3.7233&z=15&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--gr)">
+  <div class="w">
+    <div class="sh">
+      <div class="stag">Consejos y blog</div>
+      <h2 class="stit">Consejos de nuestros<br/>fontaneros urgentes</h2>
+    </div>
+    <div class="bgrid">
+      <div class="bcard"><img class="bcard-img" src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=600&q=80&auto=format&fit=crop" alt="Fugas" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#0f2f8a,#1a4fd6)';this.removeAttribute('src')"/><div class="bcard-b"><span class="btag">Urgencias</span><h3>Qué hacer cuando tienes una fuga de agua en casa</h3><p>Pasos inmediatos para minimizar daños mientras esperas la llegada del fontanero urgente.</p><div class="bcard-meta">📅 Consejos Fontaneros 24h Madrid</div></div></div>
+      <div class="bcard"><img class="bcard-img" src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=600&q=80&auto=format&fit=crop" alt="Caldera" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#065f46,#059669)';this.removeAttribute('src')"/><div class="bcard-b"><span class="btag">Calefacción</span><h3>La caldera no enciende: causas más frecuentes y soluciones</h3><p>Guía de diagnóstico rápido antes de llamar al fontanero. Ahorra tiempo y dinero.</p><div class="bcard-meta">📅 Consejos Fontaneros 24h Madrid</div></div></div>
+      <div class="bcard"><img class="bcard-img" src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80&auto=format&fit=crop" alt="Desatasco" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#c2410c,#f97316)';this.removeAttribute('src')"/><div class="bcard-b"><span class="btag">Desatascos</span><h3>Cuándo llamar a un fontanero profesional para un atasco</h3><p>No todos los atascos se solucionan con un destascador. Te explicamos cuándo necesitas un profesional.</p><div class="bcard-meta">📅 Consejos Fontaneros 24h Madrid</div></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="partners">
+  <div class="w">
+    <p class="pt-t">Certificados y asociados a</p>
+    <div class="pt-l">
+      <div class="pt-logo">GAS NATURAL</div>
+      <div class="pt-logo">PLAN RENOVE</div>
+      <div class="pt-logo">COM. DE MADRID</div>
+      <div class="pt-logo">TÉCNICOS CERT.</div>
+    </div>
+  </div>
+</div>
+
+<section class="cta">
+  <div class="cta-in w">
+    <h2>¿Tienes una urgencia<br/>de fontanería en Madrid?</h2>
+    <p>Te llegamos en 30 minutos. Visita y presupuesto gratuitos. 24 horas, 365 días.</p>
+    <div class="cta-btns">
+      <a href="tel:34652661846" class="cta-tel">📞 652 661 846</a>
+      <a href="https://wa.me/34652661846" class="cta-wa2" target="_blank">
+        <svg width="22" height="22" viewBox="0 0 32 32" fill="white"><path d="M16 3C9.373 3 4 8.373 4 15c0 2.385.67 4.61 1.832 6.5L4 29l7.75-1.813A12.94 12.94 0 0016 28c6.627 0 12-5.373 12-12S22.627 3 16 3zm5.98 16.737c-.328-.164-1.94-.957-2.24-1.065-.3-.11-.518-.164-.737.163-.218.328-.846 1.065-1.038 1.284-.19.218-.382.245-.71.082-.328-.164-1.386-.51-2.64-1.627-.977-.87-1.635-1.942-1.827-2.27-.19-.328-.02-.505.144-.668.147-.147.328-.382.492-.573.164-.19.218-.328.328-.546.11-.218.055-.41-.027-.573-.082-.164-.737-1.776-1.01-2.432-.265-.637-.535-.55-.737-.56l-.628-.01c-.218 0-.573.082-.873.41-.3.328-1.146 1.12-1.146 2.73s1.174 3.165 1.338 3.384c.164.218 2.31 3.53 5.6 4.95.782.338 1.393.54 1.868.69.785.25 1.5.215 2.065.13.63-.094 1.94-.793 2.213-1.56.274-.764.274-1.42.192-1.56-.082-.137-.3-.22-.628-.383z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+    <p class="cta-note">✓ 30 minutos · ✓ 24 horas · ✓ Visita gratuita · ✓ 10+ años experiencia</p>
+  </div>
+</section>
+
+<footer>
+  <div class="fg2">
+    <div class="fb">
+      <h3>FONTANEROS 24H MADRID</h3>
+      <p>Fontaneros urgentes disponibles las 24 horas en toda la Comunidad de Madrid. Más de 10 años y 1.000+ clientes.</p>
+      <div class="fsoc">
+        <a href="#" target="_blank">f</a>
+        <a href="#" target="_blank">ig</a>
+        <a href="https://wa.me/34652661846" target="_blank">wa</a>
+      </div>
+    </div>
+    <div class="fcol">
+      <h4>Contacto</h4>
+      <a href="tel:34652661846">📞 652 661 846</a>
+      <a href="https://wa.me/34652661846">💬 WhatsApp</a>
+      <a href="mailto:info@fontaneros24horasmadrid.es">✉️ info@fontaneros24horasmadrid.es</a>
+      <p>📍 C/ Lucero, 17, 28047 Madrid</p>
+    </div>
+    <div class="fcol">
+      <h4>Servicios</h4>
+      <p>Detección de fugas</p>
+      <p>Desatascos urgentes</p>
+      <p>Goteras y humedades</p>
+      <p>Calderas y termos</p>
+      <p>Reformas de baño</p>
+      <p>Urgencias 24 horas</p>
+    </div>
+    <div class="fcol">
+      <h4>Disponibilidad</h4>
+      <p>24 horas · 365 días</p>
+      <p>Urgencias: 30 minutos</p>
+      <br/>
+      <h4>Cobertura</h4>
+      <p>Madrid Capital · Alcorcón</p>
+      <p>Getafe · Leganés · Móstoles</p>
+    </div>
+  </div>
+  <div class="fbot">
+    <p>© 2025 Fontaneros Urgencias 24 Horas Madrid · Toda la Comunidad de Madrid</p>
+    <div class="fleg"><a href="#">Aviso legal</a><a href="#">Privacidad</a><a href="#">Cookies</a></div>
+  </div>
+</footer>
+
+<div class="float">
+  <a href="https://wa.me/34652661846" class="fbtn fw" target="_blank" rel="noopener" title="WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 32 32" fill="white"><path d="M16 3C9.373 3 4 8.373 4 15c0 2.385.67 4.61 1.832 6.5L4 29l7.75-1.813A12.94 12.94 0 0016 28c6.627 0 12-5.373 12-12S22.627 3 16 3zm5.98 16.737c-.328-.164-1.94-.957-2.24-1.065-.3-.11-.518-.164-.737.163-.218.328-.846 1.065-1.038 1.284-.19.218-.382.245-.71.082-.328-.164-1.386-.51-2.64-1.627-.977-.87-1.635-1.942-1.827-2.27-.19-.328-.02-.505.144-.668.147-.147.328-.382.492-.573.164-.19.218-.328.328-.546.11-.218.055-.41-.027-.573-.082-.164-.737-1.776-1.01-2.432-.265-.637-.535-.55-.737-.56l-.628-.01c-.218 0-.573.082-.873.41-.3.328-1.146 1.12-1.146 2.73s1.174 3.165 1.338 3.384c.164.218 2.31 3.53 5.6 4.95.782.338 1.393.54 1.868.69.785.25 1.5.215 2.065.13.63-.094 1.94-.793 2.213-1.56.274-.764.274-1.42.192-1.56-.082-.137-.3-.22-.628-.383z"/></svg>
+  </a>
+  <a href="tel:34652661846" class="fbtn ft" title="Llamar">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+  </a>
+</div>
+
+<script>
+  function openTab(e,id){document.querySelectorAll('.tpanel').forEach(p=>p.classList.remove('on'));document.querySelectorAll('.tbtn').forEach(b=>b.classList.remove('on'));document.getElementById(id).classList.add('on');e.currentTarget.classList.add('on')}
+  function toggleFaq(el){const item=el.parentElement;const isOpen=item.classList.contains('open');document.querySelectorAll('.fitem.open').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open')}
+</script>
+</body>
+</html>

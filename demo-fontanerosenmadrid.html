@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fontaneros Madrid EU - Fontanero urgente 24h en Madrid</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --azul-oscuro: #0f2f8a;
+      --azul: #1a4fd6;
+      --naranja: #f97316;
+      --naranja-dark: #ea6c0a;
+      --blanco: #ffffff;
+      --gris-claro: #f8fafc;
+      --gris-texto: #64748b;
+      --gris-borde: #e2e8f0;
+      --verde-wa: #25d366;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1e293b;
+      background: var(--blanco);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── BARRA SUPERIOR ── */
+    .topbar {
+      background: var(--azul-oscuro);
+      color: var(--blanco);
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+    .topbar a { color: var(--naranja); font-weight: 700; font-size: 1rem; }
+    .topbar a:hover { text-decoration: underline; }
+
+    /* ── HEADER STICKY ── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 900;
+      background: var(--blanco);
+      border-bottom: 2px solid var(--gris-borde);
+      box-shadow: 0 2px 16px rgba(15,47,138,0.10);
+    }
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .logo { display: flex; align-items: center; gap: 12px; }
+    .logo-icon {
+      width: 44px; height: 44px;
+      background: var(--azul-oscuro);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; flex-shrink: 0;
+    }
+    .logo-text { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.15rem; color: var(--azul-oscuro); line-height: 1.2; }
+    .logo-sub { font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.75rem; color: var(--gris-texto); }
+    .btn-llamar-header {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--naranja); color: var(--blanco);
+      font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 0.95rem;
+      padding: 12px 22px; border-radius: 50px;
+      transition: background 0.2s, transform 0.15s; white-space: nowrap;
+    }
+    .btn-llamar-header:hover { background: var(--naranja-dark); transform: scale(1.03); }
+
+    /* ── HERO CON FOTO ── */
+    .hero {
+      position: relative;
+      color: var(--blanco);
+      padding: 100px 24px 90px;
+      text-align: center;
+      overflow: hidden;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=1600&q=80&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.28) saturate(0.6);
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(15,47,138,0.85) 0%, rgba(10,28,90,0.75) 100%);
+    }
+    .hero-content { position: relative; z-index: 2; width: 100%; }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(249,115,22,0.18);
+      border: 1px solid rgba(249,115,22,0.55);
+      color: #fda96e;
+      font-size: 0.8rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 5px 16px; border-radius: 50px; margin-bottom: 22px;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 900; line-height: 1.12;
+      margin-bottom: 18px;
+      max-width: 800px; margin-left: auto; margin-right: auto;
+    }
+    .hero h1 span { color: var(--naranja); }
+    .hero p {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: rgba(255,255,255,0.85);
+      max-width: 580px; margin: 0 auto 36px;
+    }
+    .btn-hero {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--naranja); color: var(--blanco);
+      font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.15rem;
+      padding: 18px 38px; border-radius: 50px;
+      position: relative; transition: background 0.2s, transform 0.15s;
+    }
+    .btn-hero:hover { background: var(--naranja-dark); transform: scale(1.04); }
+    .btn-hero::before {
+      content: '';
+      position: absolute; inset: -4px;
+      border-radius: 50px;
+      border: 3px solid var(--naranja);
+      animation: pulse-ring 2s ease-out infinite;
+    }
+    @keyframes pulse-ring {
+      0%   { transform: scale(1);    opacity: 0.7; }
+      70%  { transform: scale(1.18); opacity: 0; }
+      100% { transform: scale(1.18); opacity: 0; }
+    }
+    .hero-stats {
+      display: flex; justify-content: center;
+      gap: 48px; margin-top: 56px; flex-wrap: wrap;
+    }
+    .stat { text-align: center; }
+    .stat-num { font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 2.4rem; color: var(--naranja); line-height: 1; }
+    .stat-label { font-size: 0.82rem; color: rgba(255,255,255,0.70); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.06em; }
+    .stat-divider { width: 1px; background: rgba(255,255,255,0.15); align-self: stretch; }
+
+    /* ── FRANJA URGENCIA ── */
+    .urgencia {
+      background: var(--naranja); color: var(--blanco);
+      text-align: center; padding: 18px 24px;
+      font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.05rem;
+    }
+    .urgencia span { font-size: 1.3rem; margin-right: 6px; }
+
+    /* ── SECCIONES GENÉRICAS ── */
+    section { padding: 72px 24px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-tag {
+      display: inline-block;
+      background: rgba(26,79,214,0.09); color: var(--azul);
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 50px; margin-bottom: 14px;
+    }
+    .section-title { font-size: clamp(1.6rem, 3.5vw, 2.3rem); font-weight: 800; color: var(--azul-oscuro); margin-bottom: 12px; line-height: 1.2; }
+    .section-sub { color: var(--gris-texto); font-size: 1rem; max-width: 540px; }
+    .section-header { margin-bottom: 48px; }
+
+    /* ── SERVICIOS CON FOTO ── */
+    .servicios { background: var(--gris-claro); }
+    .servicios-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .servicio-card {
+      background: var(--blanco); border-radius: 16px;
+      border: 1px solid var(--gris-borde);
+      overflow: hidden;
+      transition: box-shadow 0.25s, transform 0.2s;
+    }
+    .servicio-card:hover { box-shadow: 0 8px 32px rgba(15,47,138,0.13); transform: translateY(-5px); }
+    .servicio-img {
+      width: 100%; height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+    .servicio-body { padding: 24px; }
+    .servicio-icon { font-size: 2rem; margin-bottom: 10px; display: block; }
+    .servicio-card h3 { font-size: 1.08rem; font-weight: 700; color: var(--azul-oscuro); margin-bottom: 6px; }
+    .servicio-card p { font-size: 0.88rem; color: var(--gris-texto); line-height: 1.55; }
+
+    /* ── CÓMO FUNCIONA ── */
+    .pasos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 40px;
+    }
+    .paso { text-align: center; }
+    .paso-num {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--azul-oscuro), var(--azul));
+      color: var(--blanco); font-family: 'Outfit', sans-serif;
+      font-weight: 900; font-size: 1.6rem;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 18px;
+      box-shadow: 0 4px 18px rgba(26,79,214,0.30);
+    }
+    .paso h3 { font-size: 1.1rem; font-weight: 700; color: var(--azul-oscuro); margin-bottom: 8px; }
+    .paso p { font-size: 0.9rem; color: var(--gris-texto); }
+
+    /* ── SECCIÓN FOTO + TEXTO (SOBRE NOSOTROS) ── */
+    .sobre {
+      background: var(--blanco);
+    }
+    .sobre-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .sobre-foto {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(15,47,138,0.15);
+      position: relative;
+    }
+    .sobre-foto img { width: 100%; height: 420px; object-fit: cover; display: block; }
+    .sobre-foto-badge {
+      position: absolute;
+      bottom: 20px; left: 20px;
+      background: var(--naranja);
+      color: var(--blanco);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 0.9rem;
+      padding: 10px 18px;
+      border-radius: 10px;
+    }
+    .sobre-checks { margin-top: 24px; display: flex; flex-direction: column; gap: 12px; }
+    .check-item { display: flex; gap: 12px; align-items: flex-start; font-size: 0.95rem; }
+    .check-icon { color: var(--naranja); font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+
+    /* ── VENTAJAS ── */
+    .ventajas { background: var(--gris-claro); }
+    .ventajas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 24px;
+    }
+    .ventaja {
+      background: var(--blanco); border-radius: 14px;
+      padding: 28px 24px; border: 1px solid var(--gris-borde);
+      display: flex; gap: 16px; align-items: flex-start;
+    }
+    .ventaja-icon {
+      width: 46px; height: 46px; border-radius: 12px;
+      background: rgba(15,47,138,0.08);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; flex-shrink: 0;
+    }
+    .ventaja-text h4 { font-size: 1rem; font-weight: 700; color: var(--azul-oscuro); margin-bottom: 5px; }
+    .ventaja-text p { font-size: 0.85rem; color: var(--gris-texto); line-height: 1.5; }
+
+    /* ── RESEÑAS ── */
+    .resenas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .resena-card {
+      background: var(--blanco); border: 1px solid var(--gris-borde);
+      border-radius: 16px; padding: 28px; position: relative;
+    }
+    .resena-card::before {
+      content: '"'; position: absolute; top: 16px; right: 24px;
+      font-family: 'Outfit', sans-serif; font-size: 5rem;
+      color: rgba(26,79,214,0.08); line-height: 1;
+    }
+    .estrellas { color: #f59e0b; font-size: 1.1rem; margin-bottom: 14px; letter-spacing: 2px; }
+    .resena-texto { font-size: 0.93rem; color: #334155; line-height: 1.65; margin-bottom: 20px; font-style: italic; }
+    .resena-autor { display: flex; align-items: center; gap: 12px; }
+    .autor-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--azul-oscuro), var(--azul));
+      display: flex; align-items: center; justify-content: center;
+      color: var(--blanco); font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.1rem;
+    }
+    .autor-info strong { display: block; font-size: 0.9rem; font-weight: 600; color: var(--azul-oscuro); }
+    .autor-info span { font-size: 0.78rem; color: var(--gris-texto); }
+
+    /* ── GALERÍA TRABAJOS ── */
+    .galeria { background: var(--gris-claro); }
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 220px 220px;
+      gap: 16px;
+    }
+    .galeria-item { border-radius: 14px; overflow: hidden; }
+    .galeria-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s; }
+    .galeria-item:hover img { transform: scale(1.06); }
+    .galeria-item:first-child { grid-row: span 2; }
+
+    /* ── CTA FINAL ── */
+    .cta-final {
+      background: linear-gradient(135deg, var(--azul-oscuro) 0%, #0d2370 100%);
+      color: var(--blanco); text-align: center; padding: 80px 24px;
+    }
+    .cta-final h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; margin-bottom: 12px; }
+    .cta-final p { color: rgba(255,255,255,0.75); font-size: 1rem; margin-bottom: 36px; }
+    .cta-telefono {
+      display: inline-flex; align-items: center; gap: 14px;
+      background: var(--naranja); color: var(--blanco);
+      font-family: 'Outfit', sans-serif; font-weight: 900;
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      padding: 22px 48px; border-radius: 50px;
+      transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 8px 40px rgba(249,115,22,0.4);
+    }
+    .cta-telefono:hover { background: var(--naranja-dark); transform: scale(1.04); }
+    .cta-garantia { margin-top: 22px; font-size: 0.85rem; color: rgba(255,255,255,0.55); }
+
+    /* ── FOOTER ── */
+    footer { background: #070f2b; color: rgba(255,255,255,0.70); padding: 44px 24px; }
+    .footer-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 36px;
+    }
+    .footer-brand h3 { font-family: 'Outfit', sans-serif; font-size: 1.2rem; font-weight: 800; color: var(--blanco); margin-bottom: 8px; }
+    .footer-brand p { font-size: 0.85rem; line-height: 1.6; }
+    .footer-col h4 { font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--naranja); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px; }
+    .footer-col p, .footer-col a { font-size: 0.88rem; line-height: 1.8; display: block; }
+    .footer-col a:hover { color: var(--blanco); }
+    .footer-bottom { max-width: 1100px; margin: 32px auto 0; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); text-align: center; font-size: 0.8rem; }
+
+    /* ── BOTONES FLOTANTES ── */
+    .flotantes { position: fixed; bottom: 24px; right: 24px; display: flex; flex-direction: column; gap: 14px; z-index: 999; }
+    .btn-flotante {
+      width: 58px; height: 58px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; box-shadow: 0 4px 20px rgba(0,0,0,0.22);
+      transition: transform 0.2s; cursor: pointer;
+    }
+    .btn-flotante:hover { transform: scale(1.12); }
+    .btn-wa { background: var(--verde-wa); color: var(--blanco); }
+    .btn-tel { background: var(--naranja); color: var(--blanco); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .sobre-inner { grid-template-columns: 1fr; }
+      .sobre-foto img { height: 280px; }
+      .galeria-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; }
+      .galeria-item:first-child { grid-row: span 1; }
+    }
+    @media (max-width: 640px) {
+      .header-inner { padding: 12px 16px; }
+      .logo-text { font-size: 1rem; }
+      .btn-llamar-header { padding: 10px 16px; font-size: 0.85rem; }
+      section { padding: 52px 16px; }
+      .stat-divider { display: none; }
+      .hero-stats { gap: 28px; }
+      .galeria-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BARRA SUPERIOR -->
+  <div class="topbar">
+    ¿Avería urgente? Llámanos ahora &nbsp;·&nbsp; <a href="tel:919930919">919 930 919</a> &nbsp;·&nbsp; Disponibles 24h en Madrid
+  </div>
+
+  <!-- HEADER STICKY -->
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <div class="logo-icon">🔧</div>
+        <div>
+          <div class="logo-text">Fontaneros Madrid EU</div>
+          <div class="logo-sub">Fontanero profesional en Madrid · 24h</div>
+        </div>
+      </div>
+      <a href="tel:919930919" class="btn-llamar-header">
+        📞 Llamar ahora
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO CON FOTO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+      <div class="hero-badge">⚡ Servicio de emergencia 24h · Madrid</div>
+      <h1>Fontanero urgente en <span>Madrid</span> —<br/>llegamos en 20 minutos</h1>
+      <p>La experiencia se une con la eficiencia. Más de 15 años resolviendo averías en Madrid. Presupuesto gratuito, sin compromiso.</p>
+      <a href="tel:919930919" class="btn-hero">
+        📞 Llamar al 919 930 919
+      </a>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-num">15+</div>
+          <div class="stat-label">Años de experiencia</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <div class="stat-num">1.200+</div>
+          <div class="stat-label">Clientes satisfechos</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <div class="stat-num">5.0 ⭐</div>
+          <div class="stat-label">Valoración en Google</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FRANJA URGENCIA -->
+  <div class="urgencia">
+    <span>🚨</span> ¿Tubería rota o inundación? Llama AHORA — llegamos en <strong>20 minutos</strong> a cualquier punto de Madrid · <a href="tel:919930919" style="color:#fff;text-decoration:underline;">919 930 919</a>
+  </div>
+
+  <!-- SERVICIOS CON FOTOS -->
+  <section class="servicios">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Nuestros servicios</div>
+        <h2 class="section-title">Todo lo que necesitas<br/>en fontanería</h2>
+        <p class="section-sub">Profesionales especializados para cualquier tipo de avería o instalación en Madrid y alrededores.</p>
+      </div>
+      <div class="servicios-grid">
+        <div class="servicio-card">
+          <img class="servicio-img" src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=600&q=75&auto=format&fit=crop" alt="Fontaneros urgentes 24 horas Madrid" loading="lazy" />
+          <div class="servicio-body">
+            <span class="servicio-icon">🚨</span>
+            <h3>Fontaneros urgentes 24 horas</h3>
+            <p>Disponibles los 365 días del año, a cualquier hora. Tiempo de respuesta de aproximadamente 20 minutos en Madrid.</p>
+          </div>
+        </div>
+        <div class="servicio-card">
+          <img class="servicio-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75&auto=format&fit=crop" alt="Fugas de agua Madrid" loading="lazy" />
+          <div class="servicio-body">
+            <span class="servicio-icon">💧</span>
+            <h3>Detección y reparación de fugas</h3>
+            <p>Localización precisa sin obras innecesarias. Solución definitiva para fugas de agua en tuberías, paredes y suelos.</p>
+          </div>
+        </div>
+        <div class="servicio-card">
+          <img class="servicio-img" src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=75&auto=format&fit=crop" alt="Desatascos Madrid" loading="lazy" />
+          <div class="servicio-body">
+            <span class="servicio-icon">🪠</span>
+            <h3>Desatrancos y desatascos</h3>
+            <p>Desatascamos tuberías, desagües y arquetas con maquinaria profesional. Resultado inmediato garantizado.</p>
+          </div>
+        </div>
+        <div class="servicio-card">
+          <img class="servicio-img" src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=75&auto=format&fit=crop" alt="Calderas y calefacción Madrid" loading="lazy" />
+          <div class="servicio-body">
+            <span class="servicio-icon">🔥</span>
+            <h3>Calderas y calefacción</h3>
+            <p>Instalación, reparación y mantenimiento de calderas de gas y suelo radiante. Todas las marcas.</p>
+          </div>
+        </div>
+        <div class="servicio-card">
+          <img class="servicio-img" src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=75&auto=format&fit=crop" alt="Reformas de baños Madrid" loading="lazy" />
+          <div class="servicio-body">
+            <span class="servicio-icon">🚿</span>
+            <h3>Reformas de baños y cocinas</h3>
+            <p>Renovamos tu baño o cocina de principio a fin. Instalación completa de fontanería con acabados de calidad.</p>
+          </div>
+        </div>
+        <div class="servicio-card">
+          <img class="servicio-img" src="https://images.unsplash.com/photo-1544724107-6d5e4b8c4b2e?w=600&q=75&auto=format&fit=crop" alt="Instalaciones fontanería Madrid" loading="lazy" />
+          <div class="servicio-body">
+            <span class="servicio-icon">⚙️</span>
+            <h3>Instalaciones y termos eléctricos</h3>
+            <p>Instalamos termos eléctricos y suelo radiante. Proyectos completos para obra nueva y reformas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE NOSOTROS CON FOTO -->
+  <section class="sobre">
+    <div class="container">
+      <div class="sobre-inner">
+        <div class="sobre-foto">
+          <img src="https://images.unsplash.com/photo-1521791055366-0d553872952f?w=800&q=80&auto=format&fit=crop" alt="Fontanero profesional Madrid" />
+          <div class="sobre-foto-badge">⭐ 5.0 · 17 reseñas verificadas en Google</div>
+        </div>
+        <div>
+          <div class="section-tag">Quiénes somos</div>
+          <h2 class="section-title">Más de 15 años siendo el fontanero de Madrid</h2>
+          <p style="color:var(--gris-texto);margin-bottom:20px;">Somos un equipo de fontaneros profesionales con más de 15 años de experiencia en Madrid. Atendemos cualquier avería con la máxima rapidez y profesionalidad, garantizando todos nuestros trabajos.</p>
+          <p style="color:var(--gris-texto);margin-bottom:28px;">Cubrimos todos los distritos de Madrid: Carabanchel, Centro, Ciudad Lineal, Fuencarral, Latina, Vallecas y toda la comunidad.</p>
+          <div class="sobre-checks">
+            <div class="check-item"><span class="check-icon">✔</span><span><strong>Respuesta en 20 minutos</strong> para cualquier urgencia en Madrid</span></div>
+            <div class="check-item"><span class="check-icon">✔</span><span><strong>Presupuesto gratuito</strong> sin compromiso y sin letras pequeñas</span></div>
+            <div class="check-item"><span class="check-icon">✔</span><span><strong>Garantía en todos los trabajos</strong> — si falla, volvemos sin coste</span></div>
+            <div class="check-item"><span class="check-icon">✔</span><span><strong>Servicio 24h / 365 días</strong> — también festivos y noches</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO FUNCIONA -->
+  <section style="background:var(--gris-claro);">
+    <div class="container">
+      <div class="section-header" style="text-align:center;">
+        <div class="section-tag">El proceso</div>
+        <h2 class="section-title">Así de fácil es trabajar con nosotros</h2>
+        <p class="section-sub" style="margin:0 auto;">Sin complicaciones, sin sorpresas. Tu avería resuelta hoy mismo.</p>
+      </div>
+      <div class="pasos-grid">
+        <div class="paso">
+          <div class="paso-num">1</div>
+          <h3>Llamas o escribes</h3>
+          <p>Contacta al 919 930 919 o por WhatsApp. Cuéntanos el problema y te damos una estimación en el momento.</p>
+        </div>
+        <div class="paso">
+          <div class="paso-num">2</div>
+          <h3>Llegamos en 20 minutos</h3>
+          <p>Nuestro técnico se desplaza a tu domicilio en Madrid. Puntualidad garantizada, sin esperas.</p>
+        </div>
+        <div class="paso">
+          <div class="paso-num">3</div>
+          <h3>Problema resuelto</h3>
+          <p>Reparamos con materiales de calidad y te dejamos todo perfecto. Garantía incluida en cada trabajo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VENTAJAS -->
+  <section class="ventajas">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">¿Por qué elegirnos?</div>
+        <h2 class="section-title">La diferencia que nos hace<br/>el fontanero de Madrid</h2>
+      </div>
+      <div class="ventajas-grid">
+        <div class="ventaja">
+          <div class="ventaja-icon">⚡</div>
+          <div class="ventaja-text">
+            <h4>Respuesta en 20 minutos</h4>
+            <p>Para urgencias, nuestro equipo llega en aproximadamente 20 minutos a cualquier punto de Madrid.</p>
+          </div>
+        </div>
+        <div class="ventaja">
+          <div class="ventaja-icon">💰</div>
+          <div class="ventaja-text">
+            <h4>Presupuesto gratuito</h4>
+            <p>Te enviamos el presupuesto sin coste ni compromiso. Sin letras pequeñas ni sorpresas al final.</p>
+          </div>
+        </div>
+        <div class="ventaja">
+          <div class="ventaja-icon">✅</div>
+          <div class="ventaja-text">
+            <h4>Garantía de trabajo</h4>
+            <p>Todos nuestros trabajos llevan garantía. Si algo falla, volvemos sin coste adicional.</p>
+          </div>
+        </div>
+        <div class="ventaja">
+          <div class="ventaja-icon">🏆</div>
+          <div class="ventaja-text">
+            <h4>15 años de experiencia</h4>
+            <p>Profesionales con más de 15 años resolviendo averías en Madrid y toda la comunidad.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA DE TRABAJOS -->
+  <section class="galeria">
+    <div class="container">
+      <div class="section-header" style="text-align:center;">
+        <div class="section-tag">Nuestros trabajos</div>
+        <h2 class="section-title">Trabajos realizados en Madrid</h2>
+        <p class="section-sub" style="margin:0 auto;">Instalaciones y reparaciones de fontanería con acabados profesionales.</p>
+      </div>
+      <div class="galeria-grid">
+        <div class="galeria-item">
+          <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=75&auto=format&fit=crop" alt="Trabajo fontanería Madrid" loading="lazy" />
+        </div>
+        <div class="galeria-item">
+          <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=600&q=75&auto=format&fit=crop" alt="Reparación fontanería Madrid" loading="lazy" />
+        </div>
+        <div class="galeria-item">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75&auto=format&fit=crop" alt="Instalación tuberías Madrid" loading="lazy" />
+        </div>
+        <div class="galeria-item">
+          <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=75&auto=format&fit=crop" alt="Reforma baño Madrid" loading="lazy" />
+        </div>
+        <div class="galeria-item">
+          <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=75&auto=format&fit=crop" alt="Desatasco Madrid" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEÑAS -->
+  <section>
+    <div class="container">
+      <div class="section-header" style="text-align:center;">
+        <div class="section-tag">Lo que dicen nuestros clientes</div>
+        <h2 class="section-title">1.200+ familias en Madrid<br/>ya confían en nosotros</h2>
+        <p style="color:var(--gris-texto);text-align:center;margin-top:4px;">17 reseñas verificadas en Google · Valoración media 5.0 ★</p>
+      </div>
+      <div class="resenas-grid">
+        <div class="resena-card">
+          <div class="estrellas">★★★★★</div>
+          <p class="resena-texto">"Excelente servicio, lo recomiendo sin dudarlo. Vinieron en menos de media hora y dejaron todo perfecto. Muy profesionales y limpios en el trabajo."</p>
+          <div class="resena-autor">
+            <div class="autor-avatar">J</div>
+            <div class="autor-info">
+              <strong>Jose Angel de los Santos</strong>
+              <span>Cliente verificado · Madrid</span>
+            </div>
+          </div>
+        </div>
+        <div class="resena-card">
+          <div class="estrellas">★★★★★</div>
+          <p class="resena-texto">"Buenos profesionales y trato agradable. El trabajo fue impecable y muy rápido. Llamé por una fuga y en 20 minutos ya estaban aquí. Totalmente recomendables."</p>
+          <div class="resena-autor">
+            <div class="autor-avatar">E</div>
+            <div class="autor-info">
+              <strong>Elvira Sáez</strong>
+              <span>Cliente verificada · Madrid</span>
+            </div>
+          </div>
+        </div>
+        <div class="resena-card">
+          <div class="estrellas">★★★★★</div>
+          <p class="resena-texto">"Totalmente recomendable. Muy formales, llegaron a la hora acordada y el trabajo quedó muy bueno. Buen fontanero, trabaja limpio y lo revisa todo antes de irse."</p>
+          <div class="resena-autor">
+            <div class="autor-avatar">V</div>
+            <div class="autor-info">
+              <strong>Vicente Montero</strong>
+              <span>Cliente verificado · Madrid</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-final">
+    <div class="container">
+      <h2>¿Tienes una avería ahora mismo?</h2>
+      <p>No esperes más. Llámanos y resolvemos tu problema hoy mismo en Madrid. Respuesta en 20 minutos.</p>
+      <a href="tel:919930919" class="cta-telefono">
+        📞 919 930 919
+      </a>
+      <p class="cta-garantia">✓ Presupuesto gratis &nbsp;·&nbsp; ✓ Sin compromiso &nbsp;·&nbsp; ✓ 20 min de respuesta &nbsp;·&nbsp; ✓ 24h / 365 días</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>Fontaneros Madrid EU</h3>
+        <p>Tu fontanero de confianza en Madrid. Más de 15 años al servicio de los hogares madrileños. La experiencia se une con la eficiencia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="tel:919930919">📞 919 930 919</a>
+        <a href="tel:919931270">📞 919 931 270</a>
+        <a href="mailto:fontanerosmadrid24@gmail.com">✉️ fontanerosmadrid24@gmail.com</a>
+        <p>📍 C. Teobaldo, 1, 28025 Madrid</p>
+      </div>
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <p>Fontaneros urgentes 24h</p>
+        <p>Fugas de agua</p>
+        <p>Desatrancos y desatascos</p>
+        <p>Calderas y calefacción</p>
+        <p>Reformas de baños</p>
+        <p>Termos eléctricos</p>
+      </div>
+      <div class="footer-col">
+        <h4>Horario</h4>
+        <p>🕐 Lunes – Viernes: 8h–21h</p>
+        <p>🕐 Sábados: 9h–18h</p>
+        <p>🚨 Urgencias: 24h / 365 días</p>
+        <br/>
+        <h4>Cobertura</h4>
+        <p>Carabanchel · Centro · Latina</p>
+        <p>Vallecas · Fuencarral · Ciudad Lineal</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Fontaneros Madrid EU · Fontanero urgente en Madrid · Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <!-- BOTONES FLOTANTES -->
+  <div class="flotantes">
+    <a href="https://wa.me/34919930919" class="btn-flotante btn-wa" title="WhatsApp" target="_blank" rel="noopener">
+      <svg width="28" height="28" viewBox="0 0 32 32" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M16 3C9.373 3 4 8.373 4 15c0 2.385.67 4.61 1.832 6.5L4 29l7.75-1.813A12.94 12.94 0 0016 28c6.627 0 12-5.373 12-12S22.627 3 16 3zm0 22.917a10.895 10.895 0 01-5.573-1.527l-.4-.237-4.597 1.075 1.1-4.48-.26-.42A10.944 10.944 0 015.083 15c0-6.03 4.888-10.917 10.917-10.917S26.917 8.97 26.917 15 22.03 25.917 16 25.917zm5.98-8.18c-.328-.164-1.94-.957-2.24-1.065-.3-.11-.518-.164-.737.163-.218.328-.846 1.065-1.038 1.284-.19.218-.382.245-.71.082-.328-.164-1.386-.51-2.64-1.627-.977-.87-1.635-1.942-1.827-2.27-.19-.328-.02-.505.144-.668.147-.147.328-.382.492-.573.164-.19.218-.328.328-.546.11-.218.055-.41-.027-.573-.082-.164-.737-1.776-1.01-2.432-.265-.637-.535-.55-.737-.56l-.628-.01c-.218 0-.573.082-.873.41-.3.328-1.146 1.12-1.146 2.73s1.174 3.165 1.338 3.384c.164.218 2.31 3.53 5.6 4.95.782.338 1.393.54 1.868.69.785.25 1.5.215 2.065.13.63-.094 1.94-.793 2.213-1.56.274-.764.274-1.42.192-1.56-.082-.137-.3-.22-.628-.383z"/></svg>
+    </a>
+    <a href="tel:919930919" class="btn-flotante btn-tel" title="Llamar">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+    </a>
+  </div>
+
+</body>
+</html>

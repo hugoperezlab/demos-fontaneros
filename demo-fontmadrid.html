@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="referrer" content="no-referrer"/>
+  <title>FONTMADRID – Fontanero profesional en Madrid desde 1998</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--az:#0f2f8a;--az2:#1a4fd6;--na:#f97316;--na2:#ea6c0a;--bl:#fff;--gr:#f8fafc;--gt:#64748b;--gb:#e2e8f0;--ve:#25d366}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;color:#1e293b;background:#fff;line-height:1.6}
+    h1,h2,h3,h4{font-family:'Outfit',sans-serif}
+    a{text-decoration:none;color:inherit}
+
+    /* ── TOPBAR ── */
+    .topbar{background:#07194a;color:rgba(255,255,255,.8);font-size:.82rem;padding:8px 0}
+    .tw{max-width:1140px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px}
+    .tl{display:flex;gap:18px}
+    .tl span{display:flex;align-items:center;gap:5px}
+    .ttel{font-weight:700;font-size:.93rem;color:var(--na);white-space:nowrap}
+    .ttel:hover{text-decoration:underline}
+    @media(max-width:640px){.tl{display:none}.tw{justify-content:center}}
+
+    /* ── HEADER ── */
+    header{position:sticky;top:0;z-index:900;background:#fff;border-bottom:2px solid var(--gb);box-shadow:0 2px 18px rgba(15,47,138,.09)}
+    .hdr{max-width:1140px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{display:flex;align-items:center;gap:13px}
+    .logo-ico{width:48px;height:48px;background:linear-gradient(135deg,var(--az),var(--az2));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
+    .logo-name{font-family:'Outfit',sans-serif;font-weight:900;font-size:1.2rem;color:var(--az);line-height:1.2;letter-spacing:.02em}
+    .logo-sub{font-size:.71rem;color:var(--gt);font-weight:500}
+    nav{display:flex;gap:2px}
+    nav a{font-size:.84rem;font-weight:600;color:#475569;padding:7px 12px;border-radius:8px;transition:background .15s,color .15s;white-space:nowrap}
+    nav a:hover{background:var(--gr);color:var(--az)}
+    .hdr-cta{display:inline-flex;align-items:center;gap:8px;background:var(--na);color:#fff;font-family:'Outfit',sans-serif;font-weight:700;font-size:.92rem;padding:11px 22px;border-radius:50px;transition:background .2s,transform .15s;white-space:nowrap;flex-shrink:0}
+    .hdr-cta:hover{background:var(--na2);transform:scale(1.03)}
+
+    /* ── HERO ── */
+    .hero{position:relative;min-height:680px;display:flex;align-items:center;overflow:hidden;color:#fff}
+    .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center}
+    .hero-ov{position:absolute;inset:0;background:linear-gradient(120deg,rgba(10,28,90,.94) 0%,rgba(15,47,138,.85) 55%,rgba(10,28,90,.7) 100%)}
+    .hero-inner{position:relative;z-index:2;max-width:1140px;margin:0 auto;padding:80px 24px;display:grid;grid-template-columns:1fr 390px;gap:52px;align-items:center;width:100%}
+    .hero-badge{display:inline-block;background:rgba(249,115,22,.18);border:1px solid rgba(249,115,22,.5);color:#fda96e;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:50px;margin-bottom:18px}
+    .hero h1{font-size:clamp(1.9rem,4vw,3rem);font-weight:900;line-height:1.12;margin-bottom:16px}
+    .hero h1 em{color:var(--na);font-style:normal}
+    .hero-desc{font-size:1.02rem;color:rgba(255,255,255,.83);margin-bottom:28px;max-width:490px}
+    .hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px}
+    .btn-pulse{display:inline-flex;align-items:center;gap:9px;background:var(--na);color:#fff;font-family:'Outfit',sans-serif;font-weight:800;font-size:1.05rem;padding:16px 32px;border-radius:50px;position:relative;transition:background .2s,transform .15s}
+    .btn-pulse:hover{background:var(--na2);transform:scale(1.04)}
+    .btn-pulse::before{content:'';position:absolute;inset:-4px;border-radius:50px;border:3px solid var(--na);animation:pulse 2s ease-out infinite}
+    @keyframes pulse{0%{transform:scale(1);opacity:.7}70%{transform:scale(1.18);opacity:0}100%{transform:scale(1.18);opacity:0}}
+    .btn-wa{display:inline-flex;align-items:center;gap:9px;background:var(--ve);color:#fff;font-family:'Outfit',sans-serif;font-weight:700;font-size:1rem;padding:14px 26px;border-radius:50px;transition:background .2s}
+    .btn-wa:hover{background:#1db954}
+    .hero-stats{display:flex;gap:28px;flex-wrap:wrap}
+    .hs-n{font-family:'Outfit',sans-serif;font-weight:900;font-size:2rem;color:var(--na);line-height:1}
+    .hs-l{font-size:.73rem;color:rgba(255,255,255,.65);text-transform:uppercase;letter-spacing:.05em;margin-top:3px}
+
+    /* Hero form */
+    .hero-card{background:#fff;border-radius:20px;padding:28px 24px;box-shadow:0 24px 64px rgba(0,0,0,.35)}
+    .hero-card h3{font-size:1.12rem;font-weight:800;color:var(--az);margin-bottom:5px}
+    .hero-card>p{font-size:.83rem;color:var(--gt);margin-bottom:16px}
+    .fg{margin-bottom:11px}
+    .fg label{display:block;font-size:.77rem;font-weight:600;color:#475569;margin-bottom:4px}
+    .fg input,.fg select,.fg textarea{width:100%;padding:10px 13px;border:1.5px solid var(--gb);border-radius:9px;font-family:'Inter',sans-serif;font-size:.87rem;color:#1e293b;transition:border-color .2s;background:#fff}
+    .fg input:focus,.fg select:focus,.fg textarea:focus{outline:none;border-color:var(--az2)}
+    .fg textarea{resize:vertical;min-height:68px}
+    .btn-send{width:100%;padding:13px;background:var(--na);color:#fff;font-family:'Outfit',sans-serif;font-weight:800;font-size:.98rem;border:none;border-radius:10px;cursor:pointer;transition:background .2s}
+    .btn-send:hover{background:var(--na2)}
+    .form-note{font-size:.72rem;color:var(--gt);text-align:center;margin-top:8px}
+
+    /* ── SECCIÓN GENÉRICA ── */
+    .sec{padding:76px 24px}
+    .w{max-width:1140px;margin:0 auto}
+    .stag{display:inline-block;background:rgba(26,79,214,.09);color:var(--az2);font-size:.73rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 13px;border-radius:50px;margin-bottom:11px}
+    .stit{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;color:var(--az);margin-bottom:11px;line-height:1.2}
+    .ssub{color:var(--gt);font-size:.95rem;max-width:540px}
+    .sh{margin-bottom:42px}.sh.c{text-align:center}.sh.c .ssub{margin:0 auto}
+
+    /* ── STATS BAND ── */
+    .sband{background:var(--az);padding:44px 24px}
+    .sbg{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+    .sb-n{font-family:'Outfit',sans-serif;font-weight:900;font-size:2.6rem;color:var(--na)}
+    .sb-l{font-size:.82rem;color:rgba(255,255,255,.68);text-transform:uppercase;letter-spacing:.05em;margin-top:4px}
+
+    /* ── TABS ── */
+    .tabs{display:flex;gap:8px;margin-bottom:30px;flex-wrap:wrap}
+    .tbtn{padding:9px 20px;border-radius:50px;border:2px solid var(--gb);font-family:'Outfit',sans-serif;font-weight:700;font-size:.86rem;background:#fff;color:#475569;cursor:pointer;transition:all .2s}
+    .tbtn.on{background:var(--az);color:#fff;border-color:var(--az)}
+    .tbtn:hover:not(.on){border-color:var(--az2);color:var(--az2)}
+    .tpanel{display:none}.tpanel.on{display:block}
+
+    /* ── SERVICE CARDS CON FOTO ── */
+    .sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
+    .scard{background:#fff;border-radius:16px;border:1px solid var(--gb);overflow:hidden;transition:box-shadow .25s,transform .2s}
+    .scard:hover{box-shadow:0 10px 36px rgba(15,47,138,.13);transform:translateY(-5px)}
+    /* Contenedor de foto — si no carga muestra gradiente */
+    .scard-img{width:100%;height:175px;object-fit:cover;display:block;background:linear-gradient(135deg,var(--az),var(--az2))}
+    .scard-body{padding:22px}
+    .scard-ico{font-size:1.6rem;margin-bottom:9px;display:flex;align-items:center;justify-content:center;width:44px;height:44px;background:rgba(15,47,138,.08);border-radius:10px;font-family:'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji',sans-serif;line-height:1}
+    .scard h3{font-size:1rem;font-weight:700;color:var(--az);margin-bottom:5px}
+    .scard p{font-size:.84rem;color:var(--gt);line-height:1.55}
+    .scard-lnk{display:inline-flex;align-items:center;gap:4px;font-size:.8rem;font-weight:700;color:var(--az2);margin-top:10px}
+
+    /* ── SOBRE NOSOTROS ── */
+    .sobre-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+    .sobre-wrap{border-radius:20px;overflow:hidden;position:relative;box-shadow:0 20px 56px rgba(15,47,138,.15)}
+    .sobre-wrap img{width:100%;height:460px;object-fit:cover;display:block;background:linear-gradient(135deg,var(--az),var(--az2))}
+    .sobre-badge{position:absolute;bottom:20px;left:20px;background:var(--na);color:#fff;font-family:'Outfit',sans-serif;font-weight:800;font-size:.85rem;padding:10px 16px;border-radius:10px}
+    .checks{display:flex;flex-direction:column;gap:11px;margin-top:20px}
+    .chk{display:flex;gap:10px;align-items:flex-start;font-size:.91rem}
+    .chk-i{color:var(--na);font-weight:700;flex-shrink:0;margin-top:2px}
+    .mini-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px;padding-top:22px;border-top:1px solid var(--gb)}
+    .ms-n{font-family:'Outfit',sans-serif;font-weight:900;font-size:1.8rem;color:var(--az);line-height:1}
+    .ms-l{font-size:.72rem;color:var(--gt);text-transform:uppercase;letter-spacing:.05em;margin-top:4px}
+
+    /* ── PASOS ── */
+    .pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:20px}
+    .paso{text-align:center;background:#fff;border-radius:16px;border:1px solid var(--gb);padding:30px 20px}
+    .paso-n{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--az),var(--az2));color:#fff;font-family:'Outfit',sans-serif;font-weight:900;font-size:1.4rem;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;box-shadow:0 4px 16px rgba(26,79,214,.28)}
+    .paso-ico{font-size:1.8rem;margin-bottom:9px}
+    .paso h3{font-size:.98rem;font-weight:700;color:var(--az);margin-bottom:6px}
+    .paso p{font-size:.83rem;color:var(--gt)}
+
+    /* ── VENTAJAS ── */
+    .vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+    .vcard{background:#fff;border-radius:14px;padding:22px 20px;border:1px solid var(--gb);display:flex;gap:14px;align-items:flex-start}
+    .vico{width:44px;height:44px;border-radius:11px;background:rgba(15,47,138,.08);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+    .vcard h4{font-size:.95rem;font-weight:700;color:var(--az);margin-bottom:4px}
+    .vcard p{font-size:.83rem;color:var(--gt);line-height:1.5}
+
+    /* ── VALORES ── */
+    .valores{background:var(--az)}
+    .valgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+    .valcard{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:26px 22px;color:#fff}
+    .valcard-ico{font-size:1.9rem;margin-bottom:11px}
+    .valcard h3{font-size:1rem;font-weight:800;margin-bottom:6px}
+    .valcard p{font-size:.84rem;color:rgba(255,255,255,.72);line-height:1.55}
+
+    /* ── GALERÍA ── */
+    .ggrid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:230px 230px;gap:14px}
+    .gitem{border-radius:14px;overflow:hidden;cursor:pointer;background:linear-gradient(135deg,var(--az),var(--az2))}
+    .gitem img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+    .gitem:hover img{transform:scale(1.06)}
+    .gitem:first-child{grid-row:span 2}
+
+    /* ── ESPECIALIDAD COMUNIDADES ── */
+    .comunidades{background:linear-gradient(135deg,var(--az) 0%,#0d2370 100%);color:#fff;padding:76px 24px}
+    .com-inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;max-width:1140px;margin:0 auto}
+    .com-img{border-radius:18px;overflow:hidden;box-shadow:0 20px 56px rgba(0,0,0,.3);background:rgba(255,255,255,.1)}
+    .com-img img{width:100%;height:420px;object-fit:cover;display:block}
+    .com-badge-big{font-family:'Outfit',sans-serif;font-weight:900;font-size:3.2rem;color:var(--na);line-height:1;margin-bottom:4px}
+    .com-lbl{font-size:.8rem;color:rgba(255,255,255,.62);text-transform:uppercase;letter-spacing:.06em;margin-bottom:24px}
+    .com-list{display:flex;flex-direction:column;gap:12px}
+    .com-item{display:flex;gap:12px;align-items:flex-start;font-size:.92rem;color:rgba(255,255,255,.85)}
+    .com-item::before{content:'✔';color:var(--na);font-weight:700;flex-shrink:0;margin-top:2px}
+
+    /* ── RESEÑAS ── */
+    .rgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:20px}
+    .rcard{background:#fff;border:1px solid var(--gb);border-radius:16px;padding:24px;position:relative}
+    .rcard::before{content:'"';position:absolute;top:12px;right:20px;font-family:'Outfit',sans-serif;font-size:5rem;color:rgba(26,79,214,.07);line-height:1}
+    .stars{color:#f59e0b;font-size:1rem;letter-spacing:2px;margin-bottom:10px}
+    .rtxt{font-size:.9rem;color:#334155;line-height:1.65;margin-bottom:16px;font-style:italic}
+    .rautor{display:flex;align-items:center;gap:10px}
+    .ravatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--az),var(--az2));display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Outfit',sans-serif;font-weight:700;font-size:.95rem;flex-shrink:0}
+    .rname{font-size:.86rem;font-weight:600;color:var(--az)}
+    .rmeta{font-size:.74rem;color:var(--gt)}
+    .gband{display:inline-flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--gb);border-radius:14px;padding:14px 20px;margin-bottom:28px}
+    .g-sc{font-family:'Outfit',sans-serif;font-weight:900;font-size:1.9rem;color:var(--az)}
+    .g-st{color:#f59e0b;font-size:1rem}
+    .g-mt{font-size:.76rem;color:var(--gt)}
+
+    /* ── FAQ ── */
+    .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .fitem{background:#fff;border:1px solid var(--gb);border-radius:13px;overflow:hidden}
+    .fq{padding:15px 18px;font-family:'Outfit',sans-serif;font-weight:700;font-size:.91rem;color:var(--az);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;user-select:none}
+    .fq::after{content:'+';font-size:1.3rem;color:var(--na);flex-shrink:0;transition:transform .2s}
+    .fitem.open .fq::after{transform:rotate(45deg)}
+    .fa{display:none;padding:0 18px 14px;font-size:.85rem;color:var(--gt);line-height:1.65;border-top:1px solid var(--gb);padding-top:11px}
+    .fitem.open .fa{display:block}
+
+    /* ── ZONAS ── */
+    .zonas-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+    .ztags{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+    .ztag{background:rgba(15,47,138,.07);color:var(--az);font-size:.82rem;font-weight:600;padding:6px 15px;border-radius:50px;border:1px solid rgba(15,47,138,.14)}
+    .mapa{border-radius:18px;overflow:hidden;box-shadow:0 10px 40px rgba(15,47,138,.12);height:360px}
+    .mapa iframe{width:100%;height:100%;border:none}
+
+    /* ── BLOG ── */
+    .bgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
+    .bcard{background:#fff;border-radius:16px;border:1px solid var(--gb);overflow:hidden;transition:box-shadow .25s,transform .2s}
+    .bcard:hover{box-shadow:0 10px 32px rgba(15,47,138,.12);transform:translateY(-4px)}
+    .bcard-img{width:100%;height:185px;object-fit:cover;display:block;background:linear-gradient(135deg,var(--az),var(--az2))}
+    .bcard-b{padding:20px}
+    .btag{display:inline-block;background:rgba(249,115,22,.1);color:var(--na);font-size:.69rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;padding:3px 10px;border-radius:50px;margin-bottom:8px}
+    .bcard h3{font-size:.96rem;font-weight:700;color:var(--az);margin-bottom:6px;line-height:1.3}
+    .bcard p{font-size:.82rem;color:var(--gt);line-height:1.5}
+    .bcard-meta{font-size:.73rem;color:#94a3b8;margin-top:11px}
+
+    /* ── PARTNERS ── */
+    .partners{padding:32px 24px;border-top:1px solid var(--gb)}
+    .pt-t{text-align:center;font-size:.76rem;font-weight:600;color:#94a3b8;text-transform:uppercase;letter-spacing:.1em;margin-bottom:20px}
+    .pt-l{display:flex;justify-content:center;align-items:center;gap:24px;flex-wrap:wrap}
+    .pt-logo{background:var(--gr);border:1px solid var(--gb);border-radius:10px;padding:11px 24px;font-family:'Outfit',sans-serif;font-weight:800;font-size:.85rem;color:#94a3b8;letter-spacing:.04em}
+
+    /* ── CTA FINAL ── */
+    .cta{background:linear-gradient(135deg,var(--az) 0%,#0a1c5a 100%);color:#fff;text-align:center;padding:90px 24px;position:relative;overflow:hidden}
+    .cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 100%,rgba(249,115,22,.18) 0%,transparent 70%)}
+    .cta-in{position:relative;z-index:1}
+    .cta h2{font-size:clamp(1.8rem,4vw,2.9rem);font-weight:900;margin-bottom:12px}
+    .cta p{color:rgba(255,255,255,.74);font-size:1rem;margin-bottom:32px}
+    .cta-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+    .cta-tel{display:inline-flex;align-items:center;gap:12px;background:var(--na);color:#fff;font-family:'Outfit',sans-serif;font-weight:900;font-size:clamp(1.2rem,3.5vw,1.8rem);padding:20px 42px;border-radius:50px;box-shadow:0 8px 40px rgba(249,115,22,.45);transition:background .2s,transform .15s}
+    .cta-tel:hover{background:var(--na2);transform:scale(1.04)}
+    .cta-wa2{display:inline-flex;align-items:center;gap:9px;background:var(--ve);color:#fff;font-family:'Outfit',sans-serif;font-weight:700;font-size:1.05rem;padding:20px 30px;border-radius:50px;transition:background .2s,transform .15s}
+    .cta-wa2:hover{background:#1db954;transform:scale(1.04)}
+    .cta-note{margin-top:20px;font-size:.81rem;color:rgba(255,255,255,.46)}
+
+    /* ── FOOTER ── */
+    footer{background:#060e26;color:rgba(255,255,255,.65);padding:52px 24px 24px}
+    .fg2{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:38px}
+    .fb h3{font-family:'Outfit',sans-serif;font-size:1.2rem;font-weight:900;color:#fff;margin-bottom:10px}
+    .fb p{font-size:.84rem;line-height:1.65;max-width:240px}
+    .fsoc{display:flex;gap:8px;margin-top:14px}
+    .fsoc a{width:32px;height:32px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:700;transition:background .2s}
+    .fsoc a:hover{background:var(--na);color:#fff}
+    .fcol h4{font-family:'Outfit',sans-serif;font-size:.78rem;font-weight:700;color:var(--na);text-transform:uppercase;letter-spacing:.08em;margin-bottom:13px}
+    .fcol a,.fcol p{font-size:.83rem;line-height:1.9;display:block}
+    .fcol a:hover{color:#fff}
+    .fbot{max-width:1140px;margin:32px auto 0;padding-top:18px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;font-size:.76rem}
+    .fleg{display:flex;gap:14px}
+    .fleg a:hover{color:#fff}
+
+    /* ── FLOTANTES ── */
+    .float{position:fixed;bottom:24px;right:24px;display:flex;flex-direction:column;gap:11px;z-index:999}
+    .fbtn{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(0,0,0,.24);transition:transform .2s}
+    .fbtn:hover{transform:scale(1.13)}
+    .fw{background:var(--ve)}.ft{background:var(--na)}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:1024px){.hero-inner{grid-template-columns:1fr}.hero-card{max-width:460px}.fg2{grid-template-columns:1fr 1fr}}
+    @media(max-width:768px){.sobre-grid,.zonas-grid,.com-inner{grid-template-columns:1fr}.sobre-wrap img{height:300px}.com-img img{height:260px}.ggrid{grid-template-columns:repeat(2,1fr);grid-template-rows:auto}.gitem:first-child{grid-row:span 1}.fgrid{grid-template-columns:1fr}.sbg{grid-template-columns:repeat(2,1fr)}nav{display:none}}
+    @media(max-width:640px){.sec{padding:52px 16px}.hdr{padding:11px 16px}.hero-inner{padding:60px 20px}.ggrid{grid-template-columns:1fr}.fg2{grid-template-columns:1fr}.fbot{flex-direction:column;text-align:center}}
+  </style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="tw">
+    <div class="tl">
+      <span>📍 C/ Sarria, 38 · Fuencarral-El Pardo, 28029 Madrid</span>
+      <span>✉️ info@fontmadrid.es</span>
+      <span>🕐 Lun–Jue 8–18h · Vie 8–15h</span>
+    </div>
+    <a href="tel:917405265" class="ttel">📞 91 740 52 65</a>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="hdr">
+    <div class="logo">
+      <div class="logo-ico">🔧</div>
+      <div>
+        <div class="logo-name">FONTMADRID</div>
+        <div class="logo-sub">Fontanería profesional en Madrid desde 1998</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#servicios">Servicios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#comunidades">Comunidades</a>
+      <a href="#zonas">Zonas</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a href="tel:917405265" class="hdr-cta">📞 Llamar ahora</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1800&q=80&auto=format&fit=crop');filter:brightness(.25) saturate(.6)"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">⭐ Más de 25 años de experiencia · Madrid desde 1998</div>
+      <h1>El mejor equipo de fontaneros<br/>profesionales en <em>Madrid</em></h1>
+      <p class="hero-desc">Instalaciones, reparaciones, calefacción, reformas e impermeabilizaciones. Más de 200 obras en comunidades avalan nuestro trabajo desde 1998.</p>
+      <div class="hero-btns">
+        <a href="tel:917405265" class="btn-pulse">📞 91 740 52 65</a>
+        <a href="https://wa.me/34655561969" class="btn-wa" target="_blank">💬 WhatsApp</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="hs-n">25+</div><div class="hs-l">Años exp.</div></div>
+        <div><div class="hs-n">200+</div><div class="hs-l">Obras comunidades</div></div>
+        <div><div class="hs-n">1998</div><div class="hs-l">Fundación</div></div>
+        <div><div class="hs-n">4.8⭐</div><div class="hs-l">Google</div></div>
+      </div>
+    </div>
+    <div class="hero-card" id="contacto">
+      <h3>Solicita tu presupuesto gratis</h3>
+      <p>Sin compromiso. Te respondemos en el día.</p>
+      <div class="fg"><label>Nombre</label><input type="text" placeholder="Tu nombre y apellidos"/></div>
+      <div class="fg"><label>Teléfono</label><input type="tel" placeholder="600 000 000"/></div>
+      <div class="fg">
+        <label>¿Qué necesitas?</label>
+        <select>
+          <option>Selecciona un servicio...</option>
+          <option>Fontanería general</option>
+          <option>Calefacción y calderas</option>
+          <option>Desatascos</option>
+          <option>Agua caliente sanitaria</option>
+          <option>Cambio bañera por ducha</option>
+          <option>Impermeabilización</option>
+          <option>Reformas</option>
+          <option>Renovación tuberías comunidad</option>
+          <option>Otro</option>
+        </select>
+      </div>
+      <div class="fg"><label>Describe el trabajo</label><textarea placeholder="Cuéntanos qué necesitas..."></textarea></div>
+      <button class="btn-send">Enviar solicitud →</button>
+      <p class="form-note">🔒 Sin spam. Respuesta garantizada en el día.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAND -->
+<div class="sband">
+  <div class="sbg">
+    <div><div class="sb-n">25+</div><div class="sb-l">Años de experiencia</div></div>
+    <div><div class="sb-n">200+</div><div class="sb-l">Obras en comunidades</div></div>
+    <div><div class="sb-n">1998</div><div class="sb-l">Trabajando en Madrid</div></div>
+    <div><div class="sb-n">4.8★</div><div class="sb-l">Valoración Google</div></div>
+  </div>
+</div>
+
+<!-- SERVICIOS -->
+<section class="sec" id="servicios" style="background:var(--gr)">
+  <div class="w">
+    <div class="sh">
+      <div class="stag">Nuestros servicios</div>
+      <h2 class="stit">Todo lo que necesitas<br/>en fontanería y más</h2>
+      <p class="ssub">Profesionales especializados en instalaciones, reformas y mantenimiento en Madrid desde 1998.</p>
+    </div>
+    <div class="tabs">
+      <button class="tbtn on" onclick="openTab(event,'hogar')">🏠 Hogar</button>
+      <button class="tbtn" onclick="openTab(event,'comunidad')">🏢 Comunidades</button>
+      <button class="tbtn" onclick="openTab(event,'reformas')">🔨 Reformas</button>
+    </div>
+
+    <div class="tpanel on" id="hogar">
+      <div class="sgrid">
+        <div class="scard">
+          <img class="scard-img" src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=600&q=80&auto=format&fit=crop" alt="Fontanería" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#0f2f8a,#1a4fd6)';this.style.minHeight='175px';this.removeAttribute('src')"/>
+          <div class="scard-body"><span class="scard-ico">🔧</span><h3>Fontanería general</h3><p>Instalación y reparación de tuberías, grifería y sanitarios con materiales de primera calidad y mano de obra garantizada.</p><span class="scard-lnk">Saber más →</span></div>
+        </div>
+        <div class="scard">
+          <img class="scard-img" src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80&auto=format&fit=crop" alt="Calefacción" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#c2410c,#f97316)';this.style.minHeight='175px';this.removeAttribute('src')"/>
+          <div class="scard-body"><span class="scard-ico">🔥</span><h3>Calefacción y calderas</h3><p>Instalación, reparación y mantenimiento de calderas y sistemas de calefacción. Todas las marcas del mercado.</p><span class="scard-lnk">Saber más →</span></div>
+        </div>
+        <div class="scard">
+          <img class="scard-img" src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80&auto=format&fit=crop" alt="Desatascos" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#065f46,#059669)';this.style.minHeight='175px';this.removeAttribute('src')"/>
+          <div class="scard-body"><span class="scard-ico">🪠</span><h3>Desatascos domésticos</h3><p>Desobstrucción de tuberías, desagües e inodoros con maquinaria profesional. Resultado rápido y garantizado.</p><span class="scard-lnk">Saber más →</span></div>
+        </div>
+        <div class="scard">
+          <img class="scard-img" src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80&auto=format&fit=crop" alt="Agua caliente" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#0f2f8a,#1a4fd6)';this.style.minHeight='175px';this.removeAttribute('src')"/>
+          <div class="scard-body"><span class="scard-ico">🚿</span><h3>Agua caliente sanitaria</h3><p>Instalación y reparación de termos eléctricos, calderas y sistemas ACS. Soluciones eficientes y duraderas.</p><span class="scard-lnk">Saber más →</span></div>
+        </div>
+        <div class="scard">
+          <img class="scard-img" src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80&auto=format&fit=crop" alt="Bañera a ducha" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#c2410c,#f97316)';this.style.minHeight='175px';this.removeAttribute('src')"/>
+          <div class="scard-body"><span class="scard-ico">🛁</span><h3>Cambio bañera por ducha</h3><p>Transformamos tu bañera en plato de ducha. Mayor accesibilidad y ahorro de agua. Instalación en un día.</p><span class="scard-lnk">Saber más →</span></div>
+        </div>
+        <div class="scard">
+          <img class="scard-img" src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=600&q=80&auto=format&fit=crop" alt="Impermeabilizaciones" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#334155,#64748b)';this.style.minHeight='175px';this.removeAttribute('src')"/>
+          <div class="scard-body"><span class="scard-ico">🌧️</span><h3>Impermeabilizaciones</h3><p>Protegemos terrazas, cubiertas y fachadas de la humedad con los mejores materiales profesionales.</p><span class="scard-lnk">Saber más →</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tpanel" id="comunidad">
+      <div class="sgrid">
+        <div class="scard">
+          <img class="scard-img" src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=600&q=80&auto=format&fit=crop" alt="Ascendentes" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#0f2f8a,#1a4fd6)';this.style.minHeight='175px';this.removeAttribute('src')"/>
+          <div class="scard-body"><span class="scard-ico">🏢</span><h3>Renovación de ascendentes</h3><p>Más de 200 obras de renovación completa de tuberías ascendentes y bajadas en comunidades de Madrid.</p></div>
+        </div>
+        <div class="scard">
+          <img class="scard-img" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80&auto=format&fit=crop" alt="Trabajos altura" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#c2410c,#f97316)';this.style.minHeight='175px';this.removeAttribute('src')"/>
+          <div class="scard-body"><span class="scard-ico">⬆️</span><h3>Trabajos verticales en altura</h3><p>Especialistas en trabajos de fontanería vertical para edificios. Equipos certificados para trabajos en altura.</p></div>
+        </div>
+        <div class="scard">
+          <img class="scard-img" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80&auto=format&fit=crop" alt="Mantenimiento" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#065f46,#059669)';this.style.minHeight='175px';this.removeAttribute('src')"/>
+          <div class="scard-body"><span class="scard-ico">📋</span><h3>Contratos de mantenimiento</h3><p>Servicio preventivo anual para comunidades. Revisiones periódicas y atención preferente ante averías.</p></div>
+        </div>
+        <div class="scard">
+          <img class="scard-img" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80&auto=format&fit=crop" alt="Administradores" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#334155,#64748b)';this.style.minHeight='175px';this.removeAttribute('src')"/>
+          <div class="scard-body"><span class="scard-ico">📊</span><h3>Gestión con administradores</h3><p>Coordinación directa con administradores de fincas. Presupuesto detallado para junta de propietarios.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tpanel" id="reformas">
+      <div class="sgrid">
+        <div class="scard">
+          <img class="scard-img" src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80&auto=format&fit=crop" alt="Reforma baño" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#0f2f8a,#1a4fd6)';this.style.minHeight='175px';this.removeAttribute('src')"/>
+          <div class="scard-body"><span class="scard-ico">🚿</span><h3>Reforma integral de baño</h3><p>Renovamos tu baño de principio a fin. Instalación completa de fontanería con acabados de calidad.</p></div>
+        </div>
+        <div class="scard">
+          <img class="scard-img" src="https://images.unsplash.com/photo-1556909190-eccf4a8bf97a?w=600&q=80&auto=format&fit=crop" alt="Reforma cocina" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#c2410c,#f97316)';this.style.minHeight='175px';this.removeAttribute('src')"/>
+          <div class="scard-body"><span class="scard-ico">🍳</span><h3>Reforma de cocina</h3><p>Instalación y adaptación de fontanería para reformas de cocina. Trabajo limpio y garantizado.</p></div>
+        </div>
+        <div class="scard">
+          <img class="scard-img" src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=600&q=80&auto=format&fit=crop" alt="Impermeabilización" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#065f46,#059669)';this.style.minHeight='175px';this.removeAttribute('src')"/>
+          <div class="scard-body"><span class="scard-ico">🌧️</span><h3>Impermeabilización terrazas</h3><p>Protección definitiva contra humedades. Los mejores materiales aplicados por expertos con garantía.</p></div>
+        </div>
+        <div class="scard">
+          <img class="scard-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&auto=format&fit=crop" alt="Suelo radiante" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#334155,#64748b)';this.style.minHeight='175px';this.removeAttribute('src')"/>
+          <div class="scard-body"><span class="scard-ico">🌡️</span><h3>Suelo radiante</h3><p>Instalación de suelo radiante para mayor confort y ahorro energético. Proyecto completo certificado.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE NOSOTROS -->
+<section class="sec" id="nosotros">
+  <div class="w">
+    <div class="sobre-grid">
+      <div class="sobre-wrap">
+        <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=900&q=80&auto=format&fit=crop" alt="Equipo Fontmadrid" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#0f2f8a,#1a4fd6)';this.removeAttribute('src')"/>
+        <div class="sobre-badge">⭐ 4.8 · Reseñas verificadas en Google</div>
+      </div>
+      <div>
+        <div class="stag">Quiénes somos</div>
+        <h2 class="stit">Más de 25 años siendo<br/>el fontanero de Madrid</h2>
+        <p style="color:var(--gt);margin-bottom:14px">Somos <strong>FONTMADRID</strong>, una empresa familiar fundada en 1998 con más de 25 años de experiencia en fontanería, calefacción, reformas e impermeabilizaciones en Madrid. Profesionales certificados comprometidos con la calidad y la satisfacción de cada cliente.</p>
+        <p style="color:var(--gt);margin-bottom:20px">Hemos realizado más de 200 obras de renovación de ascendentes y bajadas en comunidades de vecinos de Madrid, siendo referentes en este tipo de trabajos especializados.</p>
+        <div class="checks">
+          <div class="chk"><span class="chk-i">✔</span><span><strong>Desde 1998</strong> — más de 25 años de experiencia en Madrid</span></div>
+          <div class="chk"><span class="chk-i">✔</span><span><strong>Presupuesto gratuito</strong> sin compromiso y sin letras pequeñas</span></div>
+          <div class="chk"><span class="chk-i">✔</span><span><strong>Garantía en todos los trabajos</strong> — calidad respaldada por 25 años</span></div>
+          <div class="chk"><span class="chk-i">✔</span><span><strong>Especialistas en comunidades</strong> — más de 200 obras realizadas</span></div>
+          <div class="chk"><span class="chk-i">✔</span><span><strong>Técnicos certificados</strong> — personal cualificado con experiencia real</span></div>
+        </div>
+        <div class="mini-stats">
+          <div><div class="ms-n">25+</div><div class="ms-l">Años activos</div></div>
+          <div><div class="ms-n">200+</div><div class="ms-l">Obras comunidades</div></div>
+          <div><div class="ms-n">1998</div><div class="ms-l">Fundación</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section class="sec" style="background:var(--gr)">
+  <div class="w">
+    <div class="sh c">
+      <div class="stag">El proceso</div>
+      <h2 class="stit">¿Cómo trabajamos?</h2>
+      <p class="ssub">Un proceso sencillo, transparente y sin sorpresas desde el primer contacto.</p>
+    </div>
+    <div class="pgrid">
+      <div class="paso"><div class="paso-n">1</div><div class="paso-ico">📞</div><h3>Nos contactas</h3><p>Llama o escribe por WhatsApp. Te orientamos y estudiamos tu caso sin ningún compromiso.</p></div>
+      <div class="paso"><div class="paso-n">2</div><div class="paso-ico">🔍</div><h3>Visita y diagnóstico</h3><p>Un técnico visita tu domicilio o comunidad y elabora un presupuesto detallado y cerrado.</p></div>
+      <div class="paso"><div class="paso-n">3</div><div class="paso-ico">✅</div><h3>Apruebas el presupuesto</h3><p>Revisas sin prisas. Tú decides cuándo empezamos. Sin obligación si no te convence.</p></div>
+      <div class="paso"><div class="paso-n">4</div><div class="paso-ico">🏆</div><h3>Trabajo impecable</h3><p>Ejecutamos con los mejores materiales, limpieza total y garantía incluida en todo el trabajo.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- VENTAJAS -->
+<section class="sec">
+  <div class="w">
+    <div class="sh">
+      <div class="stag">¿Por qué elegirnos?</div>
+      <h2 class="stit">25 años de diferencia<br/>con el resto</h2>
+    </div>
+    <div class="vgrid">
+      <div class="vcard"><div class="vico">📅</div><div><h4>Desde 1998 en Madrid</h4><p>25 años de experiencia respaldan cada trabajo. No somos nuevos — somos los de confianza.</p></div></div>
+      <div class="vcard"><div class="vico">💰</div><div><h4>Presupuesto gratuito</h4><p>Visitamos y presupuestamos sin coste. Precio cerrado antes de empezar, sin sorpresas al terminar.</p></div></div>
+      <div class="vcard"><div class="vico">✅</div><div><h4>Garantía en todo</h4><p>Materiales y mano de obra cubiertos. Si algo no está bien, volvemos y lo solucionamos.</p></div></div>
+      <div class="vcard"><div class="vico">🏢</div><div><h4>Especialistas en comunidades</h4><p>Más de 200 obras en comunidades de vecinos. Los referentes en renovación de ascendentes en Madrid.</p></div></div>
+      <div class="vcard"><div class="vico">🧹</div><div><h4>Trabajamos limpio</h4><p>Protegemos tu espacio y lo dejamos mejor de como lo encontramos. Siempre.</p></div></div>
+      <div class="vcard"><div class="vico">🔒</div><div><h4>Precio cerrado</h4><p>Lo que acordamos es lo que pagas. Sin costes extras ni letra pequeña.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- VALORES -->
+<section class="sec valores">
+  <div class="w">
+    <div class="sh c">
+      <div class="stag" style="background:rgba(255,255,255,.12);color:rgba(255,255,255,.85)">Nuestros valores</div>
+      <h2 class="stit" style="color:#fff">Lo que nos define<br/>desde 1998</h2>
+    </div>
+    <div class="valgrid">
+      <div class="valcard"><div class="valcard-ico">🤝</div><h3>Compromiso</h3><p>Cumplimos lo que prometemos. 25 años haciéndolo bien son la mejor garantía que podemos darte.</p></div>
+      <div class="valcard"><div class="valcard-ico">🏅</div><h3>Calidad</h3><p>Solo materiales de primera. Si no es duradero, no lo usamos. Sin atajos ni soluciones parciales.</p></div>
+      <div class="valcard"><div class="valcard-ico">💬</div><h3>Transparencia</h3><p>Presupuesto cerrado antes de empezar. Sin modificaciones sorpresa ni costes ocultos al terminar.</p></div>
+      <div class="valcard"><div class="valcard-ico">👨‍👩‍👧</div><h3>Empresa familiar</h3><p>Con alma de barrio madrileño. Tratamos tu casa como si fuera la nuestra. Siempre.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section class="sec" style="background:var(--gr)">
+  <div class="w">
+    <div class="sh c">
+      <div class="stag">Nuestros trabajos</div>
+      <h2 class="stit">Algunos de nuestros trabajos<br/>realizados en Madrid</h2>
+      <p class="ssub">Instalaciones, reformas, renovación de comunidades e impermeabilizaciones con resultados impecables.</p>
+    </div>
+    <div class="ggrid">
+      <div class="gitem">
+        <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80&auto=format&fit=crop" alt="Fontanero trabajando" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#0f2f8a,#1a4fd6)';this.remove()"/>
+      </div>
+      <div class="gitem">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&auto=format&fit=crop" alt="Instalación tuberías" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#c2410c,#f97316)';this.remove()"/>
+      </div>
+      <div class="gitem">
+        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80&auto=format&fit=crop" alt="Reforma baño" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#065f46,#059669)';this.remove()"/>
+      </div>
+      <div class="gitem">
+        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80&auto=format&fit=crop" alt="Baño moderno" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#334155,#475569)';this.remove()"/>
+      </div>
+      <div class="gitem">
+        <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80&auto=format&fit=crop" alt="Caldera instalación" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#0f2f8a,#1a4fd6)';this.remove()"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESPECIALIDAD COMUNIDADES -->
+<section class="comunidades" id="comunidades">
+  <div class="com-inner">
+    <div>
+      <div class="stag" style="background:rgba(255,255,255,.12);color:rgba(255,255,255,.85)">Especialidad</div>
+      <h2 class="stit" style="color:#fff;margin-bottom:20px">Líderes en renovación<br/>de comunidades en Madrid</h2>
+      <div class="com-badge-big">200+</div>
+      <div class="com-lbl">Obras en comunidades de vecinos realizadas en Madrid</div>
+      <div class="com-list">
+        <div class="com-item">Renovación completa de tuberías ascendentes y bajadas</div>
+        <div class="com-item">Trabajos verticales en altura con equipos certificados</div>
+        <div class="com-item">Coordinación directa con administradores de fincas</div>
+        <div class="com-item">Presupuesto detallado para junta de propietarios</div>
+        <div class="com-item">Mínimas molestias para los residentes durante la obra</div>
+        <div class="com-item">Garantía completa en materiales y mano de obra</div>
+      </div>
+    </div>
+    <div class="com-img">
+      <img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=800&q=80&auto=format&fit=crop" alt="Obra comunidad Madrid" loading="lazy" onerror="this.parentElement.style.background='rgba(255,255,255,.1)';this.remove()"/>
+    </div>
+  </div>
+</section>
+
+<!-- RESEÑAS -->
+<section class="sec">
+  <div class="w">
+    <div class="sh c">
+      <div class="stag">Opiniones de clientes</div>
+      <h2 class="stit">Lo que dicen quienes<br/>ya confían en nosotros</h2>
+    </div>
+    <div class="gband">
+      <div style="font-size:1.5rem;font-weight:900;color:#4285f4">G</div>
+      <div><div class="g-sc">4.8</div><div class="g-st">★★★★★</div><div class="g-mt">Reseñas verificadas en Google · Madrid</div></div>
+    </div>
+    <div class="rgrid">
+      <div class="rcard"><div class="stars">★★★★★</div><p class="rtxt">"Llevamos años contando con Fontmadrid para nuestra comunidad. Hicieron la renovación completa de las tuberías y el resultado fue impecable. Muy profesionales y trabajaron limpio."</p><div class="rautor"><div class="ravatar">M</div><div><div class="rname">María García</div><div class="rmeta">Presidenta de comunidad · Madrid</div></div></div></div>
+      <div class="rcard"><div class="stars">★★★★★</div><p class="rtxt">"Llamé para una reparación de calefacción y quedé encantado. Vinieron el mismo día, diagnosticaron el problema rápido y el precio fue muy razonable. Totalmente recomendables."</p><div class="rautor"><div class="ravatar">J</div><div><div class="rname">Javier Moreno</div><div class="rmeta">Cliente particular · Fuencarral</div></div></div></div>
+      <div class="rcard"><div class="stars">★★★★★</div><p class="rtxt">"Me hicieron el cambio de bañera por ducha en un día. Trabajo excelente, nada de suciedad y al precio acordado. Ya les he recomendado a varios vecinos. Empresa de toda confianza."</p><div class="rautor"><div class="ravatar">A</div><div><div class="rname">Ana Sánchez</div><div class="rmeta">Clienta · Madrid</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" style="background:var(--gr)" id="faq">
+  <div class="w">
+    <div class="sh c"><div class="stag">Preguntas frecuentes</div><h2 class="stit">Lo que más nos preguntan</h2></div>
+    <div class="fgrid">
+      <div class="fitem"><div class="fq" onclick="toggleFaq(this)">¿Dais presupuesto antes de empezar?</div><div class="fa">Siempre. Visitamos tu domicilio o comunidad, evaluamos el trabajo y te entregamos un presupuesto detallado y cerrado sin coste. Tú decides si continuamos.</div></div>
+      <div class="fitem"><div class="fq" onclick="toggleFaq(this)">¿Tenéis garantía en los trabajos?</div><div class="fa">Sí, garantía completa en materiales y mano de obra. Si algo no está bien, volvemos y lo solucionamos sin coste adicional.</div></div>
+      <div class="fitem"><div class="fq" onclick="toggleFaq(this)">¿Trabajáis con comunidades de vecinos?</div><div class="fa">Somos especialistas. Hemos realizado más de 200 obras de renovación en comunidades de Madrid. Coordinamos directamente con el administrador de fincas.</div></div>
+      <div class="fitem"><div class="fq" onclick="toggleFaq(this)">¿Cuánto tiempo lleváis en el sector?</div><div class="fa">Fundamos Fontmadrid en 1998. Llevamos más de 25 años trabajando en Madrid, lo que nos convierte en uno de los equipos con mayor experiencia de la zona.</div></div>
+      <div class="fitem"><div class="fq" onclick="toggleFaq(this)">¿Qué zonas de Madrid cubrís?</div><div class="fa">Trabajamos en toda Madrid. Tenemos nuestra base en Fuencarral-El Pardo pero atendemos proyectos en todos los distritos y municipios del área metropolitana.</div></div>
+      <div class="fitem"><div class="fq" onclick="toggleFaq(this)">¿Hacéis impermeabilizaciones?</div><div class="fa">Sí, es uno de nuestros servicios especializados. Impermeabilizamos terrazas, cubiertas y zonas húmedas con los mejores materiales del mercado.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ZONAS + MAPA -->
+<section class="sec" id="zonas">
+  <div class="w">
+    <div class="zonas-grid">
+      <div>
+        <div class="stag">Cobertura</div>
+        <h2 class="stit">Trabajamos en<br/>toda Madrid</h2>
+        <p class="ssub">Desde nuestra sede en Fuencarral atendemos proyectos en todos los distritos de Madrid y municipios del área metropolitana.</p>
+        <div class="ztags">
+          <span class="ztag">Fuencarral-El Pardo</span><span class="ztag">Hortaleza</span>
+          <span class="ztag">Chamartín</span><span class="ztag">Tetuán</span>
+          <span class="ztag">Moncloa</span><span class="ztag">Madrid Centro</span>
+          <span class="ztag">Chamberí</span><span class="ztag">Salamanca</span>
+          <span class="ztag">Alcobendas</span><span class="ztag">Las Rozas</span>
+          <span class="ztag">Pozuelo</span><span class="ztag">Majadahonda</span>
+        </div>
+      </div>
+      <div class="mapa">
+        <iframe src="https://maps.google.com/maps?q=40.4754968,-3.7137663&z=15&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="sec" style="background:var(--gr)">
+  <div class="w">
+    <div class="sh">
+      <div class="stag">Consejos y blog</div>
+      <h2 class="stit">Consejos de nuestros<br/>expertos fontaneros</h2>
+    </div>
+    <div class="bgrid">
+      <div class="bcard">
+        <img class="bcard-img" src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=600&q=80&auto=format&fit=crop" alt="Comunidades" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#0f2f8a,#1a4fd6)';this.removeAttribute('src')"/>
+        <div class="bcard-b"><span class="btag">Comunidades</span><h3>Cuándo renovar las tuberías de tu comunidad</h3><p>Señales que indican que las tuberías de tu edificio necesitan una renovación urgente.</p><div class="bcard-meta">📅 Consejos del equipo Fontmadrid</div></div>
+      </div>
+      <div class="bcard">
+        <img class="bcard-img" src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=600&q=80&auto=format&fit=crop" alt="Impermeabilización" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#065f46,#059669)';this.removeAttribute('src')"/>
+        <div class="bcard-b"><span class="btag">Impermeabilización</span><h3>Por qué impermeabilizar la terraza antes del otoño</h3><p>Las lluvias de otoño son el principal enemigo de las terrazas sin tratamiento adecuado.</p><div class="bcard-meta">📅 Consejos del equipo Fontmadrid</div></div>
+      </div>
+      <div class="bcard">
+        <img class="bcard-img" src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80&auto=format&fit=crop" alt="Calderas" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#c2410c,#f97316)';this.removeAttribute('src')"/>
+        <div class="bcard-b"><span class="btag">Calefacción</span><h3>Mantenimiento de caldera: lo que debes saber cada año</h3><p>La revisión anual es obligatoria. Qué incluye y cómo solicitarla a tiempo.</p><div class="bcard-meta">📅 Consejos del equipo Fontmadrid</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<div class="partners">
+  <div class="w">
+    <p class="pt-t">Certificados y asociados a</p>
+    <div class="pt-l">
+      <div class="pt-logo">GAS NATURAL</div>
+      <div class="pt-logo">PLAN RENOVE</div>
+      <div class="pt-logo">COM. DE MADRID</div>
+      <div class="pt-logo">TÉCNICOS CERT.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA FINAL -->
+<section class="cta">
+  <div class="cta-in w">
+    <h2>¿Necesitas un fontanero<br/>profesional en Madrid?</h2>
+    <p>Pídenos presupuesto sin compromiso. 25 años de experiencia al servicio de tu hogar y comunidad.</p>
+    <div class="cta-btns">
+      <a href="tel:917405265" class="cta-tel">📞 91 740 52 65</a>
+      <a href="https://wa.me/34655561969" class="cta-wa2" target="_blank">
+        <svg width="22" height="22" viewBox="0 0 32 32" fill="white"><path d="M16 3C9.373 3 4 8.373 4 15c0 2.385.67 4.61 1.832 6.5L4 29l7.75-1.813A12.94 12.94 0 0016 28c6.627 0 12-5.373 12-12S22.627 3 16 3zm5.98 16.737c-.328-.164-1.94-.957-2.24-1.065-.3-.11-.518-.164-.737.163-.218.328-.846 1.065-1.038 1.284-.19.218-.382.245-.71.082-.328-.164-1.386-.51-2.64-1.627-.977-.87-1.635-1.942-1.827-2.27-.19-.328-.02-.505.144-.668.147-.147.328-.382.492-.573.164-.19.218-.328.328-.546.11-.218.055-.41-.027-.573-.082-.164-.737-1.776-1.01-2.432-.265-.637-.535-.55-.737-.56l-.628-.01c-.218 0-.573.082-.873.41-.3.328-1.146 1.12-1.146 2.73s1.174 3.165 1.338 3.384c.164.218 2.31 3.53 5.6 4.95.782.338 1.393.54 1.868.69.785.25 1.5.215 2.065.13.63-.094 1.94-.793 2.213-1.56.274-.764.274-1.42.192-1.56-.082-.137-.3-.22-.628-.383z"/></svg>
+        WhatsApp — 655 56 19 69
+      </a>
+    </div>
+    <p class="cta-note">✓ Presupuesto gratis · ✓ Sin compromiso · ✓ +25 años de experiencia · ✓ Garantía total</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fg2">
+    <div class="fb">
+      <h3>FONTMADRID</h3>
+      <p>Tu empresa de fontanería de confianza en Madrid desde 1998. Más de 25 años al servicio de hogares y comunidades.</p>
+      <div class="fsoc">
+        <a href="#" target="_blank">f</a>
+        <a href="#" target="_blank">ig</a>
+        <a href="https://wa.me/34655561969" target="_blank">wa</a>
+      </div>
+    </div>
+    <div class="fcol">
+      <h4>Contacto</h4>
+      <a href="tel:917405265">📞 91 740 52 65</a>
+      <a href="https://wa.me/34655561969">💬 655 56 19 69</a>
+      <a href="mailto:info@fontmadrid.es">✉️ info@fontmadrid.es</a>
+      <p>📍 C/ Sarria, 38, Madrid</p>
+    </div>
+    <div class="fcol">
+      <h4>Servicios</h4>
+      <p>Fontanería general</p>
+      <p>Calefacción y calderas</p>
+      <p>Desatascos domésticos</p>
+      <p>Impermeabilizaciones</p>
+      <p>Reformas de baños</p>
+      <p>Comunidades de vecinos</p>
+    </div>
+    <div class="fcol">
+      <h4>Horario</h4>
+      <p>Lun – Jue: 8h – 18h</p>
+      <p>Viernes: 8h – 15h</p>
+      <br/>
+      <h4>Zonas</h4>
+      <p>Fuencarral · Hortaleza · Chamartín</p>
+      <p>Tetuán · Moncloa · Centro</p>
+    </div>
+  </div>
+  <div class="fbot">
+    <p>© 2025 Fontmadrid S.L. · Fontanero profesional en Madrid · Desde 1998</p>
+    <div class="fleg"><a href="#">Aviso legal</a><a href="#">Privacidad</a><a href="#">Cookies</a></div>
+  </div>
+</footer>
+
+<!-- FLOTANTES -->
+<div class="float">
+  <a href="https://wa.me/34655561969" class="fbtn fw" target="_blank" rel="noopener" title="WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 32 32" fill="white"><path d="M16 3C9.373 3 4 8.373 4 15c0 2.385.67 4.61 1.832 6.5L4 29l7.75-1.813A12.94 12.94 0 0016 28c6.627 0 12-5.373 12-12S22.627 3 16 3zm5.98 16.737c-.328-.164-1.94-.957-2.24-1.065-.3-.11-.518-.164-.737.163-.218.328-.846 1.065-1.038 1.284-.19.218-.382.245-.71.082-.328-.164-1.386-.51-2.64-1.627-.977-.87-1.635-1.942-1.827-2.27-.19-.328-.02-.505.144-.668.147-.147.328-.382.492-.573.164-.19.218-.328.328-.546.11-.218.055-.41-.027-.573-.082-.164-.737-1.776-1.01-2.432-.265-.637-.535-.55-.737-.56l-.628-.01c-.218 0-.573.082-.873.41-.3.328-1.146 1.12-1.146 2.73s1.174 3.165 1.338 3.384c.164.218 2.31 3.53 5.6 4.95.782.338 1.393.54 1.868.69.785.25 1.5.215 2.065.13.63-.094 1.94-.793 2.213-1.56.274-.764.274-1.42.192-1.56-.082-.137-.3-.22-.628-.383z"/></svg>
+  </a>
+  <a href="tel:917405265" class="fbtn ft" title="Llamar">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+  </a>
+</div>
+
+<script>
+  function openTab(e,id){document.querySelectorAll('.tpanel').forEach(p=>p.classList.remove('on'));document.querySelectorAll('.tbtn').forEach(b=>b.classList.remove('on'));document.getElementById(id).classList.add('on');e.currentTarget.classList.add('on')}
+  function toggleFaq(el){const item=el.parentElement;const isOpen=item.classList.contains('open');document.querySelectorAll('.fitem.open').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open')}
+</script>
+</body>
+</html>

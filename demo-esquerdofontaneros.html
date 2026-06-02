@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="referrer" content="no-referrer"/>
+  <title>Esquerdo Fontaneros – Fontaneros de confianza en Retiro y Salamanca &middot; 20+ anos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--az:#0f2f8a;--az2:#1a4fd6;--na:#f97316;--na2:#ea6c0a;--bl:#fff;--gr:#f8fafc;--gt:#64748b;--gb:#e2e8f0;--ve:#25d366}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;color:#1e293b;background:#fff;line-height:1.6}
+    h1,h2,h3,h4{font-family:'Outfit',sans-serif}
+    a{text-decoration:none;color:inherit}
+    .topbar{background:#07194a;color:rgba(255,255,255,.8);font-size:.82rem;padding:8px 0}
+    .tw{max-width:1140px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px}
+    .tl{display:flex;gap:18px}.tl span{display:flex;align-items:center;gap:5px}
+    .ttel{font-weight:700;font-size:.93rem;color:var(--na);white-space:nowrap}.ttel:hover{text-decoration:underline}
+    @media(max-width:640px){.tl{display:none}.tw{justify-content:center}}
+    header{position:sticky;top:0;z-index:900;background:#fff;border-bottom:2px solid var(--gb);box-shadow:0 2px 18px rgba(15,47,138,.09)}
+    .hdr{max-width:1140px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{display:flex;align-items:center;gap:13px}
+    .logo-ico{width:48px;height:48px;background:linear-gradient(135deg,var(--az),var(--az2));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
+    .logo-name{font-family:'Outfit',sans-serif;font-weight:900;font-size:1.2rem;color:var(--az);line-height:1.2;letter-spacing:.02em}
+    .logo-sub{font-size:.71rem;color:var(--gt);font-weight:500}
+    nav{display:flex;gap:2px}
+    nav a{font-size:.84rem;font-weight:600;color:#475569;padding:7px 12px;border-radius:8px;transition:background .15s,color .15s;white-space:nowrap}
+    nav a:hover{background:var(--gr);color:var(--az)}
+    .hdr-cta{display:inline-flex;align-items:center;gap:8px;background:var(--na);color:#fff;font-family:'Outfit',sans-serif;font-weight:700;font-size:.92rem;padding:11px 22px;border-radius:50px;transition:background .2s,transform .15s;white-space:nowrap;flex-shrink:0}
+    .hdr-cta:hover{background:var(--na2);transform:scale(1.03)}
+    .hero{position:relative;min-height:680px;display:flex;align-items:center;overflow:hidden;color:#fff}
+    .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center}
+    .hero-ov{position:absolute;inset:0;background:linear-gradient(120deg,rgba(10,28,90,.94) 0%,rgba(15,47,138,.85) 55%,rgba(10,28,90,.7) 100%)}
+    .hero-inner{position:relative;z-index:2;max-width:1140px;margin:0 auto;padding:80px 24px;display:grid;grid-template-columns:1fr 390px;gap:52px;align-items:center;width:100%}
+    .hero-badge{display:inline-block;background:rgba(249,115,22,.18);border:1px solid rgba(249,115,22,.5);color:#fda96e;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:50px;margin-bottom:18px}
+    .hero h1{font-size:clamp(1.9rem,4vw,3rem);font-weight:900;line-height:1.12;margin-bottom:16px}
+    .hero h1 em{color:var(--na);font-style:normal}
+    .hero-desc{font-size:1.02rem;color:rgba(255,255,255,.83);margin-bottom:28px;max-width:490px}
+    .hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px}
+    .btn-pulse{display:inline-flex;align-items:center;gap:9px;background:var(--na);color:#fff;font-family:'Outfit',sans-serif;font-weight:800;font-size:1.05rem;padding:16px 32px;border-radius:50px;position:relative;transition:background .2s,transform .15s}
+    .btn-pulse:hover{background:var(--na2);transform:scale(1.04)}
+    .btn-pulse::before{content:'';position:absolute;inset:-4px;border-radius:50px;border:3px solid var(--na);animation:pulse 2s ease-out infinite}
+    @keyframes pulse{0%{transform:scale(1);opacity:.7}70%{transform:scale(1.18);opacity:0}100%{transform:scale(1.18);opacity:0}}
+    .btn-wa{display:inline-flex;align-items:center;gap:9px;background:var(--ve);color:#fff;font-family:'Outfit',sans-serif;font-weight:700;font-size:1rem;padding:14px 26px;border-radius:50px;transition:background .2s}
+    .btn-wa:hover{background:#1db954}
+    .hero-stats{display:flex;gap:28px;flex-wrap:wrap}
+    .hs-n{font-family:'Outfit',sans-serif;font-weight:900;font-size:2rem;color:var(--na);line-height:1}
+    .hs-l{font-size:.73rem;color:rgba(255,255,255,.65);text-transform:uppercase;letter-spacing:.05em;margin-top:3px}
+    .hero-card{background:#fff;border-radius:20px;padding:28px 24px;box-shadow:0 24px 64px rgba(0,0,0,.35)}
+    .hero-card h3{font-size:1.12rem;font-weight:800;color:var(--az);margin-bottom:5px}
+    .hero-card>p{font-size:.83rem;color:var(--gt);margin-bottom:16px}
+    .fg{margin-bottom:11px}
+    .fg label{display:block;font-size:.77rem;font-weight:600;color:#475569;margin-bottom:4px}
+    .fg input,.fg select,.fg textarea{width:100%;padding:10px 13px;border:1.5px solid var(--gb);border-radius:9px;font-family:'Inter',sans-serif;font-size:.87rem;color:#1e293b;transition:border-color .2s;background:#fff}
+    .fg input:focus,.fg select:focus,.fg textarea:focus{outline:none;border-color:var(--az2)}
+    .fg textarea{resize:vertical;min-height:68px}
+    .btn-send{width:100%;padding:13px;background:var(--na);color:#fff;font-family:'Outfit',sans-serif;font-weight:800;font-size:.98rem;border:none;border-radius:10px;cursor:pointer;transition:background .2s}
+    .btn-send:hover{background:var(--na2)}
+    .form-note{font-size:.72rem;color:var(--gt);text-align:center;margin-top:8px}
+    .sec{padding:76px 24px}.w{max-width:1140px;margin:0 auto}
+    .stag{display:inline-block;background:rgba(26,79,214,.09);color:var(--az2);font-size:.73rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 13px;border-radius:50px;margin-bottom:11px}
+    .stit{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;color:var(--az);margin-bottom:11px;line-height:1.2}
+    .ssub{color:var(--gt);font-size:.95rem;max-width:540px}
+    .sh{margin-bottom:42px}.sh.c{text-align:center}.sh.c .ssub{margin:0 auto}
+    .sband{background:var(--az);padding:44px 24px}
+    .sbg{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+    .sb-n{font-family:'Outfit',sans-serif;font-weight:900;font-size:2.6rem;color:var(--na)}
+    .sb-l{font-size:.82rem;color:rgba(255,255,255,.68);text-transform:uppercase;letter-spacing:.05em;margin-top:4px}
+    .tabs{display:flex;gap:8px;margin-bottom:30px;flex-wrap:wrap}
+    .tbtn{padding:9px 20px;border-radius:50px;border:2px solid var(--gb);font-family:'Outfit',sans-serif;font-weight:700;font-size:.86rem;background:#fff;color:#475569;cursor:pointer;transition:all .2s}
+    .tbtn.on{background:var(--az);color:#fff;border-color:var(--az)}
+    .tbtn:hover:not(.on){border-color:var(--az2);color:var(--az2)}
+    .tpanel{display:none}.tpanel.on{display:block}
+    .sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
+    .scard{background:#fff;border-radius:16px;border:1px solid var(--gb);overflow:hidden;transition:box-shadow .25s,transform .2s}
+    .scard:hover{box-shadow:0 10px 36px rgba(15,47,138,.13);transform:translateY(-5px)}
+    .scard-img{width:100%;height:175px;object-fit:cover;display:block;background:linear-gradient(135deg,var(--az),var(--az2))}
+    .scard-body{padding:22px}
+    .scard-ico{font-size:1.6rem;margin-bottom:9px;display:flex;align-items:center;justify-content:center;width:44px;height:44px;background:rgba(15,47,138,.08);border-radius:10px;line-height:1}
+    .scard h3{font-size:1rem;font-weight:700;color:var(--az);margin-bottom:5px}
+    .scard p{font-size:.84rem;color:var(--gt);line-height:1.55}
+    .scard-lnk{display:inline-flex;align-items:center;gap:4px;font-size:.8rem;font-weight:700;color:var(--az2);margin-top:10px}
+    .sobre-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+    .sobre-wrap{border-radius:20px;overflow:hidden;position:relative;box-shadow:0 20px 56px rgba(15,47,138,.15)}
+    .sobre-wrap img{width:100%;height:460px;object-fit:cover;display:block;background:linear-gradient(135deg,var(--az),var(--az2))}
+    .sobre-badge{position:absolute;bottom:20px;left:20px;background:var(--na);color:#fff;font-family:'Outfit',sans-serif;font-weight:800;font-size:.85rem;padding:10px 16px;border-radius:10px}
+    .checks{display:flex;flex-direction:column;gap:11px;margin-top:20px}
+    .chk{display:flex;gap:10px;align-items:flex-start;font-size:.91rem}
+    .chk-i{color:var(--na);font-weight:700;flex-shrink:0;margin-top:2px}
+    .mini-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px;padding-top:22px;border-top:1px solid var(--gb)}
+    .ms-n{font-family:'Outfit',sans-serif;font-weight:900;font-size:1.8rem;color:var(--az);line-height:1}
+    .ms-l{font-size:.72rem;color:var(--gt);text-transform:uppercase;letter-spacing:.05em;margin-top:4px}
+    .pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:20px}
+    .paso{text-align:center;background:#fff;border-radius:16px;border:1px solid var(--gb);padding:30px 20px}
+    .paso-n{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--az),var(--az2));color:#fff;font-family:'Outfit',sans-serif;font-weight:900;font-size:1.4rem;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;box-shadow:0 4px 16px rgba(26,79,214,.28)}
+    .paso-ico{font-size:1.8rem;margin-bottom:9px}
+    .paso h3{font-size:.98rem;font-weight:700;color:var(--az);margin-bottom:6px}
+    .paso p{font-size:.83rem;color:var(--gt)}
+    .vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+    .vcard{background:#fff;border-radius:14px;padding:22px 20px;border:1px solid var(--gb);display:flex;gap:14px;align-items:flex-start}
+    .vico{width:44px;height:44px;border-radius:11px;background:rgba(15,47,138,.08);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+    .vcard h4{font-size:.95rem;font-weight:700;color:var(--az);margin-bottom:4px}
+    .vcard p{font-size:.83rem;color:var(--gt);line-height:1.5}
+    .valores{background:var(--az)}
+    .valgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+    .valcard{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:26px 22px;color:#fff}
+    .valcard-ico{font-size:1.9rem;margin-bottom:11px}
+    .valcard h3{font-size:1rem;font-weight:800;margin-bottom:6px}
+    .valcard p{font-size:.84rem;color:rgba(255,255,255,.72);line-height:1.55}
+    .ggrid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:230px 230px;gap:14px}
+    .gitem{border-radius:14px;overflow:hidden;cursor:pointer;background:linear-gradient(135deg,var(--az),var(--az2))}
+    .gitem img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+    .gitem:hover img{transform:scale(1.06)}
+    .gitem:first-child{grid-row:span 2}
+    .comunidades{background:linear-gradient(135deg,var(--az) 0%,#0d2370 100%);color:#fff;padding:76px 24px}
+    .com-inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;max-width:1140px;margin:0 auto}
+    .com-img{border-radius:18px;overflow:hidden;box-shadow:0 20px 56px rgba(0,0,0,.3);background:rgba(255,255,255,.1)}
+    .com-img img{width:100%;height:420px;object-fit:cover;display:block}
+    .com-badge-big{font-family:'Outfit',sans-serif;font-weight:900;font-size:3.2rem;color:var(--na);line-height:1;margin-bottom:4px}
+    .com-lbl{font-size:.8rem;color:rgba(255,255,255,.62);text-transform:uppercase;letter-spacing:.06em;margin-bottom:24px}
+    .com-list{display:flex;flex-direction:column;gap:12px}
+    .com-item{display:flex;gap:12px;align-items:flex-start;font-size:.92rem;color:rgba(255,255,255,.85)}
+    .com-item::before{content:'&#10004;';color:var(--na);font-weight:700;flex-shrink:0;margin-top:2px}
+    .rgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:20px}
+    .rcard{background:#fff;border:1px solid var(--gb);border-radius:16px;padding:24px;position:relative}
+    .rcard::before{content:'"';position:absolute;top:12px;right:20px;font-family:'Outfit',sans-serif;font-size:5rem;color:rgba(26,79,214,.07);line-height:1}
+    .stars{color:#f59e0b;font-size:1rem;letter-spacing:2px;margin-bottom:10px}
+    .rtxt{font-size:.9rem;color:#334155;line-height:1.65;margin-bottom:16px;font-style:italic}
+    .rautor{display:flex;align-items:center;gap:10px}
+    .ravatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--az),var(--az2));display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Outfit',sans-serif;font-weight:700;font-size:.95rem;flex-shrink:0}
+    .rname{font-size:.86rem;font-weight:600;color:var(--az)}.rmeta{font-size:.74rem;color:var(--gt)}
+    .gband{display:inline-flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--gb);border-radius:14px;padding:14px 20px;margin-bottom:28px}
+    .g-sc{font-family:'Outfit',sans-serif;font-weight:900;font-size:1.9rem;color:var(--az)}
+    .g-st{color:#f59e0b;font-size:1rem}.g-mt{font-size:.76rem;color:var(--gt)}
+    .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .fitem{background:#fff;border:1px solid var(--gb);border-radius:13px;overflow:hidden}
+    .fq{padding:15px 18px;font-family:'Outfit',sans-serif;font-weight:700;font-size:.91rem;color:var(--az);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;user-select:none}
+    .fq::after{content:'+';font-size:1.3rem;color:var(--na);flex-shrink:0;transition:transform .2s}
+    .fitem.open .fq::after{transform:rotate(45deg)}
+    .fa{display:none;padding:0 18px 14px;font-size:.85rem;color:var(--gt);line-height:1.65;border-top:1px solid var(--gb);padding-top:11px}
+    .fitem.open .fa{display:block}
+    .zonas-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+    .ztags{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+    .ztag{background:rgba(15,47,138,.07);color:var(--az);font-size:.82rem;font-weight:600;padding:6px 15px;border-radius:50px;border:1px solid rgba(15,47,138,.14)}
+    .mapa{border-radius:18px;overflow:hidden;box-shadow:0 10px 40px rgba(15,47,138,.12);height:360px}
+    .mapa iframe{width:100%;height:100%;border:none}
+    .bgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
+    .bcard{background:#fff;border-radius:16px;border:1px solid var(--gb);overflow:hidden;transition:box-shadow .25s,transform .2s}
+    .bcard:hover{box-shadow:0 10px 32px rgba(15,47,138,.12);transform:translateY(-4px)}
+    .bcard-img{width:100%;height:185px;object-fit:cover;display:block;background:linear-gradient(135deg,var(--az),var(--az2))}
+    .bcard-b{padding:20px}
+    .btag{display:inline-block;background:rgba(249,115,22,.1);color:var(--na);font-size:.69rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;padding:3px 10px;border-radius:50px;margin-bottom:8px}
+    .bcard h3{font-size:.96rem;font-weight:700;color:var(--az);margin-bottom:6px;line-height:1.3}
+    .bcard p{font-size:.82rem;color:var(--gt);line-height:1.5}.bcard-meta{font-size:.73rem;color:#94a3b8;margin-top:11px}
+    .partners{padding:32px 24px;border-top:1px solid var(--gb)}
+    .pt-t{text-align:center;font-size:.76rem;font-weight:600;color:#94a3b8;text-transform:uppercase;letter-spacing:.1em;margin-bottom:20px}
+    .pt-l{display:flex;justify-content:center;align-items:center;gap:24px;flex-wrap:wrap}
+    .pt-logo{background:var(--gr);border:1px solid var(--gb);border-radius:10px;padding:11px 24px;font-family:'Outfit',sans-serif;font-weight:800;font-size:.85rem;color:#94a3b8;letter-spacing:.04em}
+    .cta{background:linear-gradient(135deg,var(--az) 0%,#0a1c5a 100%);color:#fff;text-align:center;padding:90px 24px;position:relative;overflow:hidden}
+    .cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 100%,rgba(249,115,22,.18) 0%,transparent 70%)}
+    .cta-in{position:relative;z-index:1}
+    .cta h2{font-size:clamp(1.8rem,4vw,2.9rem);font-weight:900;margin-bottom:12px}
+    .cta p{color:rgba(255,255,255,.74);font-size:1rem;margin-bottom:32px}
+    .cta-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+    .cta-tel{display:inline-flex;align-items:center;gap:12px;background:var(--na);color:#fff;font-family:'Outfit',sans-serif;font-weight:900;font-size:clamp(1.2rem,3.5vw,1.8rem);padding:20px 42px;border-radius:50px;box-shadow:0 8px 40px rgba(249,115,22,.45);transition:background .2s,transform .15s}
+    .cta-tel:hover{background:var(--na2);transform:scale(1.04)}
+    .cta-wa2{display:inline-flex;align-items:center;gap:9px;background:var(--ve);color:#fff;font-family:'Outfit',sans-serif;font-weight:700;font-size:1.05rem;padding:20px 30px;border-radius:50px;transition:background .2s,transform .15s}
+    .cta-wa2:hover{background:#1db954;transform:scale(1.04)}
+    .cta-note{margin-top:20px;font-size:.81rem;color:rgba(255,255,255,.46)}
+    footer{background:#060e26;color:rgba(255,255,255,.65);padding:52px 24px 24px}
+    .fg2{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:38px}
+    .fb h3{font-family:'Outfit',sans-serif;font-size:1.2rem;font-weight:900;color:#fff;margin-bottom:10px}
+    .fb p{font-size:.84rem;line-height:1.65;max-width:240px}
+    .fsoc{display:flex;gap:8px;margin-top:14px}
+    .fsoc a{width:32px;height:32px;border-radius:7px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:700;transition:background .2s}
+    .fsoc a:hover{background:var(--na);color:#fff}
+    .fcol h4{font-family:'Outfit',sans-serif;font-size:.78rem;font-weight:700;color:var(--na);text-transform:uppercase;letter-spacing:.08em;margin-bottom:13px}
+    .fcol a,.fcol p{font-size:.83rem;line-height:1.9;display:block}.fcol a:hover{color:#fff}
+    .fbot{max-width:1140px;margin:32px auto 0;padding-top:18px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;font-size:.76rem}
+    .fleg{display:flex;gap:14px}.fleg a:hover{color:#fff}
+    .float{position:fixed;bottom:24px;right:24px;display:flex;flex-direction:column;gap:11px;z-index:999}
+    .fbtn{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(0,0,0,.24);transition:transform .2s}
+    .fbtn:hover{transform:scale(1.13)}.fw{background:var(--ve)}.ft{background:var(--na)}
+    @media(max-width:1024px){.hero-inner{grid-template-columns:1fr}.hero-card{max-width:460px}.fg2{grid-template-columns:1fr 1fr}}
+    @media(max-width:768px){.sobre-grid,.zonas-grid,.com-inner{grid-template-columns:1fr}.sobre-wrap img{height:300px}.com-img img{height:260px}.ggrid{grid-template-columns:repeat(2,1fr);grid-template-rows:auto}.gitem:first-child{grid-row:span 1}.fgrid{grid-template-columns:1fr}.sbg{grid-template-columns:repeat(2,1fr)}nav{display:none}}
+    @media(max-width:640px){.sec{padding:52px 16px}.hdr{padding:11px 16px}.hero-inner{padding:60px 20px}.ggrid{grid-template-columns:1fr}.fg2{grid-template-columns:1fr}.fbot{flex-direction:column;text-align:center}}
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="tw">
+    <div class="tl">
+      <span>&#128205; C/ Dr. Esquerdo, 159, 28007 Madrid</span>
+      <span>&#9993;&#65039; info@esquerdofontaneros.es</span>
+      <span>&#128336; Lun-Sab 9h-19h &middot; Dom cerrado</span>
+    </div>
+    <a href="tel:34919930751" class="ttel">&#128222; 919 930 751</a>
+  </div>
+</div>
+
+<header>
+  <div class="hdr">
+    <div class="logo">
+      <div class="logo-ico">&#128295;</div>
+      <div>
+        <div class="logo-name">ESQUERDO FONTANEROS</div>
+        <div class="logo-sub">20+ anos en Retiro y Salamanca &middot; Fontaneros de confianza</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#servicios">Servicios</a><a href="#nosotros">Nosotros</a>
+      <a href="#zonas">Zonas</a><a href="#faq">FAQ</a><a href="#contacto">Contacto</a>
+    </nav>
+    <a href="tel:34919930751" class="hdr-cta">&#128222; Llamar ahora</a>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1800&q=80&auto=format&fit=crop');filter:brightness(.25) saturate(.6)"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">&#11088; 4.8 en Google &middot; 20+ anos &middot; Fontaneros de confianza en Retiro</div>
+      <h1>Fontaneros de confianza<br/>en <em>Retiro y Salamanca</em></h1>
+      <p class="hero-desc">Mas de 20 anos ofreciendo soluciones rapidas y eficientes en fontaneria en la zona de Retiro, Salamanca e Ibiza. Servicio profesional, rapido y al mejor precio.</p>
+      <div class="hero-btns">
+        <a href="tel:34919930751" class="btn-pulse">&#128222; 919 930 751</a>
+        <a href="https://wa.me/34919930751" class="btn-wa" target="_blank">&#128172; WhatsApp</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="hs-n">20+</div><div class="hs-l">Anos exp.</div></div>
+        <div><div class="hs-n">800+</div><div class="hs-l">Clientes</div></div>
+        <div><div class="hs-n">en horas</div><div class="hs-l">Respuesta</div></div>
+        <div><div class="hs-n">4.8&#11088;</div><div class="hs-l">Google</div></div>
+      </div>
+    </div>
+    <div class="hero-card" id="contacto">
+      <h3>Solicita tu presupuesto gratis</h3>
+      <p>Sin compromiso. Respuesta en el dia.</p>
+      <div class="fg"><label>Nombre</label><input type="text" placeholder="Tu nombre y apellidos"/></div>
+      <div class="fg"><label>Telefono</label><input type="tel" placeholder="600 000 000"/></div>
+      <div class="fg"><label>Que necesitas?</label><select>
+        <option>Selecciona un servicio...</option>
+        <option>Instalacion de tuberias</option><option>Desatascos y limpieza</option>
+        <option>Mantenimiento preventivo</option><option>Calentadores y calefaccion</option>
+        <option>Fontaneria general</option><option>Reparaciones urgentes</option>
+        <option>Otro</option>
+      </select></div>
+      <div class="fg"><label>Describe el trabajo</label><textarea placeholder="Cuentanos que necesitas..."></textarea></div>
+      <button class="btn-send">Enviar solicitud &rarr;</button>
+      <p class="form-note">&#128274; Sin spam. Respuesta garantizada en el dia.</p>
+    </div>
+  </div>
+</section>
+
+<div class="sband">
+  <div class="sbg">
+    <div><div class="sb-n">20+</div><div class="sb-l">Anos de experiencia</div></div>
+    <div><div class="sb-n">800+</div><div class="sb-l">Clientes satisfechos</div></div>
+    <div><div class="sb-n">4.8&#9733;</div><div class="sb-l">Valoracion Google</div></div>
+    <div><div class="sb-n">en horas</div><div class="sb-l">Tiempo de respuesta</div></div>
+  </div>
+</div>
+
+<section class="sec" id="servicios" style="background:var(--gr)">
+  <div class="w">
+    <div class="sh">
+      <div class="stag">Nuestros servicios</div>
+      <h2 class="stit">20 anos resolviendo<br/>problemas de fontaneria en Retiro</h2>
+      <p class="ssub">Especialistas en la zona de Retiro y Salamanca. Servicio profesional, rapido y al mejor precio.</p>
+    </div>
+    <div class="tabs">
+      <button class="tbtn on" onclick="openTab(event,'hogar')">&#127968; Hogar</button>
+      <button class="tbtn" onclick="openTab(event,'calefaccion')">&#128293; Calefaccion</button>
+      <button class="tbtn" onclick="openTab(event,'mantenimiento')">&#128203; Mantenimiento</button>
+    </div>
+    <div class="tpanel on" id="hogar">
+      <div class="sgrid">
+        <div class="scard"><img class="scard-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&auto=format&fit=crop" alt="Tuberias" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#0f2f8a,#1a4fd6)';this.removeAttribute('src')"/><div class="scard-body"><span class="scard-ico">&#128295;</span><h3>Instalacion de tuberias</h3><p>Instalacion y sustitucion de tuberias con materiales de primera calidad y garantia completa.</p><span class="scard-lnk">Saber mas &rarr;</span></div></div>
+        <div class="scard"><img class="scard-img" src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80&auto=format&fit=crop" alt="Desatascos" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#065f46,#059669)';this.removeAttribute('src')"/><div class="scard-body"><span class="scard-ico">&#129392;</span><h3>Desatascos y limpieza</h3><p>Desobstruccion profesional de tuberias y desagues. Limpieza a presion cuando es necesario.</p><span class="scard-lnk">Saber mas &rarr;</span></div></div>
+        <div class="scard"><img class="scard-img" src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=600&q=80&auto=format&fit=crop" alt="Fontaneria" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#c2410c,#f97316)';this.removeAttribute('src')"/><div class="scard-body"><span class="scard-ico">&#128167;</span><h3>Fontaneria general</h3><p>Todo tipo de trabajos de fontaneria en Retiro y Salamanca. Presupuesto gratuito siempre.</p><span class="scard-lnk">Saber mas &rarr;</span></div></div>
+        <div class="scard"><img class="scard-img" src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=600&q=80&auto=format&fit=crop" alt="Reparaciones" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#0f2f8a,#1a4fd6)';this.removeAttribute('src')"/><div class="scard-body"><span class="scard-ico">&#128680;</span><h3>Reparaciones urgentes</h3><p>Atencion rapida para averias urgentes en horario de apertura. Respuesta en horas en nuestra zona.</p><span class="scard-lnk">Saber mas &rarr;</span></div></div>
+      </div>
+    </div>
+    <div class="tpanel" id="calefaccion">
+      <div class="sgrid">
+        <div class="scard"><img class="scard-img" src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80&auto=format&fit=crop" alt="Calderas" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#0f2f8a,#1a4fd6)';this.removeAttribute('src')"/><div class="scard-body"><span class="scard-ico">&#128293;</span><h3>Calentadores y calefaccion</h3><p>Instalacion, reparacion y mantenimiento de calentadores y sistemas de calefaccion. Todas las marcas.</p></div></div>
+        <div class="scard"><img class="scard-img" src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=600&q=80&auto=format&fit=crop" alt="Termos" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#c2410c,#f97316)';this.removeAttribute('src')"/><div class="scard-body"><span class="scard-ico">&#128167;</span><h3>Termos electricos</h3><p>Instalacion y reparacion de termos electricos y calderas murales. Eficiencia garantizada.</p></div></div>
+        <div class="scard"><img class="scard-img" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80&auto=format&fit=crop" alt="ACS" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#065f46,#059669)';this.removeAttribute('src')"/><div class="scard-body"><span class="scard-ico">&#128703;</span><h3>Agua caliente sanitaria</h3><p>Sistemas ACS eficientes para tu hogar en Retiro y Salamanca. Instalacion certificada.</p></div></div>
+      </div>
+    </div>
+    <div class="tpanel" id="mantenimiento">
+      <div class="sgrid">
+        <div class="scard"><img class="scard-img" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80&auto=format&fit=crop" alt="Mantenimiento" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#0f2f8a,#1a4fd6)';this.removeAttribute('src')"/><div class="scard-body"><span class="scard-ico">&#128203;</span><h3>Mantenimiento preventivo</h3><p>Revisiones periodicas para prevenir averias. Contratos anuales con precio especial para clientes.</p></div></div>
+        <div class="scard"><img class="scard-img" src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80&auto=format&fit=crop" alt="Inspeccion" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#c2410c,#f97316)';this.removeAttribute('src')"/><div class="scard-body"><span class="scard-ico">&#9989;</span><h3>Inspeccion de instalaciones</h3><p>Revision completa de la instalacion. Detectamos problemas antes de que ocurran.</p></div></div>
+        <div class="scard"><img class="scard-img" src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=600&q=80&auto=format&fit=crop" alt="Limpieza" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#065f46,#059669)';this.removeAttribute('src')"/><div class="scard-body"><span class="scard-ico">&#129531;</span><h3>Limpieza de tuberias</h3><p>Limpieza a presion de tuberias y bajantes. Alarga la vida de la instalacion y previene atascos.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="nosotros">
+  <div class="w">
+    <div class="sobre-grid">
+      <div class="sobre-wrap">
+        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=80&auto=format&fit=crop" alt="Esquerdo Fontaneros" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#0f2f8a,#1a4fd6)';this.removeAttribute('src')"/>
+        <div class="sobre-badge">&#11088; 4.8 &middot; Resenas verificadas en Google</div>
+      </div>
+      <div>
+        <div class="stag">Quienes somos</div>
+        <h2 class="stit">20+ anos en Retiro<br/>y Salamanca</h2>
+        <p style="color:var(--gt);margin-bottom:14px">Somos <strong>Esquerdo Fontaneros</strong>, fontaneros especializados con mas de 20 anos de experiencia en la zona de Retiro y Salamanca. Servicio profesional, rapido y al mejor precio.</p>
+        <p style="color:var(--gt);margin-bottom:20px">Conocemos perfectamente el parque de viviendas de estos barrios. Nuestros clientes llevan anos confiando en nosotros porque ofrecemos calidad, transparencia y precio justo.</p>
+        <div class="checks">
+          <div class="chk"><span class="chk-i">&#10004;</span><span><strong>20+ anos</strong> de experiencia en Retiro y Salamanca</span></div>
+          <div class="chk"><span class="chk-i">&#10004;</span><span><strong>Presupuesto gratuito</strong> sin compromiso</span></div>
+          <div class="chk"><span class="chk-i">&#10004;</span><span><strong>800+ clientes</strong> satisfechos en la zona</span></div>
+          <div class="chk"><span class="chk-i">&#10004;</span><span><strong>Especialistas locales</strong> que conocen cada edificio</span></div>
+          <div class="chk"><span class="chk-i">&#10004;</span><span><strong>Precio justo</strong> y trabajo garantizado</span></div>
+        </div>
+        <div class="mini-stats">
+          <div><div class="ms-n">800+</div><div class="ms-l">Clientes</div></div>
+          <div><div class="ms-n">20+</div><div class="ms-l">Anos</div></div>
+          <div><div class="ms-n">4.8</div><div class="ms-l">Google</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--gr)">
+  <div class="w">
+    <div class="sh c"><div class="stag">El proceso</div><h2 class="stit">Como trabajamos?</h2></div>
+    <div class="pgrid">
+      <div class="paso"><div class="paso-n">1</div><div class="paso-ico">&#128222;</div><h3>Nos contactas</h3><p>Llama o WhatsApp. Conocemos la zona y ya sabemos que necesitamos antes de llegar.</p></div>
+      <div class="paso"><div class="paso-n">2</div><div class="paso-ico">&#128269;</div><h3>Visita y diagnostico</h3><p>Un tecnico visita tu vivienda y elabora un presupuesto detallado y cerrado sin coste.</p></div>
+      <div class="paso"><div class="paso-n">3</div><div class="paso-ico">&#9989;</div><h3>Apruebas el presupuesto</h3><p>Revisas sin prisas. Tu decides cuando empezamos. Sin obligacion si no te convence.</p></div>
+      <div class="paso"><div class="paso-n">4</div><div class="paso-ico">&#127942;</div><h3>Trabajo garantizado</h3><p>Ejecutamos con los mejores materiales. Limpieza total y garantia completa incluida.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="w">
+    <div class="sh"><div class="stag">Por que elegirnos?</div><h2 class="stit">Los fontaneros de confianza<br/>de Retiro y Salamanca</h2></div>
+    <div class="vgrid">
+      <div class="vcard"><div class="vico">&#128205;</div><div><h4>Especialistas locales</h4><p>20 anos en Retiro y Salamanca. Conocemos cada edificio y llegamos antes porque estamos cerca.</p></div></div>
+      <div class="vcard"><div class="vico">&#128176;</div><div><h4>Presupuesto gratuito</h4><p>Visitamos y presupuestamos sin coste. Precio cerrado antes de empezar, sin sorpresas.</p></div></div>
+      <div class="vcard"><div class="vico">&#9989;</div><div><h4>Garantia completa</h4><p>Materiales y mano de obra garantizados. Si algo no esta bien, volvemos sin coste.</p></div></div>
+      <div class="vcard"><div class="vico">&#128203;</div><div><h4>Mantenimiento preventivo</h4><p>Contratos anuales para comunidades y particulares. Prevenir es mas barato que reparar.</p></div></div>
+      <div class="vcard"><div class="vico">&#9995;</div><div><h4>Trabajamos limpio</h4><p>20 anos cuidando las viviendas de nuestros clientes. Siempre dejamos todo impecable.</p></div></div>
+      <div class="vcard"><div class="vico">&#129309;</div><div><h4>De confianza</h4><p>800 clientes en Retiro y Salamanca. Los mismos desde hace anos. La mejor garantia posible.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec valores">
+  <div class="w">
+    <div class="sh c">
+      <div class="stag" style="background:rgba(255,255,255,.12);color:rgba(255,255,255,.85)">Nuestros valores</div>
+      <h2 class="stit" style="color:#fff">Lo que nos define<br/>en Retiro y Salamanca</h2>
+    </div>
+    <div class="valgrid">
+      <div class="valcard"><div class="valcard-ico">&#128205;</div><h3>Cercania</h3><p>Somos el fontanero del barrio de Retiro y Salamanca. Llegamos rapido porque estamos cerca.</p></div>
+      <div class="valcard"><div class="valcard-ico">&#127941;</div><h3>Calidad</h3><p>20 anos usando materiales de primera. Sin atajos. Trabajo bien hecho que dura en el tiempo.</p></div>
+      <div class="valcard"><div class="valcard-ico">&#128172;</div><h3>Transparencia</h3><p>Precio cerrado antes de empezar. Sin costes ocultos. Lo que acordamos es lo que pagas.</p></div>
+      <div class="valcard"><div class="valcard-ico">&#129309;</div><h3>Confianza</h3><p>800 clientes en la zona llevan anos confiando en nosotros. La confianza se gana trabajando.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--gr)">
+  <div class="w">
+    <div class="sh c"><div class="stag">Nuestros trabajos</div><h2 class="stit">Trabajos realizados<br/>en Retiro y Salamanca</h2></div>
+    <div class="ggrid">
+      <div class="gitem"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&auto=format&fit=crop" alt="Fontanero" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#0f2f8a,#1a4fd6)';this.remove()"/></div>
+      <div class="gitem"><img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80&auto=format&fit=crop" alt="Trabajo" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#c2410c,#f97316)';this.remove()"/></div>
+      <div class="gitem"><img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80&auto=format&fit=crop" alt="Bano" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#065f46,#059669)';this.remove()"/></div>
+      <div class="gitem"><img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=600&q=80&auto=format&fit=crop" alt="Grifo" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#334155,#475569)';this.remove()"/></div>
+      <div class="gitem"><img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=600&q=80&auto=format&fit=crop" alt="Instalacion" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#0f2f8a,#1a4fd6)';this.remove()"/></div>
+    </div>
+  </div>
+</section>
+
+<section class="comunidades" id="especialidad">
+  <div class="com-inner">
+    <div>
+      <div class="stag" style="background:rgba(255,255,255,.12);color:rgba(255,255,255,.85)">Especialidad</div>
+      <h2 class="stit" style="color:#fff;margin-bottom:20px">Especializados en Retiro<br/>y Salamanca desde hace 20 anos</h2>
+      <div class="com-badge-big">20+</div>
+      <div class="com-lbl">Anos especializados en Retiro y Salamanca</div>
+      <div class="com-list">
+        <div class="com-item">Especialistas en la zona de Retiro y Salamanca</div>
+        <div class="com-item">Instalacion y sustitucion de tuberias</div>
+        <div class="com-item">Desatascos y limpieza de instalaciones</div>
+        <div class="com-item">Calentadores, calderas y ACS</div>
+        <div class="com-item">Mantenimiento preventivo con contratos anuales</div>
+        <div class="com-item">Reparaciones urgentes en horario de apertura</div>
+      </div>
+    </div>
+    <div class="com-img">
+      <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80&auto=format&fit=crop" alt="Retiro Salamanca fontaneria" loading="lazy" onerror="this.parentElement.style.background='rgba(255,255,255,.1)';this.remove()"/>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="w">
+    <div class="sh c"><div class="stag">Opiniones</div><h2 class="stit">Lo que dicen nuestros clientes<br/>de Retiro y Salamanca</h2></div>
+    <div class="gband">
+      <div style="font-size:1.5rem;font-weight:900;color:#4285f4">G</div>
+      <div><div class="g-sc">4.8</div><div class="g-st">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="g-mt">Resenas verificadas en Google &middot; Retiro</div></div>
+    </div>
+    <div class="rgrid">
+      <div class="rcard"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rtxt">"Llevo anos con Esquerdo Fontaneros y nunca me han fallado. Siempre al precio acordado, trabajo impecable y muy cuidadosos con el piso. Los mejores fontaneros de Retiro."</p><div class="rautor"><div class="ravatar">C</div><div><div class="rname">Carmen M.</div><div class="rmeta">Clienta &middot; Retiro</div></div></div></div>
+      <div class="rcard"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rtxt">"Tuve un problema con las tuberias de mi piso en Salamanca y vinieron en pocas horas. Diagnostico preciso, solucion rapida y precio muy razonable. Totalmente recomendables."</p><div class="rautor"><div class="ravatar">J</div><div><div class="rname">Jorge L.</div><div class="rmeta">Cliente &middot; Salamanca</div></div></div></div>
+      <div class="rcard"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rtxt">"Me hicieron la instalacion de calentador en mi piso de Ibiza. Trabajo perfecto, limpio y sin obra innecesaria. Y el precio fue exactamente lo que dijeron. Muy profesionales."</p><div class="rautor"><div class="ravatar">A</div><div><div class="rname">Ana V.</div><div class="rmeta">Clienta &middot; Ibiza</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--gr)" id="faq">
+  <div class="w">
+    <div class="sh c"><div class="stag">Preguntas frecuentes</div><h2 class="stit">Lo que mas nos preguntan</h2></div>
+    <div class="fgrid">
+      <div class="fitem"><div class="fq" onclick="toggleFaq(this)">Que horario teneis?</div><div class="fa">Trabajamos de lunes a sabado de 9h a 19h. Los domingos estamos cerrados. Para urgencias dentro del horario, respondemos en pocas horas en la zona.</div></div>
+      <div class="fitem"><div class="fq" onclick="toggleFaq(this)">Cubris Retiro y Salamanca?</div><div class="fa">Si, somos especialistas en esa zona desde hace 20 anos. Retiro, Salamanca, Ibiza, Pacifico, Mediodía, Estrella, Ventas y alrededores del Doctor Esquerdo.</div></div>
+      <div class="fitem"><div class="fq" onclick="toggleFaq(this)">El presupuesto es gratuito?</div><div class="fa">Si, siempre. Visitamos sin coste y damos presupuesto cerrado. Lo que acordamos es lo que pagas sin sorpresas.</div></div>
+      <div class="fitem"><div class="fq" onclick="toggleFaq(this)">Teneis garantia?</div><div class="fa">Si, garantia completa en materiales y mano de obra. 20 anos haciendo bien nuestro trabajo.</div></div>
+      <div class="fitem"><div class="fq" onclick="toggleFaq(this)">Haceis mantenimiento preventivo?</div><div class="fa">Si, ofrecemos contratos anuales de mantenimiento para particulares y comunidades. Prevenir es mas economico que reparar.</div></div>
+      <div class="fitem"><div class="fq" onclick="toggleFaq(this)">Haceis reformas de bano?</div><div class="fa">Si, realizamos reformas de bano con toda la fontaneria incluida. Presupuesto gratuito sin compromiso.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="zonas">
+  <div class="w">
+    <div class="zonas-grid">
+      <div>
+        <div class="stag">Cobertura</div>
+        <h2 class="stit">Retiro, Salamanca<br/>y Doctor Esquerdo</h2>
+        <p class="ssub">20 anos especializados en la zona de Retiro y Salamanca. Conocemos cada edificio y llegamos rapido.</p>
+        <div class="ztags">
+          <span class="ztag">Retiro</span><span class="ztag">Salamanca</span>
+          <span class="ztag">Ibiza</span><span class="ztag">Pacifico</span>
+          <span class="ztag">Mediodía</span><span class="ztag">Estrella</span>
+          <span class="ztag">Ventas</span><span class="ztag">Ciudad Lineal</span>
+          <span class="ztag">Chamartin</span><span class="ztag">Doctor Esquerdo</span>
+        </div>
+      </div>
+      <div class="mapa">
+        <iframe src="https://maps.google.com/maps?q=40.4088,-3.6731&z=15&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--gr)">
+  <div class="w">
+    <div class="sh"><div class="stag">Consejos y blog</div><h2 class="stit">Consejos para los vecinos<br/>de Retiro y Salamanca</h2></div>
+    <div class="bgrid">
+      <div class="bcard"><img class="bcard-img" src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=600&q=80&auto=format&fit=crop" alt="Fugas" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#0f2f8a,#1a4fd6)';this.removeAttribute('src')"/><div class="bcard-b"><span class="btag">Fontaneria</span><h3>Como detectar una fuga antes de que cause danos</h3><p>Guia para identificar senales de alerta en las instalaciones de fontaneria de tu hogar.</p><div class="bcard-meta">&#128197; Consejos Esquerdo Fontaneros</div></div></div>
+      <div class="bcard"><img class="bcard-img" src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80&auto=format&fit=crop" alt="Calentador" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#065f46,#059669)';this.removeAttribute('src')"/><div class="bcard-b"><span class="btag">Calefaccion</span><h3>Mantenimiento de calentador: cuanto dura y cuando cambiarlo</h3><p>Todo sobre la vida util de tu calentador y cuando es el momento de sustituirlo.</p><div class="bcard-meta">&#128197; Consejos Esquerdo Fontaneros</div></div></div>
+      <div class="bcard"><img class="bcard-img" src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80&auto=format&fit=crop" alt="Desatascos" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#c2410c,#f97316)';this.removeAttribute('src')"/><div class="bcard-b"><span class="btag">Desatascos</span><h3>Atascos frecuentes: causas y como prevenirlos</h3><p>Por que se atascan las tuberias y que puedes hacer para evitar llamar al fontanero.</p><div class="bcard-meta">&#128197; Consejos Esquerdo Fontaneros</div></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="partners">
+  <div class="w">
+    <p class="pt-t">Certificados y asociados a</p>
+    <div class="pt-l">
+      <div class="pt-logo">GAS NATURAL</div><div class="pt-logo">PLAN RENOVE</div>
+      <div class="pt-logo">COM. DE MADRID</div><div class="pt-logo">TECNICOS CERT.</div>
+    </div>
+  </div>
+</div>
+
+<section class="cta">
+  <div class="cta-in w">
+    <h2>Necesitas un fontanero<br/>en Retiro o Salamanca?</h2>
+    <p>20 anos de experiencia en la zona. Presupuesto gratuito y trabajo garantizado.</p>
+    <div class="cta-btns">
+      <a href="tel:34919930751" class="cta-tel">&#128222; 919 930 751</a>
+      <a href="https://wa.me/34919930751" class="cta-wa2" target="_blank">
+        <svg width="22" height="22" viewBox="0 0 32 32" fill="white"><path d="M16 3C9.373 3 4 8.373 4 15c0 2.385.67 4.61 1.832 6.5L4 29l7.75-1.813A12.94 12.94 0 0016 28c6.627 0 12-5.373 12-12S22.627 3 16 3zm5.98 16.737c-.328-.164-1.94-.957-2.24-1.065-.3-.11-.518-.164-.737.163-.218.328-.846 1.065-1.038 1.284-.19.218-.382.245-.71.082-.328-.164-1.386-.51-2.64-1.627-.977-.87-1.635-1.942-1.827-2.27-.19-.328-.02-.505.144-.668.147-.147.328-.382.492-.573.164-.19.218-.328.328-.546.11-.218.055-.41-.027-.573-.082-.164-.737-1.776-1.01-2.432-.265-.637-.535-.55-.737-.56l-.628-.01c-.218 0-.573.082-.873.41-.3.328-1.146 1.12-1.146 2.73s1.174 3.165 1.338 3.384c.164.218 2.31 3.53 5.6 4.95.782.338 1.393.54 1.868.69.785.25 1.5.215 2.065.13.63-.094 1.94-.793 2.213-1.56.274-.764.274-1.42.192-1.56-.082-.137-.3-.22-.628-.383z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+    <p class="cta-note">&#10003; Presupuesto gratis &middot; &#10003; Respuesta en horas &middot; &#10003; 20+ anos &middot; &#10003; 4.8&#9733; Google</p>
+  </div>
+</section>
+
+<footer>
+  <div class="fg2">
+    <div class="fb">
+      <h3>ESQUERDO FONTANEROS</h3>
+      <p>Fontaneros especializados en Retiro y Salamanca. 20 anos de experiencia y 800+ clientes satisfechos en la zona.</p>
+      <div class="fsoc"><a href="#" target="_blank">f</a><a href="#" target="_blank">ig</a><a href="https://wa.me/34919930751" target="_blank">wa</a></div>
+    </div>
+    <div class="fcol">
+      <h4>Contacto</h4>
+      <a href="tel:34919930751">&#128222; 919 930 751</a>
+      <a href="https://wa.me/34919930751">&#128172; WhatsApp</a>
+      <a href="mailto:info@esquerdofontaneros.es">&#9993;&#65039; info@esquerdofontaneros.es</a>
+      <p>&#128205; C/ Dr. Esquerdo, 159, Madrid</p>
+    </div>
+    <div class="fcol">
+      <h4>Servicios</h4>
+      <p>Instalacion de tuberias</p><p>Desatascos</p>
+      <p>Mantenimiento preventivo</p><p>Calentadores y calderas</p>
+      <p>Fontaneria general</p><p>Reparaciones urgentes</p>
+    </div>
+    <div class="fcol">
+      <h4>Horario</h4>
+      <p>Lun - Sab: 9h - 19h</p>
+      <p>Domingo: cerrado</p>
+      <br/>
+      <h4>Zonas</h4>
+      <p>Retiro &middot; Salamanca &middot; Ibiza</p>
+      <p>Pacifico &middot; Estrella &middot; Ventas</p>
+    </div>
+  </div>
+  <div class="fbot">
+    <p>&copy; 2025 Esquerdo Fontaneros &middot; Fontaneros en Retiro y Salamanca &middot; Madrid</p>
+    <div class="fleg"><a href="#">Aviso legal</a><a href="#">Privacidad</a><a href="#">Cookies</a></div>
+  </div>
+</footer>
+
+<div class="float">
+  <a href="https://wa.me/34919930751" class="fbtn fw" target="_blank" rel="noopener">
+    <svg width="28" height="28" viewBox="0 0 32 32" fill="white"><path d="M16 3C9.373 3 4 8.373 4 15c0 2.385.67 4.61 1.832 6.5L4 29l7.75-1.813A12.94 12.94 0 0016 28c6.627 0 12-5.373 12-12S22.627 3 16 3zm5.98 16.737c-.328-.164-1.94-.957-2.24-1.065-.3-.11-.518-.164-.737.163-.218.328-.846 1.065-1.038 1.284-.19.218-.382.245-.71.082-.328-.164-1.386-.51-2.64-1.627-.977-.87-1.635-1.942-1.827-2.27-.19-.328-.02-.505.144-.668.147-.147.328-.382.492-.573.164-.19.218-.328.328-.546.11-.218.055-.41-.027-.573-.082-.164-.737-1.776-1.01-2.432-.265-.637-.535-.55-.737-.56l-.628-.01c-.218 0-.573.082-.873.41-.3.328-1.146 1.12-1.146 2.73s1.174 3.165 1.338 3.384c.164.218 2.31 3.53 5.6 4.95.782.338 1.393.54 1.868.69.785.25 1.5.215 2.065.13.63-.094 1.94-.793 2.213-1.56.274-.764.274-1.42.192-1.56-.082-.137-.3-.22-.628-.383z"/></svg>
+  </a>
+  <a href="tel:34919930751" class="fbtn ft">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+  </a>
+</div>
+
+<script>
+  function openTab(e,id){document.querySelectorAll('.tpanel').forEach(p=>p.classList.remove('on'));document.querySelectorAll('.tbtn').forEach(b=>b.classList.remove('on'));document.getElementById(id).classList.add('on');e.currentTarget.classList.add('on')}
+  function toggleFaq(el){const item=el.parentElement;const isOpen=item.classList.contains('open');document.querySelectorAll('.fitem.open').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open')}
+</script>
+</body>
+</html>
